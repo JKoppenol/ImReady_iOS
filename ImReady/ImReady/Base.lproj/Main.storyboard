@@ -196,104 +196,56 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yd5-fE-lEZ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Day" rowHeight="115" id="x8E-ut-x2H" customClass="AgendaDayCell" customModule="ImReady" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="115"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Appointment" rowHeight="57" id="LCK-RA-RNc" customClass="AgendaDayCell" customModule="ImReady" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x8E-ut-x2H" id="hup-On-eHM">
-                                            <frame key="frameInset" width="375" height="115"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCK-RA-RNc" id="3uI-KH-aNl">
+                                            <frame key="frameInset" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-K4-DLR">
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donderdag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h84-8f-Lw6">
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24-12-2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yE3-7w-pn8">
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.25882352941176473" green="0.69019607843137254" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="yE3-7w-pn8" secondAttribute="bottom" id="4Es-UW-GyA"/>
-                                                        <constraint firstItem="yE3-7w-pn8" firstAttribute="top" secondItem="3Gf-K4-DLR" secondAttribute="top" id="51U-8F-DVy"/>
-                                                        <constraint firstAttribute="height" constant="30" id="6HX-gm-MbR"/>
-                                                        <constraint firstItem="h84-8f-Lw6" firstAttribute="leading" secondItem="3Gf-K4-DLR" secondAttribute="leading" constant="16" id="CZh-Uc-QwJ"/>
-                                                        <constraint firstItem="h84-8f-Lw6" firstAttribute="top" secondItem="3Gf-K4-DLR" secondAttribute="top" id="iHj-dq-61s"/>
-                                                        <constraint firstItem="yE3-7w-pn8" firstAttribute="centerY" secondItem="3Gf-K4-DLR" secondAttribute="centerY" id="lVu-n1-QkJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="h84-8f-Lw6" secondAttribute="bottom" id="oca-Ja-3H0"/>
-                                                        <constraint firstItem="yE3-7w-pn8" firstAttribute="centerX" secondItem="3Gf-K4-DLR" secondAttribute="centerX" id="wWo-b6-6Yq"/>
-                                                    </constraints>
-                                                </view>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZJB-TB-Xdp">
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="57" id="LCK-RA-RNc">
-                                                            <rect key="frame" x="0.0" y="28" width="375" height="57"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCK-RA-RNc" id="3uI-KH-aNl">
-                                                                <frame key="frameInset" width="375" height="56"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Afspraak met Jaap de Boer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-sK-SG0">
-                                                                        <frame key="frameInset" minX="8" width="359" height="21"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8v-hl-KXj">
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbf-tv-idd">
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZM-pG-VDm">
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="t8v-hl-KXj" firstAttribute="bottom" secondItem="3uI-KH-aNl" secondAttribute="bottomMargin" identifier="id15" id="6aR-AH-la9"/>
-                                                                    <constraint firstItem="Fbf-tv-idd" firstAttribute="leading" secondItem="t8v-hl-KXj" secondAttribute="trailing" constant="8" identifier="id17" id="Bf5-EY-RU4"/>
-                                                                    <constraint firstItem="IZM-pG-VDm" firstAttribute="bottom" secondItem="3uI-KH-aNl" secondAttribute="bottomMargin" identifier="id19" id="Oua-U5-oiz"/>
-                                                                    <constraint firstItem="t8v-hl-KXj" firstAttribute="leading" secondItem="3uI-KH-aNl" secondAttribute="leadingMargin" constant="8" identifier="id16" id="Sxc-OD-1gx"/>
-                                                                    <constraint firstItem="IZM-pG-VDm" firstAttribute="leading" secondItem="Fbf-tv-idd" secondAttribute="trailing" constant="8" identifier="id20" id="db3-m7-DG2"/>
-                                                                    <constraint firstItem="Fbf-tv-idd" firstAttribute="bottom" secondItem="3uI-KH-aNl" secondAttribute="bottomMargin" identifier="id18" id="lXF-hX-b9M"/>
-                                                                </constraints>
-                                                            </tableViewCellContentView>
-                                                        </tableViewCell>
-                                                    </prototypes>
-                                                </tableView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Afspraak met Jaap de Boer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-sK-SG0">
+                                                    <frame key="frameInset" minX="8" width="359" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8v-hl-KXj">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbf-tv-idd">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZM-pG-VDm">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3Gf-K4-DLR" firstAttribute="centerX" secondItem="hup-On-eHM" secondAttribute="centerX" identifier="id7" id="0GR-t6-j0C"/>
-                                                <constraint firstAttribute="trailing" secondItem="3Gf-K4-DLR" secondAttribute="trailing" identifier="id8" id="K61-x4-hmW"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZJB-TB-Xdp" secondAttribute="bottom" identifier="id11" id="NEA-Rf-Sr7"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZJB-TB-Xdp" secondAttribute="trailing" identifier="id12" id="RpL-tU-gqf"/>
-                                                <constraint firstItem="3Gf-K4-DLR" firstAttribute="top" secondItem="hup-On-eHM" secondAttribute="top" identifier="id9" id="WHI-ar-HEz"/>
-                                                <constraint firstItem="ZJB-TB-Xdp" firstAttribute="top" secondItem="3Gf-K4-DLR" secondAttribute="bottom" identifier="id13" id="Wdx-T7-j1U"/>
-                                                <constraint firstItem="3Gf-K4-DLR" firstAttribute="leading" secondItem="hup-On-eHM" secondAttribute="leading" identifier="id10" id="eui-4g-YNM"/>
-                                                <constraint firstItem="ZJB-TB-Xdp" firstAttribute="leading" secondItem="hup-On-eHM" secondAttribute="leading" identifier="id14" id="rrd-DR-iNc"/>
+                                                <constraint firstItem="t8v-hl-KXj" firstAttribute="bottom" secondItem="3uI-KH-aNl" secondAttribute="bottomMargin" identifier="id15" id="6aR-AH-la9"/>
+                                                <constraint firstItem="Fbf-tv-idd" firstAttribute="leading" secondItem="t8v-hl-KXj" secondAttribute="trailing" constant="8" identifier="id17" id="Bf5-EY-RU4"/>
+                                                <constraint firstItem="IZM-pG-VDm" firstAttribute="bottom" secondItem="3uI-KH-aNl" secondAttribute="bottomMargin" identifier="id19" id="Oua-U5-oiz"/>
+                                                <constraint firstItem="t8v-hl-KXj" firstAttribute="leading" secondItem="3uI-KH-aNl" secondAttribute="leadingMargin" constant="8" identifier="id16" id="Sxc-OD-1gx"/>
+                                                <constraint firstItem="IZM-pG-VDm" firstAttribute="leading" secondItem="Fbf-tv-idd" secondAttribute="trailing" constant="8" identifier="id20" id="db3-m7-DG2"/>
+                                                <constraint firstItem="Fbf-tv-idd" firstAttribute="bottom" secondItem="3uI-KH-aNl" secondAttribute="bottomMargin" identifier="id18" id="lXF-hX-b9M"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateLabel" destination="yE3-7w-pn8" id="Vam-h6-jxX"/>
-                                            <outlet property="nameLabel" destination="h84-8f-Lw6" id="fGG-N3-WMe"/>
+                                            <outlet property="dashLabel" destination="Fbf-tv-idd" id="H7n-Se-Jhp"/>
+                                            <outlet property="endLabel" destination="IZM-pG-VDm" id="ytq-19-Tg1"/>
+                                            <outlet property="startLabel" destination="t8v-hl-KXj" id="uNd-JP-Mc6"/>
+                                            <outlet property="titleLabel" destination="vrR-sK-SG0" id="Ae4-uU-io2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="a8b-Eg-4JG" id="hge-yV-dIF"/>
-                                    <outlet property="delegate" destination="a8b-Eg-4JG" id="rmu-vv-r5X"/>
+                                    <outlet property="dataSource" destination="a8b-Eg-4JG" id="AgN-BC-BUP"/>
+                                    <outlet property="delegate" destination="a8b-Eg-4JG" id="4sh-Gb-fyH"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Wo-kx-pkg">
@@ -345,7 +297,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Agenda" id="nW1-Ea-IW4"/>
                     <connections>
-                        <outlet property="tableView" destination="yd5-fE-lEZ" id="MeP-nC-3sq"/>
+                        <outlet property="tableView" destination="yd5-fE-lEZ" id="Mul-dU-5Va"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJb-wQ-Ek4" userLabel="First Responder" sceneMemberID="firstResponder"/>
