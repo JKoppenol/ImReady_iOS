@@ -125,7 +125,6 @@
 			children = (
 				7F54D3D41FE168F20023B570 /* MessageVC.swift */,
 				7F54D3D61FE169730023B570 /* LoginVC.swift */,
-				A48CD7551FFE4BD30036050F /* FCProgressCell.swift */,
 				A48CD7491FFE446B0036050F /* BlockVC.swift */,
 				A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */,
 				7F6525B51FFBACCE00EE115B /* AgendaVC.swift */,
@@ -151,6 +150,7 @@
 			children = (
 				7F54D3D81FE2973A0023B570 /* MessagesCell.swift */,
 				7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */,
+				A48CD7551FFE4BD30036050F /* FCProgressCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
