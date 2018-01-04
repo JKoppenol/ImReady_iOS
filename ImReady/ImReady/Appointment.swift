@@ -16,4 +16,10 @@ class Appointment {
     var endTime: Date?
     var location: String = ""
     var comments: String = ""
+    var kind: Kind = .Appointment
+}
+
+enum Kind: String {
+    case Appointment
+    case Deadline
 }

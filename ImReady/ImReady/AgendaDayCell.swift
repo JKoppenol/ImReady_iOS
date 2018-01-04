@@ -29,7 +29,35 @@ class AgendaDayCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(appointment: Appointment, currentUser: User) {
+    func configCell(appointment: Appointment) {
+        let dateFormatter = DateFormatter()
+       
+        dateFormatter.dateFormat = "HH:mm"
         
+        if(appointment.kind == Kind.Appointment) {
+            titleLabel.text = appointment.title
+            startLabel.text = dateFormatter.string(from: appointment.startTime)
+            
+            if(appointment.endTime != nil) {
+                dashLabel.isHidden = false
+                endLabel.isHidden = false
+                dashLabel.text = "-"
+                endLabel.text = dateFormatter.string(from: appointment.endTime!)
+            }
+            
+            else {
+                titleLabel.text = appointment.title
+                startLabel.text = "Vanaf " + dateFormatter.string(from: appointment.startTime)
+                dashLabel.isHidden = true
+                endLabel.isHidden = true
+            }
+        }
+        
+        else {
+            titleLabel.text = "Streefdatum - " + appointment.title
+            startLabel.text = "Tot " + dateFormatter.string(from: appointment.startTime)
+            dashLabel.isHidden = true
+            endLabel.isHidden = true
+        }
     }
 }

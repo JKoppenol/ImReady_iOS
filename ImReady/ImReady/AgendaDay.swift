@@ -10,5 +10,5 @@ import Foundation
 
 struct AgendaDay {
     var dayName : String!
-    var appointments : [Appointment]!
+    var appointments = [Appointment]()
 }

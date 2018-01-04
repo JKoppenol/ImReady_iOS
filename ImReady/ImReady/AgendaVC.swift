@@ -16,6 +16,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var days = [Date]()
     var sections = [AgendaDay]()
     var currentUser = User()
+    var weekInterval = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let appointment = day.appointments[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Appointment") as? AgendaDayCell {
-            cell.configCell(appointment: appointment, currentUser: currentUser)
+            cell.configCell(appointment: appointment)
             
             return(cell)
         }
@@ -61,6 +62,12 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].dayName
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor(red:0.24, green:0.73, blue:0.61, alpha:1.0)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
     }
     
     func fillDaysArray() {
@@ -82,10 +89,12 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func fillSectionsArray() {
+        
+        let dateFormatter = DateFormatter()
+        
         for day in days {
             var tempAgendaDay = AgendaDay()
             for appointment in appointments {
-                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd-MM-yyyy"
                 let appointmentDay = dateFormatter.string(from: appointment.day)
                 let dateString = dateFormatter.string(from: day)
@@ -99,8 +108,67 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     tempAgendaDay.appointments.append(appointment)
                 }
             }
-            sections.append(tempAgendaDay)
+            
+            //Set to 0:00 today
+            var comp: DateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+            comp.timeZone = TimeZone(abbreviation: "UTC")!
+            let today = Calendar.current.date(from: comp)!
+            
+            //Set to 0:00 same day
+            comp  = Calendar.current.dateComponents([.year, .month, .day], from: day)
+            comp.timeZone = TimeZone(abbreviation: "UTC")!
+            let tempDay = Calendar.current.date(from: comp)!
+            
+            let startWeek = today.addingTimeInterval(TimeInterval(weekInterval)).startOfWeek!.addingTimeInterval(TimeInterval(60 * 60))
+            let endWeek = today.addingTimeInterval(TimeInterval(weekInterval)).endOfWeek!.addingTimeInterval(TimeInterval(59 * 61))
+            
+            if(weekInterval != 0) {
+                if(tempDay == startWeek || tempDay > startWeek) {
+                    sections.append(tempAgendaDay)
+                }
+            }
+            
+            else {
+                if(tempDay.fallsWithinWeek(start: startWeek, end: endWeek)) {
+                    sections.append(tempAgendaDay)
+                }
+            }
         }
     }
+    
+    @IBAction func nextWeek(_ sender: AnyObject) {
+        weekInterval = weekInterval + (60 * 60 * 24 * 6) + ((60 * 60 * 23) + (59 * 60))
+        tableView.reloadData()
+    }
+    
+    @IBAction func previousWeek(_ sender: AnyObject) {
+        weekInterval = weekInterval - (60 * 60 * 24 * 6) - ((60 * 60 * 23) + (59 * 60))
+        tableView.reloadData()
+    }
 
+}
+
+extension Calendar {
+    static let gregorian = Calendar(identifier: .gregorian)
+}
+extension Date {
+    var startOfWeek: Date? {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return gregorian.date(byAdding: .day, value: 1, to: sunday)
+    }
+    
+    var endOfWeek: Date? {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return gregorian.date(byAdding: .day, value: 8, to: sunday)
+    }
+    
+    func fallsWithinWeek(start: Date, end: Date) -> Bool {
+        if((self > start && self < end)) {
+            return true
+        }
+        
+        return false
+    }
 }

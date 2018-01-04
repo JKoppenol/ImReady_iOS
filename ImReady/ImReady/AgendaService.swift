@@ -33,19 +33,24 @@ class AgendaService {
         return false
     }
     
-    func mockData() -> [Appointment]{
+    func mockData() -> [Appointment] {
+        
         var appointments = [Appointment]()
         
         let appointment1 = Appointment()
         appointment1.title = "Afspraak met Jaap de Boer (Zorgverlener)"
         appointment1.id = 1
         appointment1.day = Date()
+        appointment1.startTime = Date()
+        let oneHour = TimeInterval(60 * 60)
+        appointment1.endTime = Date(timeIntervalSinceNow: oneHour)
         
         let appointment2 = Appointment()
-        appointment2.title = "Poelejak met jootje"
+        appointment2.title = "CV Maken"
         appointment2.id = 2
-        let oneDay = TimeInterval(60 * 60 * 24)
+        let oneDay = TimeInterval(60 * 60 * 24 * 7)
         appointment2.day = Date(timeIntervalSinceNow: oneDay)
+        appointment2.kind = .Deadline
         
         appointments.append(appointment1)
         appointments.append(appointment2)
