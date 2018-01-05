@@ -23,6 +23,8 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUser.id = 2
+        tableView.estimatedRowHeight = 50.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

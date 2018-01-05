@@ -13,11 +13,16 @@ class LoginVC: UIViewController {
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     var loggedInUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let logo = UIImage(named: "ImReadyLogo")!
+        logoImageView.image = logo
+        
         // Do any additional setup after loading the view.
     }
     
