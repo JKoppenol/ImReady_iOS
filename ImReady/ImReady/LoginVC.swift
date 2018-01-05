@@ -13,7 +13,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
-    var userId: String!
+    var loggedInUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +26,14 @@ class LoginVC: UIViewController {
         //..
         
         performSegue(withIdentifier: "toFutureCanvas", sender: nil)
-        
-        //Hier geef je de ingelogde user mee aan de opvolgende view
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            
-//            if segue.identifier == "toFutureCanvas" {
-//                if let futureCanvas= segue.destination as? TableViewController {
-//                    futureCanvas.currentUser = loggedInUser
-//                }
-//            }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //Hier geef je de ingelogde user mee aan de opvolgende view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toFutureCanvas" {
+            if let futureCanvas = segue.destination as? FutureCanvasVC {
+//                futureCanvas.currentUser = loggedInUser
+            }
+        }
     }
-    */
-
 }

@@ -15,6 +15,7 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     var items = ["1", "2", "3", "4"]
     var apiClient: ApiClient = ApiClient()
     var blocks: [Block] = []
+    var currentUser: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()

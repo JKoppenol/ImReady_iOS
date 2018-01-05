@@ -35,6 +35,9 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         sections = [AgendaDay]()
         fillSectionsArray()
         
+        let vc = AddAgendaVC(nibName: "AddAgendaVC", bundle: nil)
+        vc.agendaVC = self
+        
         tableView.reloadData()
     }
 
@@ -47,6 +50,16 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "toAddAgendaItem", sender: nil)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let id = segue.identifier else {return}
+        
+        if(id == "toAddAgendaItem") {
+            guard let destination = segue.destination as? AddAgendaVC else {return}
+            
+            destination.agendaVC = self
+        }
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -156,30 +169,10 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         weekInterval = weekInterval - (60 * 60 * 24 * 6) - ((60 * 60 * 23) + (59 * 60))
         loadData()
     }
-
-}
-
-extension Calendar {
-    static let gregorian = Calendar(identifier: .gregorian)
-}
-extension Date {
-    var startOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 1, to: sunday)
-    }
     
-    var endOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 8, to: sunday)
+    func onUserAction(appointment: Appointment) {
+        appointments.append(appointment)
+        loadData()
     }
-    
-    func fallsWithinWeek(start: Date, end: Date) -> Bool {
-        if((self > start && self < end)) {
-            return true
-        }
-        
-        return false
-    }
+
 }

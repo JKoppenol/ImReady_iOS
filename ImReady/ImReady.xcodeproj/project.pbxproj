@@ -21,6 +21,7 @@
 		7F6525BA1FFCDE7100EE115B /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525B91FFCDE7100EE115B /* Appointment.swift */; };
 		7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */; };
 		7F6525BE1FFCE6AB00EE115B /* AgendaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */; };
+		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
 		7F8DCCAE1FD07C960022CBE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8DCCAD1FD07C960022CBE6 /* AppDelegate.swift */; };
 		7F8DCCB31FD07C960022CBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8DCCB11FD07C960022CBE6 /* Main.storyboard */; };
 		7F8DCCB51FD07C960022CBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8DCCB41FD07C960022CBE6 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		7F6525B91FFCDE7100EE115B /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDayCell.swift; sourceTree = "<group>"; };
 		7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaService.swift; sourceTree = "<group>"; };
+		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
 		7F8DCCAA1FD07C960022CBE6 /* ImReady.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImReady.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8DCCAD1FD07C960022CBE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F8DCCB21FD07C960022CBE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				7F8DCCB41FD07C960022CBE6 /* Assets.xcassets */,
 				7F8DCCB61FD07C960022CBE6 /* LaunchScreen.storyboard */,
 				7F8DCCB91FD07C960022CBE6 /* Info.plist */,
+				7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */,
 			);
 			path = ImReady;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				7F54D3CE1FD97C2B0023B570 /* UserService.swift in Sources */,
 				7F54D3D11FD97C4F0023B570 /* ChatService.swift in Sources */,
 				A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */,
+				7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */,
 				7F54D3D51FE168F30023B570 /* MessageVC.swift in Sources */,
 				A48CD7521FFE44930036050F /* ApiService.swift in Sources */,
 				A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */,
