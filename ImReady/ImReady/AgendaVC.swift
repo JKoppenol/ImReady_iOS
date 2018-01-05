@@ -21,10 +21,21 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUser.id = 2
-        fillDaysArray()
-        fillSectionsArray()
+        loadData()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44.0
 
         // Do any additional setup after loading the view.
+    }
+    
+    func loadData() {
+        days = [Date]()
+        fillDaysArray()
+        sections = [AgendaDay]()
+        fillSectionsArray()
+        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,14 +147,14 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    @IBAction func nextWeek(_ sender: AnyObject) {
+    @IBAction func nextWeek(sender: UIButton!) {
         weekInterval = weekInterval + (60 * 60 * 24 * 6) + ((60 * 60 * 23) + (59 * 60))
-        tableView.reloadData()
+        loadData()
     }
     
-    @IBAction func previousWeek(_ sender: AnyObject) {
+    @IBAction func previousWeek(sender: UIButton!) {
         weekInterval = weekInterval - (60 * 60 * 24 * 6) - ((60 * 60 * 23) + (59 * 60))
-        tableView.reloadData()
+        loadData()
     }
 
 }

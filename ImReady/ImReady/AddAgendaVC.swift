@@ -15,9 +15,9 @@ class AddAgendaVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.commentsTV.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
-        self.commentsTV.layer.borderWidth = 1.0
-        self.commentsTV.layer.cornerRadius = 8.0
+//        commentsTV.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+//        commentsTV.layer.borderWidth = 1.0
+//        commentsTV.layer.cornerRadius = 8.0
 
         // Do any additional setup after loading the view.
     }

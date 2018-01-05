@@ -52,8 +52,17 @@ class AgendaService {
         appointment2.day = Date(timeIntervalSinceNow: oneDay)
         appointment2.kind = .Deadline
         
+        let appointment3 = Appointment()
+        appointment3.title = "Afspraak met Jaap de Boer (Zorgverlener)"
+        appointment3.id = 3
+        appointment3.day = Date()
+        appointment3.startTime = Date()
+        appointment3.endTime = Date(timeIntervalSinceNow: oneHour)
+
+        
         appointments.append(appointment1)
         appointments.append(appointment2)
+        appointments.append(appointment3)
         
         return appointments
     }
