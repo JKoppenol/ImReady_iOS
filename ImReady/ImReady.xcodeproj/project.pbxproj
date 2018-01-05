@@ -22,6 +22,12 @@
 		7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */; };
 		7F6525BE1FFCE6AB00EE115B /* AgendaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */; };
 		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
+		7F80EA762000002500093253 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA752000002500093253 /* NotificationVC.swift */; };
+		7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA77200001B600093253 /* MasterMessageVC.swift */; };
+		7F80EA7E20000F6500093253 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA7D20000F6500093253 /* NotificationService.swift */; };
+		7F80EA8020000F9A00093253 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA7F20000F9A00093253 /* Notification.swift */; };
+		7F80EA8220000FBD00093253 /* MasterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA8120000FBD00093253 /* MasterMessage.swift */; };
+		7F80EA852000163200093253 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA842000163200093253 /* NotificationCell.swift */; };
 		7F8DCCAE1FD07C960022CBE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8DCCAD1FD07C960022CBE6 /* AppDelegate.swift */; };
 		7F8DCCB31FD07C960022CBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8DCCB11FD07C960022CBE6 /* Main.storyboard */; };
 		7F8DCCB51FD07C960022CBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8DCCB41FD07C960022CBE6 /* Assets.xcassets */; };
@@ -64,6 +70,12 @@
 		7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDayCell.swift; sourceTree = "<group>"; };
 		7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaService.swift; sourceTree = "<group>"; };
 		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
+		7F80EA752000002500093253 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		7F80EA77200001B600093253 /* MasterMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessageVC.swift; sourceTree = "<group>"; };
+		7F80EA7D20000F6500093253 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		7F80EA7F20000F9A00093253 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		7F80EA8120000FBD00093253 /* MasterMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessage.swift; sourceTree = "<group>"; };
+		7F80EA842000163200093253 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		7F8DCCAA1FD07C960022CBE6 /* ImReady.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImReady.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8DCCAD1FD07C960022CBE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F8DCCB21FD07C960022CBE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,16 +136,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F28564220001A3D003DE7BC /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				7F54D3D81FE2973A0023B570 /* MessagesCell.swift */,
+				7F80EA842000163200093253 /* NotificationCell.swift */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		7F28564320001A50003DE7BC /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				7F54D3D01FD97C4F0023B570 /* ChatService.swift */,
+				7F80EA7D20000F6500093253 /* NotificationService.swift */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
 		7F54D3C71FD9707B0023B570 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7F54D3D41FE168F20023B570 /* MessageVC.swift */,
+				7F80EA7A200001D200093253 /* Agenda */,
+				7F80EA79200001BC00093253 /* Messages */,
 				7F54D3D61FE169730023B570 /* LoginVC.swift */,
 				A48CD7491FFE446B0036050F /* BlockVC.swift */,
 				A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */,
-				7F6525B51FFBACCE00EE115B /* AgendaVC.swift */,
 				A48CD74D1FFE44750036050F /* TaskVC.swift */,
-				7F6525B71FFBBCEF00EE115B /* AddAgendaVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -141,8 +170,8 @@
 		7F54D3CC1FD97BED0023B570 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7F28564320001A50003DE7BC /* Message */,
 				7F54D3CD1FD97C2B0023B570 /* UserService.swift */,
-				7F54D3D01FD97C4F0023B570 /* ChatService.swift */,
 				A48CD7511FFE44930036050F /* ApiService.swift */,
 				7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */,
 			);
@@ -152,11 +181,40 @@
 		7F54D3DA1FE2983B0023B570 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7F54D3D81FE2973A0023B570 /* MessagesCell.swift */,
+				7F28564220001A3D003DE7BC /* Message */,
 				7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */,
 				A48CD7551FFE4BD30036050F /* FCProgressCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		7F80EA79200001BC00093253 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				7F54D3D41FE168F20023B570 /* MessageVC.swift */,
+				7F80EA752000002500093253 /* NotificationVC.swift */,
+				7F80EA77200001B600093253 /* MasterMessageVC.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		7F80EA7A200001D200093253 /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				7F6525B71FFBBCEF00EE115B /* AddAgendaVC.swift */,
+				7F6525B51FFBACCE00EE115B /* AgendaVC.swift */,
+			);
+			name = Agenda;
+			sourceTree = "<group>";
+		};
+		7F80EA832000103900093253 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				7F54D3C31FD6CB900023B570 /* Chat.swift */,
+				7F80EA7F20000F9A00093253 /* Notification.swift */,
+				7F80EA8120000FBD00093253 /* MasterMessage.swift */,
+			);
+			name = Messages;
 			sourceTree = "<group>";
 		};
 		7F8DCCA11FD07C950022CBE6 = {
@@ -208,7 +266,7 @@
 		A45C230D1FD6CE1A0016311D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7F54D3C31FD6CB900023B570 /* Chat.swift */,
+				7F80EA832000103900093253 /* Messages */,
 				A48CD74F1FFE447A0036050F /* Block.swift */,
 				A45C23121FD6D7530016311D /* User.swift */,
 				7F6525B91FFCDE7100EE115B /* Appointment.swift */,
@@ -435,22 +493,28 @@
 				A48CD7501FFE447A0036050F /* Block.swift in Sources */,
 				7F2FC1C31FFE6E6300F8C3F7 /* AgendaDay.swift in Sources */,
 				7F54D3D71FE169730023B570 /* LoginVC.swift in Sources */,
+				7F80EA8220000FBD00093253 /* MasterMessage.swift in Sources */,
 				A48CD74E1FFE44750036050F /* TaskVC.swift in Sources */,
 				7F6525B81FFBBCEF00EE115B /* AddAgendaVC.swift in Sources */,
 				7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */,
 				7F54D3C41FD6CB900023B570 /* Chat.swift in Sources */,
+				7F80EA852000163200093253 /* NotificationCell.swift in Sources */,
 				7F6525B61FFBACCE00EE115B /* AgendaVC.swift in Sources */,
 				7F54D3CE1FD97C2B0023B570 /* UserService.swift in Sources */,
+				7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */,
 				7F54D3D11FD97C4F0023B570 /* ChatService.swift in Sources */,
 				A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */,
 				7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */,
 				7F54D3D51FE168F30023B570 /* MessageVC.swift in Sources */,
 				A48CD7521FFE44930036050F /* ApiService.swift in Sources */,
+				7F80EA7E20000F6500093253 /* NotificationService.swift in Sources */,
 				A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */,
+				7F80EA8020000F9A00093253 /* Notification.swift in Sources */,
 				A45C23131FD6D7530016311D /* User.swift in Sources */,
 				7F8DCCAE1FD07C960022CBE6 /* AppDelegate.swift in Sources */,
 				A48CD7561FFE4BD30036050F /* FCProgressCell.swift in Sources */,
 				7F54D3D91FE2973A0023B570 /* MessagesCell.swift in Sources */,
+				7F80EA762000002500093253 /* NotificationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

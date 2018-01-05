@@ -19,10 +19,6 @@ class Chat {
     var messages : [Message] = []
 }
 
-class Message {
-    var id : Int = 0
+class Message : MasterMessage {
     var senderId : Int = 0
-    var receiverId : Int = 0
-    var content : String = ""
-    var date : Date = Date()
 }
