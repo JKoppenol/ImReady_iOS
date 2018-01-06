@@ -197,7 +197,7 @@
                                         <rect key="frame" x="0.0" y="92" width="1000" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCK-RA-RNc" id="3uI-KH-aNl">
-                                            <frame key="frameInset" width="1000" height="57"/>
+                                            <frame key="frameInset" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afspraak met Jaap de Boer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-sK-SG0">
@@ -272,6 +272,14 @@
                                             <action selector="previousWeekWithSender:" destination="a8b-Eg-4JG" eventType="touchUpInside" id="eTa-ca-GZk"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je hebt geen afspraken of streefdata deze week." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFo-dQ-iyA">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="d50-U5-C3u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -279,11 +287,15 @@
                                     <constraint firstItem="8BB-Kt-E8Q" firstAttribute="top" secondItem="1Wo-kx-pkg" secondAttribute="top" constant="5" id="83O-vU-i0R"/>
                                     <constraint firstAttribute="bottom" secondItem="8BB-Kt-E8Q" secondAttribute="bottom" constant="5" id="8H5-jF-EB9"/>
                                     <constraint firstItem="ww1-lf-XgY" firstAttribute="centerX" secondItem="1Wo-kx-pkg" secondAttribute="centerX" id="ErK-Qg-Bmj"/>
+                                    <constraint firstItem="lFo-dQ-iyA" firstAttribute="centerX" secondItem="1Wo-kx-pkg" secondAttribute="centerX" id="HDU-oa-jMh"/>
+                                    <constraint firstAttribute="trailing" secondItem="lFo-dQ-iyA" secondAttribute="trailing" constant="30" id="Kee-4q-jBt"/>
+                                    <constraint firstItem="lFo-dQ-iyA" firstAttribute="leading" secondItem="1Wo-kx-pkg" secondAttribute="leading" constant="30" id="QOD-Ff-hW9"/>
                                     <constraint firstItem="Wkm-TI-V5r" firstAttribute="leading" secondItem="1Wo-kx-pkg" secondAttribute="leading" constant="8" id="QjK-Ir-Upf"/>
                                     <constraint firstItem="Wkm-TI-V5r" firstAttribute="centerY" secondItem="1Wo-kx-pkg" secondAttribute="centerY" id="RKc-95-LH3"/>
                                     <constraint firstItem="ww1-lf-XgY" firstAttribute="top" secondItem="1Wo-kx-pkg" secondAttribute="top" constant="5" id="WZ4-xu-nfr"/>
                                     <constraint firstAttribute="bottom" secondItem="Wkm-TI-V5r" secondAttribute="bottom" constant="5" id="Z8P-PV-0fB"/>
                                     <constraint firstItem="8BB-Kt-E8Q" firstAttribute="centerY" secondItem="1Wo-kx-pkg" secondAttribute="centerY" id="ghI-4i-e8G"/>
+                                    <constraint firstItem="Wkm-TI-V5r" firstAttribute="top" secondItem="lFo-dQ-iyA" secondAttribute="bottom" constant="250" id="i9T-wA-5ov"/>
                                     <constraint firstAttribute="bottom" secondItem="ww1-lf-XgY" secondAttribute="bottom" constant="5" id="jMA-Xp-aBX"/>
                                     <constraint firstItem="ww1-lf-XgY" firstAttribute="centerY" secondItem="1Wo-kx-pkg" secondAttribute="centerY" id="quU-Ih-ayQ"/>
                                     <constraint firstItem="Wkm-TI-V5r" firstAttribute="top" secondItem="1Wo-kx-pkg" secondAttribute="top" constant="5" id="t3R-8R-byi"/>
@@ -304,6 +316,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Agenda" id="nW1-Ea-IW4"/>
                     <connections>
+                        <outlet property="navItem" destination="nW1-Ea-IW4" id="42n-LV-0id"/>
+                        <outlet property="noAppointmentsLabel" destination="lFo-dQ-iyA" id="ZGH-Bp-8Gu"/>
                         <outlet property="tableView" destination="yd5-fE-lEZ" id="Mul-dU-5Va"/>
                     </connections>
                 </viewController>
@@ -524,7 +538,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hlK-wu-zhh" id="FzB-yo-qeB">
-                                            <frame key="frameInset" width="375" height="89"/>
+                                            <frame key="frameInset" width="375" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="Goed bezig, je hebt een taak voltooid!" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMT-iB-SRK">

@@ -11,18 +11,20 @@ import UIKit
 class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noAppointmentsLabel: UILabel!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     var appointments = agendaService.mockData()
     var days = [Date]()
     var sections = [AgendaDay]()
     var currentUser = User()
     var weekInterval = 0
+    var weekNumber = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUser.id = 2
         loadData()
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
 
@@ -37,6 +39,11 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let vc = AddAgendaVC(nibName: "AddAgendaVC", bundle: nil)
         vc.agendaVC = self
+        
+        let calendar = Calendar.current
+        weekNumber = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: TimeInterval(weekInterval)))
+        
+        navItem.title = "Week " + String(weekNumber)
         
         tableView.reloadData()
     }
@@ -147,7 +154,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let endWeek = today.addingTimeInterval(TimeInterval(weekInterval)).endOfWeek!.addingTimeInterval(TimeInterval(59 * 61))
             
             if(weekInterval != 0) {
-                if(tempDay == startWeek || tempDay > startWeek) {
+                if(tempDay == startWeek || (tempDay > startWeek && tempDay < endWeek)) {
                     sections.append(tempAgendaDay)
                 }
             }
@@ -157,6 +164,16 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     sections.append(tempAgendaDay)
                 }
             }
+        }
+        
+        if(sections.isEmpty) {
+            tableView.isHidden = true
+            noAppointmentsLabel.isHidden = false
+        }
+        
+        else {
+            tableView.isHidden = false
+            noAppointmentsLabel.isHidden = true
         }
     }
     
