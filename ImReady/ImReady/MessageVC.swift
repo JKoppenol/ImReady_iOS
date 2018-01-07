@@ -25,6 +25,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         currentUser.id = 2
         tableView.estimatedRowHeight = 50.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        sendButton.layer.cornerRadius = 5.0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -13,6 +13,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
+    @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var logoImageView: UIImageView!
     
     var loggedInUser: User?
@@ -22,6 +23,8 @@ class LoginVC: UIViewController {
 
         let logo = UIImage(named: "ImReadyLogo")!
         logoImageView.image = logo
+        
+        loginBtn.layer.cornerRadius = 5.0
         
         // Do any additional setup after loading the view.
     }
