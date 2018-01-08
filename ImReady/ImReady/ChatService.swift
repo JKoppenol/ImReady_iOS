@@ -37,7 +37,7 @@ class ChatService {
         msg.id = 1
         msg.receiverId = 2
         msg.senderId = 1
-        msg.content = "Hoi Gebruiker!"
+        msg.content = "Hoi Jeroen!"
         
         tempChat.messages.append(msg)
         
@@ -45,7 +45,7 @@ class ChatService {
         msg.id = 2
         msg.receiverId = 1
         msg.senderId = 2
-        msg.content = "Hey Jaap!"
+        msg.content = "Hey Ralph! Alles goed?"
         
         tempChat.messages.append(msg)
         

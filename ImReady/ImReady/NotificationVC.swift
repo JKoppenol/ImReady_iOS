@@ -18,7 +18,7 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        currentUser.id = 2
+        currentUser = sharedInstance.currentUser!
         tableView.estimatedRowHeight = 60.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }

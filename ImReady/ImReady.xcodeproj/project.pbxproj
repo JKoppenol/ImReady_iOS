@@ -21,6 +21,7 @@
 		7F6525BA1FFCDE7100EE115B /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525B91FFCDE7100EE115B /* Appointment.swift */; };
 		7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */; };
 		7F6525BE1FFCE6AB00EE115B /* AgendaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */; };
+		7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7C2003D8A90077D416 /* Session.swift */; };
 		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
 		7F80EA762000002500093253 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA752000002500093253 /* NotificationVC.swift */; };
 		7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA77200001B600093253 /* MasterMessageVC.swift */; };
@@ -69,6 +70,7 @@
 		7F6525B91FFCDE7100EE115B /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDayCell.swift; sourceTree = "<group>"; };
 		7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaService.swift; sourceTree = "<group>"; };
+		7F6D6B7C2003D8A90077D416 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
 		7F80EA752000002500093253 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		7F80EA77200001B600093253 /* MasterMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessageVC.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				A45C23121FD6D7530016311D /* User.swift */,
 				7F6525B91FFCDE7100EE115B /* Appointment.swift */,
 				7F2FC1C21FFE6E6300F8C3F7 /* AgendaDay.swift */,
+				7F6D6B7C2003D8A90077D416 /* Session.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */,
 				7F6525BA1FFCDE7100EE115B /* Appointment.swift in Sources */,
 				7F6525BE1FFCE6AB00EE115B /* AgendaService.swift in Sources */,
 				A48CD7501FFE447A0036050F /* Block.swift in Sources */,

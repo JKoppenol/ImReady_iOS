@@ -22,7 +22,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentUser.id = 2
+        currentUser = sharedInstance.currentUser!
         tableView.estimatedRowHeight = 50.0
         tableView.rowHeight = UITableViewAutomaticDimension
         sendButton.layer.cornerRadius = 5.0
@@ -61,7 +61,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         if(textField.text != "") {
             message.id = messages.count + 1
             message.content = textField.text!
-            message.senderId = 2
+            message.senderId = currentUser.id
             message.receiverId = 1
             
             messages.append(message)

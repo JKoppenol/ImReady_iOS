@@ -19,7 +19,7 @@ class MessagesCell: UITableViewCell {
     @IBOutlet weak var sendDate: UILabel!
     
     var message: Message!
-    var currentUser = User()
+    var currentUser = sharedInstance.currentUser
     var dateFormatter = DateFormatter()
     
     override func awakeFromNib() {

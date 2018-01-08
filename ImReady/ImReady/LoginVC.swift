@@ -18,30 +18,63 @@ class LoginVC: UIViewController {
     
     var loggedInUser: User?
     
+    let users: [User] = userService.getAllUsers()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let logo = UIImage(named: "ImReadyLogo")!
-        logoImageView.image = logo
         
-        loginBtn.layer.cornerRadius = 5.0
+        setupIBObjects()
         
         // Do any additional setup after loading the view.
     }
     
     @IBAction func login(_ sender: AnyObject) {
-        //hier logincheck
-        //..
+        if(usernameText.text == "" || passwordText.text == "") {
+            usernameText.layer.borderColor = UIColor.red.cgColor
+            passwordText.layer.borderColor = UIColor.red.cgColor
+            
+            createAlert(title: "Oops, er is iets fout gegaan!", message: "Vul zowel je emailadres als je wachtwoord in!")
+        }
         
-        performSegue(withIdentifier: "toFutureCanvas", sender: nil)
+        else {
+            for user in users {
+                if(user.password == passwordText.text && user.email == usernameText.text) {
+                    sharedInstance.currentUser = user
+                    performSegue(withIdentifier: "toFutureCanvas", sender: nil)
+                }
+                
+                continue
+            }
+            
+            createAlert(title: "Onjuiste gegevens!", message: "De zojuist ingevulde gegevens corresponderen niet met een bestaand account.")
+        }
     }
     
-    //Hier geef je de ingelogde user mee aan de opvolgende view
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toFutureCanvas" {
-            if let futureCanvas = segue.destination as? FutureCanvasVC {
-//                futureCanvas.currentUser = loggedInUser
-            }
-        }
+    private func setupIBObjects() {
+        usernameText.layer.borderWidth = 1.0
+        passwordText.layer.borderWidth = 1.0
+        
+        let grey = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+        
+        usernameText.layer.borderColor = grey
+        passwordText.layer.borderColor = grey
+        
+        usernameText.layer.cornerRadius = 8.0
+        passwordText.layer.cornerRadius = 8.0
+        
+        let logo = UIImage(named: "ImReadyLogo")!
+        logoImageView.image = logo
+        
+        loginBtn.layer.cornerRadius = 5.0
+    }
+    
+    private func createAlert(title: String!, message: String!) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Oke", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
