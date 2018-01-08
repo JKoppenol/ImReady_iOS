@@ -35,26 +35,50 @@ class AgendaDayCell: UITableViewCell {
         dateFormatter.dateFormat = "HH:mm"
         
         if(appointment.kind == Kind.Appointment) {
-            titleLabel.text = appointment.title
+            if(sharedInstance.currentUser?.role == .Client) {
+                titleLabel.text = appointment.clientTitle
+                
+                if(appointment.endTime != nil) {
+                    dashLabel.isHidden = false
+                    endLabel.isHidden = false
+                    dashLabel.text = "-"
+                    endLabel.text = dateFormatter.string(from: appointment.endTime!)
+                }
+                    
+                else {
+                    titleLabel.text = appointment.clientTitle
+                    startLabel.text = "Vanaf " + dateFormatter.string(from: appointment.startTime)
+                    dashLabel.isHidden = true
+                    endLabel.isHidden = true
+                }
+
+            }
+                
+            else {
+                titleLabel.text = appointment.caretakerTitle
+                
+                if(appointment.endTime != nil) {
+                    dashLabel.isHidden = false
+                    endLabel.isHidden = false
+                    dashLabel.text = "-"
+                    endLabel.text = dateFormatter.string(from: appointment.endTime!)
+                }
+                    
+                else {
+                    titleLabel.text = appointment.caretakerTitle
+                    startLabel.text = "Vanaf " + dateFormatter.string(from: appointment.startTime)
+                    dashLabel.isHidden = true
+                    endLabel.isHidden = true
+                }
+
+            }
+            
             startLabel.text = dateFormatter.string(from: appointment.startTime)
             
-            if(appointment.endTime != nil) {
-                dashLabel.isHidden = false
-                endLabel.isHidden = false
-                dashLabel.text = "-"
-                endLabel.text = dateFormatter.string(from: appointment.endTime!)
-            }
-            
-            else {
-                titleLabel.text = appointment.title
-                startLabel.text = "Vanaf " + dateFormatter.string(from: appointment.startTime)
-                dashLabel.isHidden = true
-                endLabel.isHidden = true
-            }
         }
         
         else {
-            titleLabel.text = "Streefdatum - " + appointment.title
+            titleLabel.text = "Streefdatum - " + appointment.clientTitle
             startLabel.text = "Tot " + dateFormatter.string(from: appointment.startTime)
             dashLabel.isHidden = true
             endLabel.isHidden = true

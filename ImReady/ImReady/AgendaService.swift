@@ -38,26 +38,36 @@ class AgendaService {
         var appointments = [Appointment]()
         
         let appointment1 = Appointment()
-        appointment1.title = "Afspraak met Jaap de Boer (Zorgverlener)"
+        appointment1.clientTitle = "Afspraak met Ralph Hink"
+        appointment1.caretakerTitle = "Afspraak met Jeroen Koppenol"
         appointment1.id = 1
         appointment1.day = Date()
         appointment1.startTime = Date()
         let oneHour = TimeInterval(60 * 60)
         appointment1.endTime = Date(timeIntervalSinceNow: oneHour)
+        appointment1.clientId = 2
+        appointment1.caretakerId = 1
         
         let appointment2 = Appointment()
-        appointment2.title = "CV Maken"
+        appointment2.clientTitle = "CV Maken"
         appointment2.id = 2
-        let oneDay = TimeInterval(60 * 60 * 24 * 7)
-        appointment2.day = Date(timeIntervalSinceNow: oneDay)
+        let oneWeek = TimeInterval(60 * 60 * 24 * 7)
+        appointment2.day = Date(timeIntervalSinceNow: oneWeek)
         appointment2.kind = .Deadline
+        appointment2.clientId = 2
         
         let appointment3 = Appointment()
-        appointment3.title = "Afspraak bij Rabobank"
+        appointment3.clientTitle = "Afspraak met Ralph Hink"
+        appointment3.caretakerTitle = "Afspraak met Jeroen Koppenol"
         appointment3.id = 3
         appointment3.day = Date()
-        appointment3.startTime = Date(timeIntervalSinceNow: oneHour)
-        appointment3.endTime = Date(timeIntervalSinceNow: oneHour + oneHour)
+        let intervalStart = TimeInterval(60 * 60 * 24)
+        let intervalEnd = TimeInterval((60 * 60 * 24) + (60 * 60))
+        appointment3.startTime = Date(timeIntervalSinceNow: intervalStart)
+        appointment3.endTime = Date(timeIntervalSinceNow: intervalEnd)
+        appointment3.kind = .Appointment
+        appointment3.clientId = 2
+        appointment3.caretakerId = 1
 
         
         appointments.append(appointment1)

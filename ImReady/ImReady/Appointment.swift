@@ -10,12 +10,15 @@ import Foundation
 
 class Appointment {
     var id: Int = 0
-    var title: String = ""
+    var clientTitle: String = ""
+    var caretakerTitle: String? = ""
     var day = Date()
     var startTime = Date()
     var endTime: Date?
     var location: String = ""
     var comments: String = ""
+    var clientId: Int = 0
+    var caretakerId: Int? = 0
     var kind: Kind = .Appointment
 }
 

@@ -14,19 +14,24 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var noAppointmentsLabel: UILabel!
     @IBOutlet weak var navItem: UINavigationItem!
     
+//    @IBOutlet weak var addButton: UIButton!
+    
     var appointments = agendaService.mockData()
     var days = [Date]()
     var sections = [AgendaDay]()
-    var currentUser = User()
+    var currentUser = sharedInstance.currentUser
     var weekInterval = 0
     var weekNumber = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentUser.id = 2
         loadData()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
+        
+//        if(currentUser?.role == .Client) {
+//            addButton.isHidden = true
+//        }
 
         // Do any additional setup after loading the view.
     }
@@ -103,12 +108,17 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func fillDaysArray() {
         for appointment in appointments {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
-            let appointmentDay = dateFormatter.date(from: dateFormatter.string(from: appointment.day))
             
-            if(!days.contains(appointmentDay!)) {
-                days.append(appointmentDay!)
+            if((appointment.clientId == sharedInstance.currentUser?.id) ||
+                (appointment.caretakerId == sharedInstance.currentUser?.id && appointment.kind == .Appointment)) {
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yyyy"
+                let appointmentDay = dateFormatter.date(from: dateFormatter.string(from: appointment.day))
+                
+                if(!days.contains(appointmentDay!)) {
+                    days.append(appointmentDay!)
+                }
             }
         }
         
@@ -126,17 +136,21 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         for day in days {
             var tempAgendaDay = AgendaDay()
             for appointment in appointments {
-                dateFormatter.dateFormat = "dd-MM-yyyy"
-                let appointmentDay = dateFormatter.string(from: appointment.day)
-                let dateString = dateFormatter.string(from: day)
-                
-                dateFormatter.dateFormat = "EEEE"
-                dateFormatter.locale = Locale(identifier: "nl_NL")
-                let dayName = dateFormatter.string(from: day).capitalized + ", " + dateString
-                
-                if (appointmentDay == dateString) {
-                    tempAgendaDay.dayName = dayName
-                    tempAgendaDay.appointments.append(appointment)
+                if((appointment.clientId == sharedInstance.currentUser?.id) ||
+                    (appointment.caretakerId == sharedInstance.currentUser?.id && appointment.kind == .Appointment)){
+                    
+                    dateFormatter.dateFormat = "dd-MM-yyyy"
+                    let appointmentDay = dateFormatter.string(from: appointment.day)
+                    let dateString = dateFormatter.string(from: day)
+                    
+                    dateFormatter.dateFormat = "EEEE"
+                    dateFormatter.locale = Locale(identifier: "nl_NL")
+                    let dayName = dateFormatter.string(from: day).capitalized + ", " + dateString
+                    
+                    if (appointmentDay == dateString) {
+                        tempAgendaDay.dayName = dayName
+                        tempAgendaDay.appointments.append(appointment)
+                    }
                 }
             }
             

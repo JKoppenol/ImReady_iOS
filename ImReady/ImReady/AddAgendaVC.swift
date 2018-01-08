@@ -48,7 +48,7 @@ class AddAgendaVC: UIViewController {
     @IBAction func saveAppointment(_ sender: UIBarButtonItem) {
         
         appointment.id = 4
-        appointment.title = titleTextfield.text!
+        appointment.clientTitle = titleTextfield.text!
         appointment.day = dayPicker.date
         appointment.startTime = startPicker.date
         
