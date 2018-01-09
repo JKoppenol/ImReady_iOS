@@ -9,5 +9,13 @@ import Foundation
 import UIKit
 
 class FCProgressCell: UICollectionViewCell {
+    @IBOutlet weak var blockImage: UIImageView!
+    @IBOutlet weak var lblBlockName: UILabel!
+    @IBOutlet weak var prgTaskProgress: UIProgressView!
     
+    func configCell() {
+        blockImage.layer.borderWidth = 1.0
+        blockImage.layer.borderColor = UIColor.black.cgColor
+        blockImage.layer.cornerRadius = 8.0
+    }
 }

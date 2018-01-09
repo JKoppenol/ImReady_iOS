@@ -34,7 +34,7 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     // Populate views (cells)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FCProgressCell
-        
+        cell.configCell()
         return cell
     }
     
