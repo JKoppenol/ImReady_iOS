@@ -777,9 +777,6 @@
                             <color key="tintColor" red="0.25490196078431371" green="0.68235294117647061" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="progressCollectionView" destination="Vwh-yc-CpC" id="cvJ-3F-FNw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NQ-ip-A89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
