@@ -38,6 +38,7 @@
 		7F8DCCB51FD07C960022CBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8DCCB41FD07C960022CBE6 /* Assets.xcassets */; };
 		7F8DCCB81FD07C960022CBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8DCCB61FD07C960022CBE6 /* LaunchScreen.storyboard */; };
 		7F8DCCC31FD07C960022CBE6 /* ImReadyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8DCCC21FD07C960022CBE6 /* ImReadyUITests.swift */; };
+		A4492354200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4492353200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift */; };
 		A45C23131FD6D7530016311D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C23121FD6D7530016311D /* User.swift */; };
 		A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7491FFE446B0036050F /* BlockVC.swift */; };
 		A48CD74E1FFE44750036050F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD74D1FFE44750036050F /* TaskVC.swift */; };
@@ -95,6 +96,7 @@
 		7F8DCCC21FD07C960022CBE6 /* ImReadyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImReadyUITests.swift; sourceTree = "<group>"; };
 		7F8DCCC41FD07C960022CBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2A05A8B1ACA3E1B17626240 /* Pods_ImReady.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImReady.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4492353200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCSectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		A45C23121FD6D7530016311D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A48CD7491FFE446B0036050F /* BlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVC.swift; sourceTree = "<group>"; };
 		A48CD74D1FFE44750036050F /* TaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				7F28564220001A3D003DE7BC /* Message */,
 				7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */,
 				7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */,
+				A4492353200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				7F2FC1C31FFE6E6300F8C3F7 /* AgendaDay.swift in Sources */,
 				7F54D3D71FE169730023B570 /* LoginVC.swift in Sources */,
 				7F80EA8220000FBD00093253 /* MasterMessage.swift in Sources */,
+				A4492354200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift in Sources */,
 				A48CD74E1FFE44750036050F /* TaskVC.swift in Sources */,
 				7F6525B81FFBBCEF00EE115B /* AddAgendaVC.swift in Sources */,
 				7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */,

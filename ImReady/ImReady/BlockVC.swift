@@ -9,6 +9,7 @@
 import UIKit
 
 class BlockVC: UIViewController {
+    var block: Block = Block()
 
     override func viewDidLoad() {
         super.viewDidLoad()

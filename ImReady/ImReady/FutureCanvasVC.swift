@@ -44,6 +44,31 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath as IndexPath) {
+            performSegue(withIdentifier: "ShowBlockSegue", sender: cell)
+        } else {
+            // Error indexPath is not on screen: this should never happen.
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        assert(sender as? UICollectionViewCell != nil, "Sender is not a collection view")
+        guard segue.identifier != nil else {return}
+        
+            if let indexPath = self.collectionView?.indexPath(for: sender as! UICollectionViewCell) {
+                if segue.identifier == "ShowBlockSegue" {
+                    let blockVC: BlockVC = segue.destination as! BlockVC
+                    blockVC.block = blocks[indexPath.row]
+                }
+             else {
+                // Error sender is not a cell or cell is not in collectionView.
+            }
+        }
+    }
+    
+
+    
     
     // MARK: - UICollectionViewDelegate protocol
     
