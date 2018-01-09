@@ -68,7 +68,16 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             destination.agendaVC = self
         }
+        
+        if(id == "toAgendaItem") {
+            var selectedRowIndex = self.tableView.indexPathForSelectedRow
+            if let vc = segue.destination as? AgendaDetailVC {
+            vc.appointment =  sections[(selectedRowIndex?.section)!].appointments[(selectedRowIndex?.row)!]
+            }
+        }
     }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }

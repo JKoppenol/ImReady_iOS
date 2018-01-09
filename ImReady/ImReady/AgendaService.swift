@@ -55,6 +55,7 @@ class AgendaService {
         appointment2.day = Date(timeIntervalSinceNow: oneWeek)
         appointment2.kind = .Deadline
         appointment2.clientId = 2
+        appointment2.hasEndTime = false
         
         let appointment3 = Appointment()
         appointment3.clientTitle = "Afspraak met Ralph Hink"

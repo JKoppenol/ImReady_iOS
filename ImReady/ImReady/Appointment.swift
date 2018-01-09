@@ -20,6 +20,7 @@ class Appointment {
     var clientId: Int = 0
     var caretakerId: Int? = 0
     var kind: Kind = .Appointment
+    var hasEndTime: Bool = true
 }
 
 enum Kind: String {

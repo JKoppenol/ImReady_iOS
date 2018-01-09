@@ -39,6 +39,14 @@ class AddAgendaVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillDisappear(_ animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        if self.isMovingFromParentViewController {
+            createAlert(title: "Weet je het zeker?", message: "Weet je zeker dat je deze pagina wilt verlaten? Al je de pagina verlaat worden je ingevoerde gegevens niet opgeslagen!")
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,8 +60,13 @@ class AddAgendaVC: UIViewController {
         appointment.day = dayPicker.date
         appointment.startTime = startPicker.date
         
-        if(!endSwitch.isOn) {
+        if(endSwitch.isOn) {
             appointment.endTime = endPicker.date
+            appointment.hasEndTime = true
+        }
+        
+        else {
+            appointment.hasEndTime = false
         }
         
         if(locationTextfield.text != "") {
@@ -82,6 +95,22 @@ class AddAgendaVC: UIViewController {
             endPicker.isHidden = false
         }
     }
+    
+    private func createAlert(title: String!, message: String!) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Nee", style: UIAlertActionStyle.default, handler: { (action) in
+            
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
     
 
     /*

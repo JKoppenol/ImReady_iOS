@@ -18,6 +18,8 @@ class AgendaDayCell: UITableViewCell {
     
     @IBOutlet weak var endLabel: UILabel!
     
+    var appointment = Appointment()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,6 +32,7 @@ class AgendaDayCell: UITableViewCell {
     }
     
     func configCell(appointment: Appointment) {
+        self.appointment = appointment
         let dateFormatter = DateFormatter()
        
         dateFormatter.dateFormat = "HH:mm"

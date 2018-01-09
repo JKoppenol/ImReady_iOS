@@ -24,6 +24,8 @@
 		7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7C2003D8A90077D416 /* Session.swift */; };
 		7F6D6B7F2005089E0077D416 /* FCProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */; };
 		7F6D6B81200508D30077D416 /* BlockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B80200508D30077D416 /* BlockService.swift */; };
+		7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B82200522220077D416 /* AgendaDetailVC.swift */; };
+		7F6D6B85200546410077D416 /* EditAgendaItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B84200546410077D416 /* EditAgendaItemVC.swift */; };
 		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
 		7F80EA762000002500093253 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA752000002500093253 /* NotificationVC.swift */; };
 		7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA77200001B600093253 /* MasterMessageVC.swift */; };
@@ -74,6 +76,8 @@
 		7F6D6B7C2003D8A90077D416 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCProgressCell.swift; sourceTree = "<group>"; };
 		7F6D6B80200508D30077D416 /* BlockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockService.swift; sourceTree = "<group>"; };
+		7F6D6B82200522220077D416 /* AgendaDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDetailVC.swift; sourceTree = "<group>"; };
+		7F6D6B84200546410077D416 /* EditAgendaItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAgendaItemVC.swift; sourceTree = "<group>"; };
 		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
 		7F80EA752000002500093253 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		7F80EA77200001B600093253 /* MasterMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessageVC.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 			children = (
 				7F6525B71FFBBCEF00EE115B /* AddAgendaVC.swift */,
 				7F6525B51FFBACCE00EE115B /* AgendaVC.swift */,
+				7F6D6B82200522220077D416 /* AgendaDetailVC.swift */,
+				7F6D6B84200546410077D416 /* EditAgendaItemVC.swift */,
 			);
 			name = Agenda;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				7F54D3C41FD6CB900023B570 /* Chat.swift in Sources */,
 				7F80EA852000163200093253 /* NotificationCell.swift in Sources */,
 				7F6525B61FFBACCE00EE115B /* AgendaVC.swift in Sources */,
+				7F6D6B85200546410077D416 /* EditAgendaItemVC.swift in Sources */,
 				7F54D3CE1FD97C2B0023B570 /* UserService.swift in Sources */,
 				7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */,
 				7F54D3D11FD97C4F0023B570 /* ChatService.swift in Sources */,
@@ -519,6 +526,7 @@
 				A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */,
 				7F80EA8020000F9A00093253 /* Notification.swift in Sources */,
 				A45C23131FD6D7530016311D /* User.swift in Sources */,
+				7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */,
 				7F8DCCAE1FD07C960022CBE6 /* AppDelegate.swift in Sources */,
 				7F54D3D91FE2973A0023B570 /* MessagesCell.swift in Sources */,
 				7F6D6B81200508D30077D416 /* BlockService.swift in Sources */,
