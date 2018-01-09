@@ -22,6 +22,8 @@
 		7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */; };
 		7F6525BE1FFCE6AB00EE115B /* AgendaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */; };
 		7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7C2003D8A90077D416 /* Session.swift */; };
+		7F6D6B7F2005089E0077D416 /* FCProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */; };
+		7F6D6B81200508D30077D416 /* BlockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B80200508D30077D416 /* BlockService.swift */; };
 		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
 		7F80EA762000002500093253 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA752000002500093253 /* NotificationVC.swift */; };
 		7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA77200001B600093253 /* MasterMessageVC.swift */; };
@@ -40,7 +42,6 @@
 		A48CD7501FFE447A0036050F /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD74F1FFE447A0036050F /* Block.swift */; };
 		A48CD7521FFE44930036050F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7511FFE44930036050F /* ApiService.swift */; };
 		A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */; };
-		A48CD7561FFE4BD30036050F /* FCProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7551FFE4BD30036050F /* FCProgressCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDayCell.swift; sourceTree = "<group>"; };
 		7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaService.swift; sourceTree = "<group>"; };
 		7F6D6B7C2003D8A90077D416 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCProgressCell.swift; sourceTree = "<group>"; };
+		7F6D6B80200508D30077D416 /* BlockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockService.swift; sourceTree = "<group>"; };
 		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
 		7F80EA752000002500093253 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		7F80EA77200001B600093253 /* MasterMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessageVC.swift; sourceTree = "<group>"; };
@@ -94,7 +97,6 @@
 		A48CD74F1FFE447A0036050F /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		A48CD7511FFE44930036050F /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureCanvasVC.swift; sourceTree = "<group>"; };
-		A48CD7551FFE4BD30036050F /* FCProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCProgressCell.swift; sourceTree = "<group>"; };
 		E2818FDCBE8C31385A4936E8 /* Pods-ImReady.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImReady.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ImReady/Pods-ImReady.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 				7F54D3CD1FD97C2B0023B570 /* UserService.swift */,
 				A48CD7511FFE44930036050F /* ApiService.swift */,
 				7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */,
+				7F6D6B80200508D30077D416 /* BlockService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -185,7 +188,7 @@
 			children = (
 				7F28564220001A3D003DE7BC /* Message */,
 				7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */,
-				A48CD7551FFE4BD30036050F /* FCProgressCell.swift */,
+				7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				7F54D3CE1FD97C2B0023B570 /* UserService.swift in Sources */,
 				7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */,
 				7F54D3D11FD97C4F0023B570 /* ChatService.swift in Sources */,
+				7F6D6B7F2005089E0077D416 /* FCProgressCell.swift in Sources */,
 				A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */,
 				7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */,
 				7F54D3D51FE168F30023B570 /* MessageVC.swift in Sources */,
@@ -516,8 +520,8 @@
 				7F80EA8020000F9A00093253 /* Notification.swift in Sources */,
 				A45C23131FD6D7530016311D /* User.swift in Sources */,
 				7F8DCCAE1FD07C960022CBE6 /* AppDelegate.swift in Sources */,
-				A48CD7561FFE4BD30036050F /* FCProgressCell.swift in Sources */,
 				7F54D3D91FE2973A0023B570 /* MessagesCell.swift in Sources */,
+				7F6D6B81200508D30077D416 /* BlockService.swift in Sources */,
 				7F80EA762000002500093253 /* NotificationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

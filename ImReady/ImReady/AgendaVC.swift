@@ -14,7 +14,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var noAppointmentsLabel: UILabel!
     @IBOutlet weak var navItem: UINavigationItem!
     
-//    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     var appointments = agendaService.mockData()
     var days = [Date]()
@@ -28,15 +28,17 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         loadData()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
-        
-//        if(currentUser?.role == .Client) {
-//            addButton.isHidden = true
-//        }
+
 
         // Do any additional setup after loading the view.
     }
     
     func loadData() {
+        
+        if(currentUser?.role == .Client) {
+            addButton.isHidden = true
+        }
+        
         days = [Date]()
         fillDaysArray()
         sections = [AgendaDay]()
@@ -57,11 +59,6 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func addItem(_ sender: AnyObject) {
-        performSegue(withIdentifier: "toAddAgendaItem", sender: nil)
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let id = segue.identifier else {return}

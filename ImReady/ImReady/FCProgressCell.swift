@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-class FutureCanvasProgressCollectionVC: UICollectionViewCell {
-    @IBOutlet weak var blockImage: UIImageView!
+class FCProgressCell: UICollectionViewCell {
     
 }
