@@ -9,14 +9,18 @@
 import UIKit
 
 class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    //let blockIni:[Block] = blockService.mockData()
-    let items:[String] = ["1","2","3"]
+    let blocks:[Block] = blockService.mockData()
     let reuseIdentifier = "cell"
     var apiClient: ApiClient = ApiClient()
     var currentUser: User?
     
+    @IBOutlet weak var collectionView: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//    collectionView.rowHeight = UITableViewAutomaticDimension
+//    collectionView.estimatedRowHeight = 125.0
         
         // Do any additional setup after loading the view.
     }
@@ -28,13 +32,15 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     
     // Number of views (cells)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return self.blocks.count
     }
     
     // Populate views (cells)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FCProgressCell
-        cell.configCell()
+        
+        let block: Block = blocks[indexPath.item]
+        cell.configCell(block: block)
         return cell
     }
     

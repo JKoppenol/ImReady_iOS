@@ -13,9 +13,16 @@ class FCProgressCell: UICollectionViewCell {
     @IBOutlet weak var lblBlockName: UILabel!
     @IBOutlet weak var prgTaskProgress: UIProgressView!
     
-    func configCell() {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func configCell(block: Block) {
         blockImage.layer.borderWidth = 1.0
         blockImage.layer.borderColor = UIColor.black.cgColor
         blockImage.layer.cornerRadius = 8.0
+        
+        lblBlockName.isHidden = false
+        lblBlockName.text = block.name
     }
 }
