@@ -26,6 +26,7 @@
 		7F6D6B81200508D30077D416 /* BlockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B80200508D30077D416 /* BlockService.swift */; };
 		7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B82200522220077D416 /* AgendaDetailVC.swift */; };
 		7F6D6B85200546410077D416 /* EditAgendaItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B84200546410077D416 /* EditAgendaItemVC.swift */; };
+		7F6D6B87200661570077D416 /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B86200661570077D416 /* ChatListVC.swift */; };
 		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
 		7F80EA762000002500093253 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA752000002500093253 /* NotificationVC.swift */; };
 		7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA77200001B600093253 /* MasterMessageVC.swift */; };
@@ -79,6 +80,7 @@
 		7F6D6B80200508D30077D416 /* BlockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockService.swift; sourceTree = "<group>"; };
 		7F6D6B82200522220077D416 /* AgendaDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDetailVC.swift; sourceTree = "<group>"; };
 		7F6D6B84200546410077D416 /* EditAgendaItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAgendaItemVC.swift; sourceTree = "<group>"; };
+		7F6D6B86200661570077D416 /* ChatListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
 		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
 		7F80EA752000002500093253 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		7F80EA77200001B600093253 /* MasterMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessageVC.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				7F54D3D41FE168F20023B570 /* MessageVC.swift */,
 				7F80EA752000002500093253 /* NotificationVC.swift */,
 				7F80EA77200001B600093253 /* MasterMessageVC.swift */,
+				7F6D6B86200661570077D416 /* ChatListVC.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */,
 				7F54D3C41FD6CB900023B570 /* Chat.swift in Sources */,
 				7F80EA852000163200093253 /* NotificationCell.swift in Sources */,
+				7F6D6B87200661570077D416 /* ChatListVC.swift in Sources */,
 				7F6525B61FFBACCE00EE115B /* AgendaVC.swift in Sources */,
 				7F6D6B85200546410077D416 /* EditAgendaItemVC.swift in Sources */,
 				7F54D3CE1FD97C2B0023B570 /* UserService.swift in Sources */,

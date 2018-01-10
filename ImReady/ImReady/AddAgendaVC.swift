@@ -11,21 +11,14 @@ import UIKit
 class AddAgendaVC: UIViewController {
     
     @IBOutlet weak var commentsTV: UITextView!
-    
     @IBOutlet weak var titleTextfield: UITextField!
-    
     @IBOutlet weak var dayPicker: UIDatePicker!
-    
     @IBOutlet weak var startPicker: UIDatePicker!
-    
     @IBOutlet weak var endLabel: UILabel!
-    
     @IBOutlet weak var endPicker: UIDatePicker!
-    
     @IBOutlet weak var endSwitch: UISwitch!
-    
     @IBOutlet weak var locationTextfield: UITextField!
-    
+
     var appointment = Appointment()
     
     var agendaVC: AgendaVC?
@@ -36,16 +29,16 @@ class AddAgendaVC: UIViewController {
         commentsTV.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
         commentsTV.layer.borderWidth = 1.0
         commentsTV.layer.cornerRadius = 8.0
+        
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "< Terug", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillDisappear(_ animated : Bool) {
-        super.viewWillDisappear(animated)
-        
-        if self.isMovingFromParentViewController {
-            createAlert(title: "Weet je het zeker?", message: "Weet je zeker dat je deze pagina wilt verlaten? Al je de pagina verlaat worden je ingevoerde gegevens niet opgeslagen!")
-        }
+    @objc private func back(sender: UIBarButtonItem) {
+        createAlert(title: "Weet je het zeker?", message: "Als je de pagina verlaat worden al je ingevoerde gegevens niet opgeslagen!", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,7 +49,6 @@ class AddAgendaVC: UIViewController {
     @IBAction func saveAppointment(_ sender: UIBarButtonItem) {
         
         appointment.id = 4
-        appointment.clientTitle = titleTextfield.text!
         appointment.day = dayPicker.date
         appointment.startTime = startPicker.date
         
@@ -96,15 +88,15 @@ class AddAgendaVC: UIViewController {
         }
     }
     
-    private func createAlert(title: String!, message: String!) {
+    private func createAlert(title: String!, message: String!, sender: AddAgendaVC!) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
-        alert.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.destructive, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "Nee", style: UIAlertActionStyle.default, handler: { (action) in
-            
             alert.dismiss(animated: true, completion: nil)
         }))
         

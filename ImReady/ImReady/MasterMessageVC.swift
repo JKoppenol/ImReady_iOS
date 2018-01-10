@@ -12,39 +12,63 @@ class MasterMessageVC: UIViewController {
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    var currentUser = sharedInstance.currentUser
+    
     lazy var messageVC: MessageVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var viewController = MessageVC()
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "Messages") as! MessageVC
+        if(self.currentUser?.role == .Client) {
+            viewController = storyboard.instantiateViewController(withIdentifier: "Messages") as! MessageVC
+            
+            self.addVCAsChildVC(childVC: viewController)
+        }
         
-        self.addVCAsChildVC(childVC: viewController)
         return viewController
     }()
 
     lazy var notificationVC: NotificationVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var viewController = NotificationVC()
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "Notifications") as! NotificationVC
+        if(self.currentUser?.role == .Client) {
+            viewController = storyboard.instantiateViewController(withIdentifier: "Notifications") as! NotificationVC
         
-        self.addVCAsChildVC(childVC: viewController)
+            self.addVCAsChildVC(childVC: viewController)
+        }
+        
         return viewController
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupView()
+        if(currentUser?.role == .Caretaker) {
+            segmentedControl.isHidden = true
+            let navItem = UINavigationItem(title: "Berichten")
+            self.navigationController?.navigationBar.setItems([navItem], animated: false);
+        }
+        
+        else {
+            setupClientView()
+        }
     }
     
-    private func setupView() {
+    private func setupClientView() {
         setupSegmentedControl()
         
         updateView()
     }
     
+    private func setupCareTakerView() {
+        
+    }
+    
     private func updateView() {
-        messageVC.view.isHidden = !(segmentedControl.selectedSegmentIndex == 0)
-        notificationVC.view.isHidden = (segmentedControl.selectedSegmentIndex == 0)
+        if(currentUser?.role == .Client) {
+            messageVC.view.isHidden = !(segmentedControl.selectedSegmentIndex == 0)
+            notificationVC.view.isHidden = (segmentedControl.selectedSegmentIndex == 0)
+        }
     }
     
     private func setupSegmentedControl() {
