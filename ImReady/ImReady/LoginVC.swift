@@ -12,9 +12,11 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var rememberMeLbl: UILabel!
     
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var rememberMeSwitch: UISwitch!
     
     var loggedInUser: User?
     
