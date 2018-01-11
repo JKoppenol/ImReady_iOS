@@ -45,8 +45,8 @@ class AgendaService {
         appointment1.startTime = Date()
         let oneHour = TimeInterval(60 * 60)
         appointment1.endTime = Date(timeIntervalSinceNow: oneHour)
-        appointment1.clientId = 2
-        appointment1.caretakerId = 1
+        appointment1.client.id = 2
+        appointment1.caretaker.id = 1
         
         let appointment2 = Appointment()
         appointment2.clientTitle = "CV Maken"
@@ -54,7 +54,7 @@ class AgendaService {
         let oneWeek = TimeInterval(60 * 60 * 24 * 7)
         appointment2.day = Date(timeIntervalSinceNow: oneWeek)
         appointment2.kind = .Deadline
-        appointment2.clientId = 2
+        appointment2.client.id = 2
         appointment2.hasEndTime = false
         
         let appointment3 = Appointment()
@@ -67,8 +67,8 @@ class AgendaService {
         appointment3.startTime = Date(timeIntervalSinceNow: intervalStart)
         appointment3.endTime = Date(timeIntervalSinceNow: intervalEnd)
         appointment3.kind = .Appointment
-        appointment3.clientId = 2
-        appointment3.caretakerId = 1
+        appointment3.client.id = 2
+        appointment3.caretaker.id = 1
 
         
         appointments.append(appointment1)

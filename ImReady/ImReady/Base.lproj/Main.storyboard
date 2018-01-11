@@ -459,7 +459,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details Afspraak" id="w2q-Mq-Cxa">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="CQh-S7-gmq">
+                        <barButtonItem key="rightBarButtonItem" title="Bewerk" id="CQh-S7-gmq">
                             <connections>
                                 <segue destination="4kS-dV-lLC" kind="show" identifier="toEditAppointment" id="tSf-dB-PWB"/>
                             </connections>
@@ -486,10 +486,10 @@
             </objects>
             <point key="canvasLocation" x="158" y="2190"/>
         </scene>
-        <!--Edit Agenda ItemVC-->
+        <!--Bewerk Afspraak-->
         <scene sceneID="LU6-MY-NCr">
             <objects>
-                <viewController id="4kS-dV-lLC" customClass="EditAgendaItemVC" customModule="ImReady" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Bewerk Afspraak" id="4kS-dV-lLC" customClass="EditAgendaItemVC" customModule="ImReady" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HFt-8T-U1v"/>
                         <viewControllerLayoutGuide type="bottom" id="OQL-Ap-6lB"/>
@@ -507,25 +507,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="umZ-qZ-rFm">
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNP-jN-ago">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="Ekr-9j-qaW"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="4kS-dV-lLC" id="iho-lS-ube"/>
+                                                    <outlet property="delegate" destination="4kS-dV-lLC" id="iCJ-WC-d6c"/>
+                                                </connections>
+                                            </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dag:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bm-D6-mg4">
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="qe7-px-Jhv">
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="Er4-hV-NaF"/>
-                                                </constraints>
-                                                <date key="date" timeIntervalSinceReferenceDate="536590071.58912402">
-                                                    <!--2018-01-02 12:47:51 +0000-->
-                                                </date>
-                                                <locale key="locale" localeIdentifier="nl"/>
-                                            </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Begintijd:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGN-Yn-0UY">
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -588,20 +583,30 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="qe7-px-Jhv">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="Er4-hV-NaF"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="536590071.58912402">
+                                                    <!--2018-01-02 12:47:51 +0000-->
+                                                </date>
+                                                <locale key="locale" localeIdentifier="nl"/>
+                                            </datePicker>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Ct5-5d-hN8" secondAttribute="trailing" constant="8" id="1di-Ri-1Df"/>
+                                            <constraint firstItem="SNP-jN-ago" firstAttribute="top" secondItem="R7B-1o-d5X" secondAttribute="bottom" id="2wk-H9-ZZT"/>
                                             <constraint firstItem="Sdh-ct-g7I" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="8" id="41k-AP-vTR"/>
-                                            <constraint firstItem="qe7-px-Jhv" firstAttribute="top" secondItem="umZ-qZ-rFm" secondAttribute="bottom" constant="20" id="5fp-Qy-ZIf"/>
                                             <constraint firstAttribute="trailing" secondItem="oQ5-R8-R4t" secondAttribute="trailing" constant="8" id="6i6-jH-Zvg"/>
                                             <constraint firstItem="IzT-xI-bgt" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="centerX" constant="8" id="BAf-dt-bwC"/>
                                             <constraint firstItem="Ct5-5d-hN8" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="8" id="CHw-UM-HRU"/>
-                                            <constraint firstItem="8Bm-D6-mg4" firstAttribute="top" secondItem="umZ-qZ-rFm" secondAttribute="bottom" constant="16" id="CbB-Yo-xiu"/>
+                                            <constraint firstItem="SNP-jN-ago" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="30" id="CrE-5e-Ibc"/>
                                             <constraint firstItem="R1x-3j-3cF" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="8" id="FSh-tz-yKa"/>
                                             <constraint firstItem="8Bm-D6-mg4" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="8" id="Jwi-uO-kUt"/>
                                             <constraint firstAttribute="bottom" secondItem="Ct5-5d-hN8" secondAttribute="bottom" constant="16" id="K7r-ue-aAF"/>
                                             <constraint firstItem="Hpw-pX-W6t" firstAttribute="top" secondItem="qe7-px-Jhv" secondAttribute="bottom" constant="8" id="M1X-nl-m4J"/>
+                                            <constraint firstItem="qe7-px-Jhv" firstAttribute="top" secondItem="SNP-jN-ago" secondAttribute="bottom" constant="16" id="MVc-eJ-ojV"/>
                                             <constraint firstItem="wGN-Yn-0UY" firstAttribute="top" secondItem="qe7-px-Jhv" secondAttribute="bottom" constant="8" id="OIq-q4-mv8"/>
                                             <constraint firstItem="wGN-Yn-0UY" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="8" id="PS8-RE-5cr"/>
                                             <constraint firstAttribute="height" constant="700" id="Pne-x4-pt0"/>
@@ -614,7 +619,6 @@
                                             <constraint firstItem="Sdh-ct-g7I" firstAttribute="top" secondItem="CPW-4d-8mA" secondAttribute="bottom" constant="16" id="baE-NE-EZA"/>
                                             <constraint firstItem="oQ5-R8-R4t" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="8" id="beV-o4-AbN"/>
                                             <constraint firstAttribute="centerX" secondItem="wGN-Yn-0UY" secondAttribute="trailing" id="ej7-Aj-rBN"/>
-                                            <constraint firstAttribute="trailing" secondItem="umZ-qZ-rFm" secondAttribute="trailing" constant="8" id="fvd-vn-iMH"/>
                                             <constraint firstItem="R1x-3j-3cF" firstAttribute="top" secondItem="oQ5-R8-R4t" secondAttribute="bottom" constant="16" id="gmZ-C8-rmK"/>
                                             <constraint firstAttribute="trailing" secondItem="IzT-xI-bgt" secondAttribute="trailing" constant="8" id="i0G-nm-bvP"/>
                                             <constraint firstItem="mY4-qH-YhR" firstAttribute="top" secondItem="wGN-Yn-0UY" secondAttribute="bottom" constant="8" id="igw-1c-Lwg"/>
@@ -623,12 +627,12 @@
                                             <constraint firstItem="qe7-px-Jhv" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="30" id="lUI-cF-5nI"/>
                                             <constraint firstAttribute="centerX" secondItem="mY4-qH-YhR" secondAttribute="trailing" constant="8" id="mPs-pd-FeL"/>
                                             <constraint firstItem="CPW-4d-8mA" firstAttribute="top" secondItem="mY4-qH-YhR" secondAttribute="bottom" constant="8" id="oxe-C6-Acj"/>
-                                            <constraint firstItem="umZ-qZ-rFm" firstAttribute="top" secondItem="R7B-1o-d5X" secondAttribute="bottom" constant="8" id="qPw-3S-fow"/>
                                             <constraint firstAttribute="trailing" secondItem="qe7-px-Jhv" secondAttribute="trailing" constant="30" id="r7W-dc-VTV"/>
                                             <constraint firstItem="0WG-fN-c1b" firstAttribute="leading" secondItem="CPW-4d-8mA" secondAttribute="trailing" constant="8" id="sYT-th-Ljy"/>
-                                            <constraint firstItem="umZ-qZ-rFm" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="8" id="w24-VE-aDK"/>
+                                            <constraint firstAttribute="trailing" secondItem="SNP-jN-ago" secondAttribute="trailing" constant="30" id="thf-RX-f9R"/>
                                             <constraint firstItem="R7B-1o-d5X" firstAttribute="leading" secondItem="koa-pO-M10" secondAttribute="leading" constant="8" id="wdG-fw-UYS"/>
                                             <constraint firstItem="oQ5-R8-R4t" firstAttribute="top" secondItem="Sdh-ct-g7I" secondAttribute="bottom" constant="8" id="xd2-ma-5Fi"/>
+                                            <constraint firstItem="8Bm-D6-mg4" firstAttribute="top" secondItem="SNP-jN-ago" secondAttribute="bottom" constant="8" id="ywZ-Ih-nvr"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -649,7 +653,15 @@
                             <constraint firstAttribute="trailing" secondItem="OjR-fg-L0K" secondAttribute="trailing" id="vz0-nc-Axn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Bewerk Afspraak" id="RZc-by-ZKT">
+                        <barButtonItem key="rightBarButtonItem" title="Opslaan" id="7Sr-0d-JKg">
+                            <connections>
+                                <action selector="saveAppointment:" destination="4kS-dV-lLC" id="PGH-ue-TGg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="clientPicker" destination="SNP-jN-ago" id="teR-yH-Pbs"/>
                         <outlet property="commentsTV" destination="Ct5-5d-hN8" id="QZg-ej-c60"/>
                         <outlet property="dayPicker" destination="qe7-px-Jhv" id="iGy-Wf-wC5"/>
                         <outlet property="endLabel" destination="Hpw-pX-W6t" id="0V9-WG-HLL"/>
@@ -657,7 +669,6 @@
                         <outlet property="endSwitch" destination="0WG-fN-c1b" id="M31-7c-2jM"/>
                         <outlet property="locationTextfield" destination="oQ5-R8-R4t" id="RmW-Q3-Cae"/>
                         <outlet property="startPicker" destination="mY4-qH-YhR" id="zxt-h8-9nj"/>
-                        <outlet property="titleTextfield" destination="umZ-qZ-rFm" id="29d-J1-x8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkB-gL-aux" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -763,6 +774,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="NkV-hu-wO4"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="G5J-3H-tce" id="vIo-42-K64"/>
+                                                    <outlet property="delegate" destination="G5J-3H-tce" id="RiD-9O-KlH"/>
+                                                </connections>
                                             </pickerView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="RT8-g1-nYq">
                                                 <constraints>
@@ -844,6 +859,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="clientPicker" destination="GNl-3P-bGj" id="KNu-N6-0dK"/>
                         <outlet property="commentsTV" destination="lw8-QZ-5L0" id="2Je-Vi-h8Y"/>
                         <outlet property="dayPicker" destination="RT8-g1-nYq" id="JCS-s1-zBP"/>
                         <outlet property="endLabel" destination="AW8-1h-rN9" id="RC1-iS-TeC"/>

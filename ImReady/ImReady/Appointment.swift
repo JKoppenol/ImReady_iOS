@@ -17,8 +17,8 @@ class Appointment {
     var endTime: Date?
     var location: String = ""
     var comments: String = ""
-    var clientId: Int = 0
-    var caretakerId: Int? = 0
+    var client: User = User()
+    var caretaker: User = User()
     var kind: Kind = .Appointment
     var hasEndTime: Bool = true
 }

@@ -11,14 +11,14 @@ import Foundation
 class UserService {
     func getAllUsers() -> [User] {
         let User1 = User()
-        User1.name = "Ralph"
+        User1.name = "Ralph Hink"
         User1.email = "ralph@test.nl"
         User1.id = 1
         User1.password = "test"
         User1.role = .Caretaker
         
         let User2 = User()
-        User2.name = "Jeroen"
+        User2.name = "Jeroen Koppenol"
         User2.email = "jeroen@test.nl"
         User2.id = 2
         User2.password = "test"

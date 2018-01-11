@@ -47,6 +47,9 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let vc = AddAgendaVC(nibName: "AddAgendaVC", bundle: nil)
         vc.agendaVC = self
         
+        let editVc = EditAgendaItemVC(nibName: "EditAgendaItemVC", bundle: nil)
+        editVc.agendaVC = self
+        
         let calendar = Calendar.current
         weekNumber = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: TimeInterval(weekInterval)))
         
@@ -115,8 +118,8 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func fillDaysArray() {
         for appointment in appointments {
             
-            if((appointment.clientId == sharedInstance.currentUser?.id) ||
-                (appointment.caretakerId == sharedInstance.currentUser?.id && appointment.kind == .Appointment)) {
+            if((appointment.client.id == sharedInstance.currentUser?.id) ||
+                (appointment.caretaker.id == sharedInstance.currentUser?.id && appointment.kind == .Appointment)) {
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -142,8 +145,8 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         for day in days {
             var tempAgendaDay = AgendaDay()
             for appointment in appointments {
-                if((appointment.clientId == sharedInstance.currentUser?.id) ||
-                    (appointment.caretakerId == sharedInstance.currentUser?.id && appointment.kind == .Appointment)){
+                if((appointment.client.id == sharedInstance.currentUser?.id) ||
+                    (appointment.caretaker.id == sharedInstance.currentUser?.id && appointment.kind == .Appointment)){
                     
                     dateFormatter.dateFormat = "dd-MM-yyyy"
                     let appointmentDay = dateFormatter.string(from: appointment.day)
@@ -209,6 +212,12 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func onUserAction(appointment: Appointment) {
         appointments.append(appointment)
+        loadData()
+    }
+    
+    func onEditAction(appointment: Appointment) {
+        var changedAppointment = appointments.first(where: { $0.id == appointment.id})
+        changedAppointment = appointment
         loadData()
     }
 
