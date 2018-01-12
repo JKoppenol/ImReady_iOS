@@ -24,6 +24,7 @@
 		7F67F78D2008E40F00672BFC /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F78C2008E40F00672BFC /* Component.swift */; };
 		7F67F78F2008E45100672BFC /* ComponentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F78E2008E45100672BFC /* ComponentTask.swift */; };
 		7F67F7912008E4F900672BFC /* ComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7902008E4F900672BFC /* ComponentCell.swift */; };
+		7F67F7932008F30500672BFC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7922008F30500672BFC /* ChatCell.swift */; };
 		7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7C2003D8A90077D416 /* Session.swift */; };
 		7F6D6B7F2005089E0077D416 /* FCProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */; };
 		7F6D6B81200508D30077D416 /* BlockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B80200508D30077D416 /* BlockService.swift */; };
@@ -81,6 +82,7 @@
 		7F67F78C2008E40F00672BFC /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		7F67F78E2008E45100672BFC /* ComponentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTask.swift; sourceTree = "<group>"; };
 		7F67F7902008E4F900672BFC /* ComponentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentCell.swift; sourceTree = "<group>"; };
+		7F67F7922008F30500672BFC /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		7F6D6B7C2003D8A90077D416 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCProgressCell.swift; sourceTree = "<group>"; };
 		7F6D6B80200508D30077D416 /* BlockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockService.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				7F67F7902008E4F900672BFC /* ComponentCell.swift */,
+				7F67F7922008F30500672BFC /* ChatCell.swift */,
 			);
 			name = "Future Canvas";
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				A48CD7521FFE44930036050F /* ApiService.swift in Sources */,
 				7F80EA7E20000F6500093253 /* NotificationService.swift in Sources */,
 				A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */,
+				7F67F7932008F30500672BFC /* ChatCell.swift in Sources */,
 				7F80EA8020000F9A00093253 /* Notification.swift in Sources */,
 				A45C23131FD6D7530016311D /* User.swift in Sources */,
 				7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */,

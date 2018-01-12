@@ -33,12 +33,14 @@ class UserService {
     }
     
     func getById(id : Int) -> User? {
-        let users : [User] = getAllUsers()
+        let users = getAllUsers()
         
         for user in users {
             if(user.id == id) {
                 return user
             }
+            
+            continue
         }
         
         return nil

@@ -1294,10 +1294,10 @@
             </objects>
             <point key="canvasLocation" x="905" y="752"/>
         </scene>
-        <!--ChatlistVC-->
+        <!--Chat ListVC-->
         <scene sceneID="W62-Zp-4LP">
             <objects>
-                <viewController id="8aE-ln-pZQ" customClass="ChatlistVC" customModule="ImReady" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Chatlist" id="8aE-ln-pZQ" customClass="ChatListVC" customModule="ImReady" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qhL-hp-M7E"/>
                         <viewControllerLayoutGuide type="bottom" id="bQN-jx-3j8"/>
@@ -1306,21 +1306,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rfy-Tt-KMA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rfy-Tt-KMA">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clientCell" rowHeight="78" id="ewh-uy-VqR">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="78"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clientCell" rowHeight="68" id="ewh-uy-VqR" customClass="ChatCell" customModule="ImReady" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ewh-uy-VqR" id="QSI-qK-MGE">
-                                            <frame key="frameInset" width="1000" height="77"/>
+                                            <frame key="frameInset" width="375" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voornaam Achternaam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqX-Xu-7rD">
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:23" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl0-sq-SHe">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="a0g-hf-s3M"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laatst gestuurde bericht" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBg-68-10b">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Pl0-sq-SHe" firstAttribute="top" secondItem="QSI-qK-MGE" secondAttribute="top" constant="8" id="FDG-4J-TxT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pl0-sq-SHe" secondAttribute="trailing" constant="8" id="HFt-an-Fpr"/>
+                                                <constraint firstItem="sqX-Xu-7rD" firstAttribute="top" secondItem="QSI-qK-MGE" secondAttribute="top" constant="8" id="QkJ-2b-afj"/>
+                                                <constraint firstItem="CBg-68-10b" firstAttribute="leading" secondItem="QSI-qK-MGE" secondAttribute="leading" constant="8" id="WWg-gX-4Gy"/>
+                                                <constraint firstItem="CBg-68-10b" firstAttribute="top" secondItem="sqX-Xu-7rD" secondAttribute="bottom" constant="8" id="Zqh-4Z-xw4"/>
+                                                <constraint firstItem="sqX-Xu-7rD" firstAttribute="leading" secondItem="QSI-qK-MGE" secondAttribute="leading" constant="8" id="eaP-zM-YSz"/>
+                                                <constraint firstAttribute="trailing" secondItem="CBg-68-10b" secondAttribute="trailing" constant="8" id="sUV-jJ-1Tn"/>
+                                                <constraint firstItem="Pl0-sq-SHe" firstAttribute="leading" secondItem="sqX-Xu-7rD" secondAttribute="trailing" constant="8" id="ucU-3w-9TU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lastSentMessageLabel" destination="CBg-68-10b" id="e0k-Mm-XXo"/>
+                                            <outlet property="nameLabel" destination="sqX-Xu-7rD" id="RIH-FS-CTR"/>
+                                            <outlet property="timeLabel" destination="Pl0-sq-SHe" id="YDk-9d-KoP"/>
                                             <segue destination="BYZ-38-t0r" kind="show" identifier="toChatDetail" id="WaN-1J-z1Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8aE-ln-pZQ" id="z6p-cZ-gdB"/>
+                                    <outlet property="delegate" destination="8aE-ln-pZQ" id="qS7-Yf-FEo"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1331,10 +1368,13 @@
                             <constraint firstAttribute="trailing" secondItem="Rfy-Tt-KMA" secondAttribute="trailing" id="mNZ-Mf-iK8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Rfy-Tt-KMA" id="uKk-Oq-3HS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMZ-Cr-Q9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1621.5999999999999" y="752.47376311844084"/>
+            <point key="canvasLocation" x="1592.8" y="751.57421289355329"/>
         </scene>
         <!--Bouwsteen-->
         <scene sceneID="rAk-VO-n9H">

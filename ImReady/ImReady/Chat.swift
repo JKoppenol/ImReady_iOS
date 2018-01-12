@@ -17,6 +17,7 @@ class Chat {
     var senderId : Int = 0
     var receiverId : Int = 0
     var messages : [Message] = []
+    var lastMessage = Message()
 }
 
 class Message : MasterMessage {

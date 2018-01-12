@@ -39,6 +39,19 @@ class MasterMessageVC: UIViewController {
         
         return viewController
     }()
+    
+    lazy var chatListVC: ChatListVC = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var viewController = ChatListVC()
+        
+        if(self.currentUser?.role == .Caretaker) {
+            viewController = storyboard.instantiateViewController(withIdentifier: "Chatlist") as! ChatListVC
+            
+            self.addVCAsChildVC(childVC: viewController)
+        }
+        
+        return viewController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +60,7 @@ class MasterMessageVC: UIViewController {
             segmentedControl.isHidden = true
             let navItem = UINavigationItem(title: "Berichten")
             self.navigationController?.navigationBar.setItems([navItem], animated: false);
+            setupCareTakerView()
         }
         
         else {
@@ -61,7 +75,7 @@ class MasterMessageVC: UIViewController {
     }
     
     private func setupCareTakerView() {
-        
+        chatListVC.view.isHidden = false
     }
     
     private func updateView() {
