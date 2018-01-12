@@ -1435,8 +1435,18 @@
                                                 <constraint firstAttribute="trailing" secondItem="aJH-lO-q0k" secondAttribute="trailing" constant="8" id="wRK-Tj-uBg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="doneLabel" destination="2Xi-w6-3Fd" id="OIS-So-UkO"/>
+                                            <outlet property="naamLabel" destination="j4h-iI-mTI" id="ZL6-16-L2t"/>
+                                            <outlet property="statusLabel" destination="oec-tt-ie2" id="p31-Bp-Kfn"/>
+                                            <outlet property="toDoLabel" destination="aJH-lO-q0k" id="K9z-ye-513"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9KH-Sq-TtG" id="X7f-xR-YMb"/>
+                                    <outlet property="delegate" destination="9KH-Sq-TtG" id="JSC-7C-thd"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voltooide taken" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNP-mL-O0v">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1471,6 +1481,10 @@
                             <constraint firstAttribute="trailing" secondItem="Ac3-T2-CE8" secondAttribute="trailing" constant="8" id="yGn-GO-4g8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blockImageView" destination="Isy-GE-MHW" id="XLJ-NI-EUv"/>
+                        <outlet property="descriptionLabel" destination="T4t-wD-5Zq" id="7Ii-17-3GZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mh7-DP-ntp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
