@@ -26,7 +26,7 @@ class BlockVC: UIViewController,UITabBarDelegate, UITableViewDataSource {
     
     private func setupUI() {
         descriptionLabel.text = block.name
-        //        blockImageView.image = block.image
+        blockImageView.image = block.image
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }

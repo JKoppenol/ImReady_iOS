@@ -1297,7 +1297,7 @@
         <!--ChatlistVC-->
         <scene sceneID="W62-Zp-4LP">
             <objects>
-                <viewController id="8aE-ln-pZQ" customClass="ChatlistVC" sceneMemberID="viewController">
+                <viewController id="8aE-ln-pZQ" customClass="ChatlistVC" customModule="ImReady" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qhL-hp-M7E"/>
                         <viewControllerLayoutGuide type="bottom" id="bQN-jx-3j8"/>
@@ -1354,7 +1354,7 @@
                                     <constraint firstAttribute="height" constant="2" id="Zle-yv-2EF"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Isy-GE-MHW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Isy-GE-MHW">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Isy-GE-MHW" secondAttribute="height" multiplier="1:1" id="3kq-Dg-Luq"/>
                                 </constraints>
