@@ -18,7 +18,7 @@ class BlockService {
         block1.name = "Zorg"
         block1.iscomplete = false
         let component = Component()
-        component.name = "Testonderdeel"
+        component.name = "Sporten"
         block1.components.append(component)
         
         let block2 = Block()

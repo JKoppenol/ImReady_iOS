@@ -9,7 +9,7 @@
 import Foundation
 
 class Component {
-    var name: String = ""
+    var name: String = "Sport"
     var isDone: Bool = false
     var tasks = [ComponentTask]()
     
