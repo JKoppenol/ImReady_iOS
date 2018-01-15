@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginVC: UIViewController {
-
+    //UI elements
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var rememberMeLbl: UILabel!
@@ -18,9 +19,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var rememberMeSwitch: UISwitch!
     
-    var loggedInUser: User?
-    
-    let users: [User] = userService.getAllUsers()
+    //Dec & ini
+    let defaultValues = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,24 +31,30 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func login(_ sender: AnyObject) {
-        if(usernameText.text == "" || passwordText.text == "") {
+        activateIndicator_Activity(onViewController: self, onView: view)
+        let parameters: [String : String]=[
+            "username":usernameText.text!,
+            "password":passwordText.text!
+        ]
+        
+        if (parameters["username"] == "" || parameters["password"] == "")
+        {
             usernameText.layer.borderColor = UIColor.red.cgColor
             passwordText.layer.borderColor = UIColor.red.cgColor
             
-            createAlert(title: "Oops, er is iets fout gegaan!", message: "Vul zowel je emailadres als je wachtwoord in!")
+            createAlert(title: "Er is iets fout gegaan!", message: "Vul zowel je emailadres als je wachtwoord in!")
         }
-        
-        else {
-            for user in users {
-                if(user.password == passwordText.text && user.email == usernameText.text) {
-                    sharedInstance.currentUser = user
-                    performSegue(withIdentifier: "toFutureCanvas", sender: nil)
-                }
-                
-                continue
+        else
+        {
+            loginService.login(
+                Username: parameters["username"]!,
+                Password: parameters["password"]!,
+                onSuccess: {
+                   self.performSegue(withIdentifier: "toFutureCanvas", sender: nil)
+            })
+            {
+                self.createAlert(title: "Er is iets fout gegaan!", message: "Gebruikersnaam of wachtwoord ongeldig!")
             }
-            
-            createAlert(title: "Onjuiste gegevens!", message: "De zojuist ingevulde gegevens corresponderen niet met een bestaand account.")
         }
     }
     

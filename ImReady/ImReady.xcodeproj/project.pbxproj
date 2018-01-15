@@ -40,11 +40,16 @@
 		7F8DCCB81FD07C960022CBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8DCCB61FD07C960022CBE6 /* LaunchScreen.storyboard */; };
 		7F8DCCC31FD07C960022CBE6 /* ImReadyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8DCCC21FD07C960022CBE6 /* ImReadyUITests.swift */; };
 		A4492354200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4492353200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift */; };
+		A449235A2007A02D00D818A7 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44923592007A02D00D818A7 /* LoginService.swift */; };
+		A449235D2007A47200D818A7 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A449235C2007A47200D818A7 /* LoginResult.swift */; };
+		A449235F2007AB9B00D818A7 /* LoggedInUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A449235E2007AB9B00D818A7 /* LoggedInUser.swift */; };
+		A44923622007ACF800D818A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44923612007ACF800D818A7 /* Model.swift */; };
+		A4492365200CDFCB00D818A7 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4492364200CDFCB00D818A7 /* activityIndicator.swift */; };
 		A45C23131FD6D7530016311D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C23121FD6D7530016311D /* User.swift */; };
 		A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7491FFE446B0036050F /* BlockVC.swift */; };
 		A48CD74E1FFE44750036050F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD74D1FFE44750036050F /* TaskVC.swift */; };
 		A48CD7501FFE447A0036050F /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD74F1FFE447A0036050F /* Block.swift */; };
-		A48CD7521FFE44930036050F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7511FFE44930036050F /* ApiService.swift */; };
+		A48CD7521FFE44930036050F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7511FFE44930036050F /* ApiClient.swift */; };
 		A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,11 +104,16 @@
 		7F8DCCC41FD07C960022CBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2A05A8B1ACA3E1B17626240 /* Pods_ImReady.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImReady.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4492353200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCSectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		A44923592007A02D00D818A7 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A449235C2007A47200D818A7 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		A449235E2007AB9B00D818A7 /* LoggedInUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInUser.swift; sourceTree = "<group>"; };
+		A44923612007ACF800D818A7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A4492364200CDFCB00D818A7 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
 		A45C23121FD6D7530016311D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A48CD7491FFE446B0036050F /* BlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVC.swift; sourceTree = "<group>"; };
 		A48CD74D1FFE44750036050F /* TaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		A48CD74F1FFE447A0036050F /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
-		A48CD7511FFE44930036050F /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		A48CD7511FFE44930036050F /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureCanvasVC.swift; sourceTree = "<group>"; };
 		E2818FDCBE8C31385A4936E8 /* Pods-ImReady.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImReady.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ImReady/Pods-ImReady.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,11 +192,13 @@
 		7F54D3CC1FD97BED0023B570 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A449235B2007A43D00D818A7 /* Result Models */,
+				A449235820079FF500D818A7 /* Client */,
 				7F28564320001A50003DE7BC /* Message */,
 				7F54D3CD1FD97C2B0023B570 /* UserService.swift */,
-				A48CD7511FFE44930036050F /* ApiService.swift */,
 				7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */,
 				7F6D6B80200508D30077D416 /* BlockService.swift */,
+				A44923592007A02D00D818A7 /* LoginService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 		7F8DCCAC1FD07C960022CBE6 /* ImReady */ = {
 			isa = PBXGroup;
 			children = (
+				A4492363200CDF7A00D818A7 /* Other */,
 				7F54D3DA1FE2983B0023B570 /* View */,
 				7F54D3CC1FD97BED0023B570 /* Services */,
 				7F54D3C71FD9707B0023B570 /* Controllers */,
@@ -280,15 +293,49 @@
 			path = ImReadyUITests;
 			sourceTree = "<group>";
 		};
+		A449235820079FF500D818A7 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				A48CD7511FFE44930036050F /* ApiClient.swift */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		A449235B2007A43D00D818A7 /* Result Models */ = {
+			isa = PBXGroup;
+			children = (
+				A449235C2007A47200D818A7 /* LoginResult.swift */,
+			);
+			name = "Result Models";
+			sourceTree = "<group>";
+		};
+		A44923602007AC3B00D818A7 /* User Models */ = {
+			isa = PBXGroup;
+			children = (
+				A45C23121FD6D7530016311D /* User.swift */,
+				A449235E2007AB9B00D818A7 /* LoggedInUser.swift */,
+			);
+			name = "User Models";
+			sourceTree = "<group>";
+		};
+		A4492363200CDF7A00D818A7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A4492364200CDFCB00D818A7 /* activityIndicator.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		A45C230D1FD6CE1A0016311D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A44923602007AC3B00D818A7 /* User Models */,
 				7F80EA832000103900093253 /* Messages */,
 				A48CD74F1FFE447A0036050F /* Block.swift */,
-				A45C23121FD6D7530016311D /* User.swift */,
 				7F6525B91FFCDE7100EE115B /* Appointment.swift */,
 				7F2FC1C21FFE6E6300F8C3F7 /* AgendaDay.swift */,
 				7F6D6B7C2003D8A90077D416 /* Session.swift */,
+				A44923612007ACF800D818A7 /* Model.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -517,19 +564,24 @@
 				A48CD74E1FFE44750036050F /* TaskVC.swift in Sources */,
 				7F6525B81FFBBCEF00EE115B /* AddAgendaVC.swift in Sources */,
 				7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */,
+				A44923622007ACF800D818A7 /* Model.swift in Sources */,
 				7F54D3C41FD6CB900023B570 /* Chat.swift in Sources */,
 				7F80EA852000163200093253 /* NotificationCell.swift in Sources */,
 				7F6D6B87200661570077D416 /* ChatListVC.swift in Sources */,
 				7F6525B61FFBACCE00EE115B /* AgendaVC.swift in Sources */,
+				A4492365200CDFCB00D818A7 /* activityIndicator.swift in Sources */,
 				7F6D6B85200546410077D416 /* EditAgendaItemVC.swift in Sources */,
 				7F54D3CE1FD97C2B0023B570 /* UserService.swift in Sources */,
+				A449235F2007AB9B00D818A7 /* LoggedInUser.swift in Sources */,
+				A449235A2007A02D00D818A7 /* LoginService.swift in Sources */,
 				7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */,
 				7F54D3D11FD97C4F0023B570 /* ChatService.swift in Sources */,
 				7F6D6B7F2005089E0077D416 /* FCProgressCell.swift in Sources */,
 				A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */,
+				A449235D2007A47200D818A7 /* LoginResult.swift in Sources */,
 				7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */,
 				7F54D3D51FE168F30023B570 /* MessageVC.swift in Sources */,
-				A48CD7521FFE44930036050F /* ApiService.swift in Sources */,
+				A48CD7521FFE44930036050F /* ApiClient.swift in Sources */,
 				7F80EA7E20000F6500093253 /* NotificationService.swift in Sources */,
 				A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */,
 				7F80EA8020000F9A00093253 /* Notification.swift in Sources */,

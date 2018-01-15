@@ -13,12 +13,15 @@ import SwiftyJSON
 public class ApiClient {
     private let baseUrl: String = "https://imreadyapiv2.azurewebsites.net/api/"
     
+    public let ContentTypeHeader = "application/x-www-form-urlencoded"
+    public let AcceptHeader = "application/json"
+    
     public func send(toRelativePath url: String,
                      withHttpMethod httpMethod: HTTPMethod,
                      withParameters parameters: [String: Any] = [:],
                      withHeaders headers: [String : String] = [:],
                      withEncoding encoding: ParameterEncoding = URLEncoding.default,
-                     onSuccessParser onSuccess: @escaping (_ data: Data) -> (),
+                     onSuccessDo onSuccess: @escaping (_ data: Data) -> (),
                      onFailure: @escaping () -> ()) -> () {
         print(baseUrl + url)
         
