@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ComponentTasksVC: UIViewController {
+class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var currentUser = sharedInstance.currentUser
+    var tasks = [ComponentTask]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +25,26 @@ class ComponentTasksVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return(tasks.count)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let task = tasks[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Task") as? TaskCell {
+            cell.configCell(task: task)
+            
+            return(cell)
+        }
+            
+        else {
+            return TaskCell()
+        }
+    }
 }

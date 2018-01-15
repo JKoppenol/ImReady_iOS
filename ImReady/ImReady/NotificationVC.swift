@@ -55,8 +55,16 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toTask") {
+            guard let destination = segue.destination as? ComponentVC else {return}
+            destination.segmentedControl.selectedSegmentIndex = 1
+            //code for setting component
+            //code for expanding specific task of notification
+        }
+    }
+    
     func loadData() {
         notifications = notificationService.mockData()
     }
-
 }
