@@ -19,6 +19,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var messages = chatService.mockData().messages
     var recipient = User()
     var currentUser = User()
+    var chat = Chat()
     
     override func viewDidLoad() {
         super.viewDidLoad()

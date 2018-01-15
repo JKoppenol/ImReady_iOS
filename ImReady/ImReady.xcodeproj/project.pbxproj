@@ -21,6 +21,17 @@
 		7F6525BA1FFCDE7100EE115B /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525B91FFCDE7100EE115B /* Appointment.swift */; };
 		7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */; };
 		7F6525BE1FFCE6AB00EE115B /* AgendaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */; };
+		7F67F78D2008E40F00672BFC /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F78C2008E40F00672BFC /* Component.swift */; };
+		7F67F78F2008E45100672BFC /* ComponentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F78E2008E45100672BFC /* ComponentTask.swift */; };
+		7F67F7912008E4F900672BFC /* ComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7902008E4F900672BFC /* ComponentCell.swift */; };
+		7F67F7932008F30500672BFC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7922008F30500672BFC /* ChatCell.swift */; };
+		7F67F7952009068D00672BFC /* ComponentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7942009068D00672BFC /* ComponentVC.swift */; };
+		7F67F797200906AC00672BFC /* ComponentInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F796200906AC00672BFC /* ComponentInfoVC.swift */; };
+		7F67F799200906BE00672BFC /* ComponentTasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F798200906BE00672BFC /* ComponentTasksVC.swift */; };
+		7F67F79B200CC0AC00672BFC /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F79A200CC0AB00672BFC /* LinkCell.swift */; };
+		7F67F79D200CC0C100672BFC /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F79C200CC0C100672BFC /* TaskCell.swift */; };
+		7F67F79F200CCA3F00672BFC /* ClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F79E200CCA3F00672BFC /* ClientCell.swift */; };
+		7F67F7A1200CCA6B00672BFC /* ClientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7A0200CCA6B00672BFC /* ClientVC.swift */; };
 		7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7C2003D8A90077D416 /* Session.swift */; };
 		7F6D6B7F2005089E0077D416 /* FCProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */; };
 		7F6D6B81200508D30077D416 /* BlockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B80200508D30077D416 /* BlockService.swift */; };
@@ -80,6 +91,17 @@
 		7F6525B91FFCDE7100EE115B /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDayCell.swift; sourceTree = "<group>"; };
 		7F6525BD1FFCE6AB00EE115B /* AgendaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaService.swift; sourceTree = "<group>"; };
+		7F67F78C2008E40F00672BFC /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		7F67F78E2008E45100672BFC /* ComponentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTask.swift; sourceTree = "<group>"; };
+		7F67F7902008E4F900672BFC /* ComponentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentCell.swift; sourceTree = "<group>"; };
+		7F67F7922008F30500672BFC /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		7F67F7942009068D00672BFC /* ComponentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentVC.swift; sourceTree = "<group>"; };
+		7F67F796200906AC00672BFC /* ComponentInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentInfoVC.swift; sourceTree = "<group>"; };
+		7F67F798200906BE00672BFC /* ComponentTasksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTasksVC.swift; sourceTree = "<group>"; };
+		7F67F79A200CC0AB00672BFC /* LinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
+		7F67F79C200CC0C100672BFC /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		7F67F79E200CCA3F00672BFC /* ClientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientCell.swift; sourceTree = "<group>"; };
+		7F67F7A0200CCA6B00672BFC /* ClientVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientVC.swift; sourceTree = "<group>"; };
 		7F6D6B7C2003D8A90077D416 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCProgressCell.swift; sourceTree = "<group>"; };
 		7F6D6B80200508D30077D416 /* BlockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockService.swift; sourceTree = "<group>"; };
@@ -179,12 +201,10 @@
 		7F54D3C71FD9707B0023B570 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F67F78A2008E3AC00672BFC /* Future Canvas */,
 				7F80EA7A200001D200093253 /* Agenda */,
 				7F80EA79200001BC00093253 /* Messages */,
 				7F54D3D61FE169730023B570 /* LoginVC.swift */,
-				A48CD7491FFE446B0036050F /* BlockVC.swift */,
-				A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */,
-				A48CD74D1FFE44750036050F /* TaskVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -206,12 +226,66 @@
 		7F54D3DA1FE2983B0023B570 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7F67F7882008E39200672BFC /* Future Canvas */,
 				7F28564220001A3D003DE7BC /* Message */,
 				7F6525BB1FFCE03C00EE115B /* AgendaDayCell.swift */,
 				7F6D6B7E2005089E0077D416 /* FCProgressCell.swift */,
 				A4492353200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		7F67F7882008E39200672BFC /* Future Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				7F67F7902008E4F900672BFC /* ComponentCell.swift */,
+				7F67F7922008F30500672BFC /* ChatCell.swift */,
+				7F67F79A200CC0AB00672BFC /* LinkCell.swift */,
+				7F67F79C200CC0C100672BFC /* TaskCell.swift */,
+				7F67F79E200CCA3F00672BFC /* ClientCell.swift */,
+			);
+			name = "Future Canvas";
+			sourceTree = "<group>";
+		};
+		7F67F7892008E39D00672BFC /* Future Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				7F6D6B80200508D30077D416 /* BlockService.swift */,
+			);
+			name = "Future Canvas";
+			sourceTree = "<group>";
+		};
+		7F67F78A2008E3AC00672BFC /* Future Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				A48CD7491FFE446B0036050F /* BlockVC.swift */,
+				A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */,
+				A48CD74D1FFE44750036050F /* TaskVC.swift */,
+				7F67F7942009068D00672BFC /* ComponentVC.swift */,
+				7F67F796200906AC00672BFC /* ComponentInfoVC.swift */,
+				7F67F798200906BE00672BFC /* ComponentTasksVC.swift */,
+				7F67F7A0200CCA6B00672BFC /* ClientVC.swift */,
+			);
+			name = "Future Canvas";
+			sourceTree = "<group>";
+		};
+		7F67F78B2008E3BF00672BFC /* Future Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				A48CD74F1FFE447A0036050F /* Block.swift */,
+				7F67F78C2008E40F00672BFC /* Component.swift */,
+				7F67F78E2008E45100672BFC /* ComponentTask.swift */,
+			);
+			name = "Future Canvas";
+			sourceTree = "<group>";
+		};
+		7F67F7A2200CD60500672BFC /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				7F6525B91FFCDE7100EE115B /* Appointment.swift */,
+				7F2FC1C21FFE6E6300F8C3F7 /* AgendaDay.swift */,
+			);
+			name = Agenda;
 			sourceTree = "<group>";
 		};
 		7F80EA79200001BC00093253 /* Messages */ = {
@@ -553,16 +627,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F67F79B200CC0AC00672BFC /* LinkCell.swift in Sources */,
 				7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */,
 				7F6525BA1FFCDE7100EE115B /* Appointment.swift in Sources */,
 				7F6525BE1FFCE6AB00EE115B /* AgendaService.swift in Sources */,
+				7F67F799200906BE00672BFC /* ComponentTasksVC.swift in Sources */,
+				7F67F78D2008E40F00672BFC /* Component.swift in Sources */,
 				A48CD7501FFE447A0036050F /* Block.swift in Sources */,
+				7F67F7912008E4F900672BFC /* ComponentCell.swift in Sources */,
 				7F2FC1C31FFE6E6300F8C3F7 /* AgendaDay.swift in Sources */,
 				7F54D3D71FE169730023B570 /* LoginVC.swift in Sources */,
 				7F80EA8220000FBD00093253 /* MasterMessage.swift in Sources */,
 				A4492354200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift in Sources */,
 				A48CD74E1FFE44750036050F /* TaskVC.swift in Sources */,
 				7F6525B81FFBBCEF00EE115B /* AddAgendaVC.swift in Sources */,
+				7F67F79F200CCA3F00672BFC /* ClientCell.swift in Sources */,
 				7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */,
 				A44923622007ACF800D818A7 /* Model.swift in Sources */,
 				7F54D3C41FD6CB900023B570 /* Chat.swift in Sources */,
@@ -575,21 +654,25 @@
 				A449235F2007AB9B00D818A7 /* LoggedInUser.swift in Sources */,
 				A449235A2007A02D00D818A7 /* LoginService.swift in Sources */,
 				7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */,
+				7F67F7A1200CCA6B00672BFC /* ClientVC.swift in Sources */,
 				7F54D3D11FD97C4F0023B570 /* ChatService.swift in Sources */,
 				7F6D6B7F2005089E0077D416 /* FCProgressCell.swift in Sources */,
 				A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */,
 				A449235D2007A47200D818A7 /* LoginResult.swift in Sources */,
 				7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */,
+				7F67F78F2008E45100672BFC /* ComponentTask.swift in Sources */,
 				7F54D3D51FE168F30023B570 /* MessageVC.swift in Sources */,
 				A48CD7521FFE44930036050F /* ApiClient.swift in Sources */,
 				7F80EA7E20000F6500093253 /* NotificationService.swift in Sources */,
 				A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */,
+				7F67F7932008F30500672BFC /* ChatCell.swift in Sources */,
 				7F80EA8020000F9A00093253 /* Notification.swift in Sources */,
 				A45C23131FD6D7530016311D /* User.swift in Sources */,
 				7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */,
 				7F8DCCAE1FD07C960022CBE6 /* AppDelegate.swift in Sources */,
 				7F54D3D91FE2973A0023B570 /* MessagesCell.swift in Sources */,
 				7F6D6B81200508D30077D416 /* BlockService.swift in Sources */,
+				7F67F7952009068D00672BFC /* ComponentVC.swift in Sources */,
 				7F80EA762000002500093253 /* NotificationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

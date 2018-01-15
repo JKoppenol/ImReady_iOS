@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class Block {
     var id : Int = 0
     var name : String = ""
     var moduleid : Int = 0
     var goalids : [Int] = []
-    var image : String = ""
+    var image: UIImage = #imageLiteral(resourceName: "zorg")
     var iscomplete : Bool = false
+    var components = [Component]()
 }

@@ -53,20 +53,37 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        assert(sender as? UICollectionViewCell != nil, "Sender is not a collection view")
-        guard segue.identifier != nil else {return}
-        
+        if segue.identifier == "ShowBlockSegue" {
+            assert(sender as? UICollectionViewCell != nil, "Sender is not a collection view")
+            guard segue.identifier != nil else {return}
+            
             if let indexPath = self.collectionView?.indexPath(for: sender as! UICollectionViewCell) {
-                if segue.identifier == "ShowBlockSegue" {
-                    let blockVC: BlockVC = segue.destination as! BlockVC
-                    blockVC.block = blocks[indexPath.row]
-                }
-             else {
-                // Error sender is not a cell or cell is not in collectionView.
+                let blockVC: BlockVC = segue.destination as! BlockVC
+                blockVC.block = blocks[indexPath.row]
             }
         }
     }
     
+    @IBAction func logOut() {
+        createAlert(title: "Uitloggen", message: "Weet u zeker dat u wilt uitloggen?", sender: self)
+    }
+    
+    private func createAlert(title: String!, message: String!, sender: FutureCanvasVC!) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.destructive, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            sharedInstance.currentUser = nil
+            self.performSegue(withIdentifier: "logOut", sender: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Nee", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
 
     
     

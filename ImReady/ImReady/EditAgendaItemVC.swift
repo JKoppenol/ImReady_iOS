@@ -8,11 +8,10 @@
 
 import UIKit
 
-class EditAgendaItemVC: UIViewController {
+class EditAgendaItemVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var appointment: Appointment = Appointment()
     
-    @IBOutlet weak var titleTextfield: UITextField!
     @IBOutlet weak var dayPicker: UIDatePicker!
     @IBOutlet weak var endSwitch: UISwitch!
     @IBOutlet weak var commentsTV: UITextView!
@@ -20,9 +19,20 @@ class EditAgendaItemVC: UIViewController {
     @IBOutlet weak var endPicker: UIDatePicker!
     @IBOutlet weak var startPicker: UIDatePicker!
     @IBOutlet weak var endLabel: UILabel!
+    @IBOutlet weak var clientPicker: UIPickerView!
+    
+    var clients = userService.getAllUsers()
+    var selectedClient = User()
+    var agendaVC: AgendaVC?
+    var detailVC: AgendaDetailVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.clientPicker.dataSource = self;
+        self.clientPicker.delegate = self;
+        
+        selectedClient = appointment.client
         fillUI()
         // Do any additional setup after loading the view.
     }
@@ -33,7 +43,8 @@ class EditAgendaItemVC: UIViewController {
     }
     
     private func fillUI() {
-        titleTextfield.text = appointment.caretakerTitle
+        let clientRow: Int = selectRowForClient()
+        clientPicker.selectRow(clientRow, inComponent: 0, animated: false)
         dayPicker.date = appointment.day
         startPicker.date = appointment.startTime
         
@@ -70,15 +81,58 @@ class EditAgendaItemVC: UIViewController {
             endPicker.isHidden = false
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func saveAppointment(_ sender: UIBarButtonItem) {
+        appointment.clientTitle = "Afspraak met " + (sharedInstance.currentUser?.name)!
+        appointment.client = selectedClient
+        appointment.caretakerTitle = "Afspraak met " + selectedClient.name
+        appointment.day = dayPicker.date
+        appointment.startTime = startPicker.date
+        
+        if(!endSwitch.isOn) {
+            appointment.endTime = endPicker.date
+            appointment.hasEndTime = true
+        }
+            
+        else {
+            appointment.hasEndTime = false
+        }
+        
+        if(locationTextfield.text != "") {
+            appointment.location = locationTextfield.text!
+        }
+        
+        if(commentsTV.text != "") {
+            appointment.comments = commentsTV.text!
+        }
+        
+        agendaVC?.onEditAction(appointment: appointment)
+        detailVC?.onEditAction(appointment: appointment)
+        
+        _ = navigationController?.popViewController(animated: true)
     }
-    */
+    
+    private func selectRowForClient() -> Int {
+        return clients.index(where: { (client) -> Bool in
+            client.id == appointment.client.id
+        })!
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return clients.count;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return clients[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        selectedClient = clients[row]
+    }
 
 }
