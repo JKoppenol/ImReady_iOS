@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Model {
+class baseModel {
     var id : String?
     var deleted : Bool?
 }

@@ -26,10 +26,8 @@
 		7F67F7912008E4F900672BFC /* ComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7902008E4F900672BFC /* ComponentCell.swift */; };
 		7F67F7932008F30500672BFC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7922008F30500672BFC /* ChatCell.swift */; };
 		7F67F7952009068D00672BFC /* ComponentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7942009068D00672BFC /* ComponentVC.swift */; };
-		7F67F797200906AC00672BFC /* ComponentInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F796200906AC00672BFC /* ComponentInfoVC.swift */; };
 		7F67F799200906BE00672BFC /* ComponentTasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F798200906BE00672BFC /* ComponentTasksVC.swift */; };
 		7F67F79B200CC0AC00672BFC /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F79A200CC0AB00672BFC /* LinkCell.swift */; };
-		7F67F79D200CC0C100672BFC /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F79C200CC0C100672BFC /* TaskCell.swift */; };
 		7F67F79F200CCA3F00672BFC /* ClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F79E200CCA3F00672BFC /* ClientCell.swift */; };
 		7F67F7A1200CCA6B00672BFC /* ClientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67F7A0200CCA6B00672BFC /* ClientVC.swift */; };
 		7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B7C2003D8A90077D416 /* Session.swift */; };
@@ -54,7 +52,7 @@
 		A449235A2007A02D00D818A7 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44923592007A02D00D818A7 /* LoginService.swift */; };
 		A449235D2007A47200D818A7 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A449235C2007A47200D818A7 /* LoginResult.swift */; };
 		A449235F2007AB9B00D818A7 /* LoggedInUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A449235E2007AB9B00D818A7 /* LoggedInUser.swift */; };
-		A44923622007ACF800D818A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44923612007ACF800D818A7 /* Model.swift */; };
+		A44923622007ACF800D818A7 /* baseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44923612007ACF800D818A7 /* baseModel.swift */; };
 		A4492365200CDFCB00D818A7 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4492364200CDFCB00D818A7 /* activityIndicator.swift */; };
 		A45C23131FD6D7530016311D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C23121FD6D7530016311D /* User.swift */; };
 		A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7491FFE446B0036050F /* BlockVC.swift */; };
@@ -129,7 +127,7 @@
 		A44923592007A02D00D818A7 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		A449235C2007A47200D818A7 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		A449235E2007AB9B00D818A7 /* LoggedInUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInUser.swift; sourceTree = "<group>"; };
-		A44923612007ACF800D818A7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A44923612007ACF800D818A7 /* baseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseModel.swift; sourceTree = "<group>"; };
 		A4492364200CDFCB00D818A7 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
 		A45C23121FD6D7530016311D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A48CD7491FFE446B0036050F /* BlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVC.swift; sourceTree = "<group>"; };
@@ -247,14 +245,6 @@
 			name = "Future Canvas";
 			sourceTree = "<group>";
 		};
-		7F67F7892008E39D00672BFC /* Future Canvas */ = {
-			isa = PBXGroup;
-			children = (
-				7F6D6B80200508D30077D416 /* BlockService.swift */,
-			);
-			name = "Future Canvas";
-			sourceTree = "<group>";
-		};
 		7F67F78A2008E3AC00672BFC /* Future Canvas */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,25 +257,6 @@
 				7F67F7A0200CCA6B00672BFC /* ClientVC.swift */,
 			);
 			name = "Future Canvas";
-			sourceTree = "<group>";
-		};
-		7F67F78B2008E3BF00672BFC /* Future Canvas */ = {
-			isa = PBXGroup;
-			children = (
-				A48CD74F1FFE447A0036050F /* Block.swift */,
-				7F67F78C2008E40F00672BFC /* Component.swift */,
-				7F67F78E2008E45100672BFC /* ComponentTask.swift */,
-			);
-			name = "Future Canvas";
-			sourceTree = "<group>";
-		};
-		7F67F7A2200CD60500672BFC /* Agenda */ = {
-			isa = PBXGroup;
-			children = (
-				7F6525B91FFCDE7100EE115B /* Appointment.swift */,
-				7F2FC1C21FFE6E6300F8C3F7 /* AgendaDay.swift */,
-			);
-			name = Agenda;
 			sourceTree = "<group>";
 		};
 		7F80EA79200001BC00093253 /* Messages */ = {
@@ -409,7 +380,7 @@
 				7F6525B91FFCDE7100EE115B /* Appointment.swift */,
 				7F2FC1C21FFE6E6300F8C3F7 /* AgendaDay.swift */,
 				7F6D6B7C2003D8A90077D416 /* Session.swift */,
-				A44923612007ACF800D818A7 /* Model.swift */,
+				A44923612007ACF800D818A7 /* baseModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -643,7 +614,7 @@
 				7F6525B81FFBBCEF00EE115B /* AddAgendaVC.swift in Sources */,
 				7F67F79F200CCA3F00672BFC /* ClientCell.swift in Sources */,
 				7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */,
-				A44923622007ACF800D818A7 /* Model.swift in Sources */,
+				A44923622007ACF800D818A7 /* baseModel.swift in Sources */,
 				7F54D3C41FD6CB900023B570 /* Chat.swift in Sources */,
 				7F80EA852000163200093253 /* NotificationCell.swift in Sources */,
 				7F6D6B87200661570077D416 /* ChatListVC.swift in Sources */,

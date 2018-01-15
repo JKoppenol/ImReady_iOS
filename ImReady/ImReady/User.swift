@@ -8,10 +8,10 @@
 
 import Foundation
 
-class User : Model {
-    var firstname : String
-    var lastname : String
-    var role : Role
+class User : baseModel {
+    var firstname : String?
+    var lastname : String?
+    var role : Role?
 
     
     init(id: String, firstname: String, lastname: String, role: Role){
