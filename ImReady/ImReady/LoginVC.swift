@@ -50,7 +50,8 @@ class LoginVC: UIViewController {
                 Username: parameters["username"]!,
                 Password: parameters["password"]!,
                 onSuccess: {
-                   self.performSegue(withIdentifier: "toFutureCanvas", sender: nil)
+                    deactivateIndicator_Activity()
+                    self.performSegue(withIdentifier: "toFutureCanvas", sender: nil)
             })
             {
                 self.createAlert(title: "Er is iets fout gegaan!", message: "Gebruikersnaam of wachtwoord ongeldig!")
