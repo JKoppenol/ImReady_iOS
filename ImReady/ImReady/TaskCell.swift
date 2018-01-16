@@ -17,8 +17,6 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var readyButton: UIButton!
     @IBOutlet weak var toggleButton: UIButton!
     
-    var task = ComponentTask()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         readyButton.layer.cornerRadius = 5.0
@@ -33,7 +31,6 @@ class TaskCell: UITableViewCell {
     }
 
     func configCell(task: ComponentTask) {
-        self.task = task
 //        titleLabel.text
 //        statusLabel.text
 //        descriptionLabel.text

@@ -12,6 +12,7 @@ class ComponentVC: UIViewController {
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    var component = Component()
     var currentUser = sharedInstance.currentUser
     
     lazy var infoVC: ComponentInfoVC = {
@@ -19,6 +20,7 @@ class ComponentVC: UIViewController {
         var viewController = ComponentInfoVC()
         
         viewController = storyboard.instantiateViewController(withIdentifier: "Information") as! ComponentInfoVC
+        viewController.component = self.component
         
         self.addVCAsChildVC(childVC: viewController)
 
@@ -30,7 +32,7 @@ class ComponentVC: UIViewController {
         var viewController = ComponentTasksVC()
         
         viewController = storyboard.instantiateViewController(withIdentifier: "Tasks") as! ComponentTasksVC
-        
+        viewController.component = self.component
         self.addVCAsChildVC(childVC: viewController)
         
         return viewController
@@ -49,8 +51,8 @@ class ComponentVC: UIViewController {
     
     private func setupView() {
         setupSegmentedControl()
-        
         updateView()
+        
     }
     
     private func updateView() {

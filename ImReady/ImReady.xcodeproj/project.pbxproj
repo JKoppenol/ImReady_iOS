@@ -36,6 +36,11 @@
 		7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B82200522220077D416 /* AgendaDetailVC.swift */; };
 		7F6D6B85200546410077D416 /* EditAgendaItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B84200546410077D416 /* EditAgendaItemVC.swift */; };
 		7F6D6B87200661570077D416 /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D6B86200661570077D416 /* ChatListVC.swift */; };
+		7F7017FE200E3E42009B972D /* FutureCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7017FD200E3E42009B972D /* FutureCanvas.swift */; };
+		7F701804200E5DE8009B972D /* BlockResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701803200E5DE8009B972D /* BlockResult.swift */; };
+		7F701806200E5F48009B972D /* ComponentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701805200E5F48009B972D /* ComponentResult.swift */; };
+		7F701808200E5FDC009B972D /* ComponentTaskResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701807200E5FDC009B972D /* ComponentTaskResult.swift */; };
+		7F70180A200E6084009B972D /* FutureCanvasResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701809200E6084009B972D /* FutureCanvasResult.swift */; };
 		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
 		7F80EA762000002500093253 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA752000002500093253 /* NotificationVC.swift */; };
 		7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA77200001B600093253 /* MasterMessageVC.swift */; };
@@ -108,6 +113,11 @@
 		7F6D6B82200522220077D416 /* AgendaDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDetailVC.swift; sourceTree = "<group>"; };
 		7F6D6B84200546410077D416 /* EditAgendaItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAgendaItemVC.swift; sourceTree = "<group>"; };
 		7F6D6B86200661570077D416 /* ChatListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
+		7F7017FD200E3E42009B972D /* FutureCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureCanvas.swift; sourceTree = "<group>"; };
+		7F701803200E5DE8009B972D /* BlockResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockResult.swift; sourceTree = "<group>"; };
+		7F701805200E5F48009B972D /* ComponentResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentResult.swift; sourceTree = "<group>"; };
+		7F701807200E5FDC009B972D /* ComponentTaskResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTaskResult.swift; sourceTree = "<group>"; };
+		7F701809200E6084009B972D /* FutureCanvasResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureCanvasResult.swift; sourceTree = "<group>"; };
 		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
 		7F80EA752000002500093253 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		7F80EA77200001B600093253 /* MasterMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessageVC.swift; sourceTree = "<group>"; };
@@ -352,6 +362,10 @@
 			isa = PBXGroup;
 			children = (
 				A449235C2007A47200D818A7 /* LoginResult.swift */,
+				7F701803200E5DE8009B972D /* BlockResult.swift */,
+				7F701805200E5F48009B972D /* ComponentResult.swift */,
+				7F701807200E5FDC009B972D /* ComponentTaskResult.swift */,
+				7F701809200E6084009B972D /* FutureCanvasResult.swift */,
 			);
 			name = "Result Models";
 			sourceTree = "<group>";
@@ -383,6 +397,7 @@
 				7F2FC1C21FFE6E6300F8C3F7 /* AgendaDay.swift */,
 				7F6D6B7C2003D8A90077D416 /* Session.swift */,
 				A44923612007ACF800D818A7 /* baseModel.swift */,
+				7F7017FD200E3E42009B972D /* FutureCanvas.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -626,6 +641,7 @@
 				7F54D3CE1FD97C2B0023B570 /* UserService.swift in Sources */,
 				A449235F2007AB9B00D818A7 /* LoggedInUser.swift in Sources */,
 				A449235A2007A02D00D818A7 /* LoginService.swift in Sources */,
+				7F7017FE200E3E42009B972D /* FutureCanvas.swift in Sources */,
 				7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */,
 				7F67F7A1200CCA6B00672BFC /* ClientVC.swift in Sources */,
 				7F54D3D11FD97C4F0023B570 /* ChatService.swift in Sources */,
@@ -633,6 +649,7 @@
 				A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */,
 				A449235D2007A47200D818A7 /* LoginResult.swift in Sources */,
 				7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */,
+				7F701806200E5F48009B972D /* ComponentResult.swift in Sources */,
 				7F67F78F2008E45100672BFC /* ComponentTask.swift in Sources */,
 				7F54D3D51FE168F30023B570 /* MessageVC.swift in Sources */,
 				A48CD7521FFE44930036050F /* ApiClient.swift in Sources */,
@@ -643,11 +660,14 @@
 				7F80EA8020000F9A00093253 /* Notification.swift in Sources */,
 				A4170A10200E2DC9008E9792 /* ComponentInfoVC.swift in Sources */,
 				A45C23131FD6D7530016311D /* User.swift in Sources */,
+				7F70180A200E6084009B972D /* FutureCanvasResult.swift in Sources */,
 				7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */,
 				7F8DCCAE1FD07C960022CBE6 /* AppDelegate.swift in Sources */,
 				7F54D3D91FE2973A0023B570 /* MessagesCell.swift in Sources */,
 				7F6D6B81200508D30077D416 /* BlockService.swift in Sources */,
+				7F701808200E5FDC009B972D /* ComponentTaskResult.swift in Sources */,
 				7F67F7952009068D00672BFC /* ComponentVC.swift in Sources */,
+				7F701804200E5DE8009B972D /* BlockResult.swift in Sources */,
 				7F80EA762000002500093253 /* NotificationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

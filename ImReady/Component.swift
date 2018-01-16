@@ -9,15 +9,19 @@
 import Foundation
 
 class Component {
-    var name: String = "Sport"
-    var isDone: Bool = false
-    var tasks = [ComponentTask]()
+    
+    var name : String = ""
+    var description : String = ""
+    var tasks : [ComponentTask] = []
+    var youtubeUrl : String = ""
+    var usefulLinks : [String:String] = [:]
+    var id : String = ""
     
     func amountTasks() -> String{
-        return String(5)
+        return String(tasks.count)
     }
     
     func doneTasks() -> String{
-        return String(2)
+        return String(0)
     }
 }

@@ -10,8 +10,10 @@ import UIKit
 
 class BlockVC: UIViewController,UITabBarDelegate, UITableViewDataSource {
     var block: Block = Block()
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var blockImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,16 @@ class BlockVC: UIViewController,UITabBarDelegate, UITableViewDataSource {
         blockImageView.image = block.image
         navigationItem.title = block.name
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toComponentDetail" {
+            guard segue.identifier != nil else {return}
+            
+            if let indexPath = tableView?.indexPath(for: sender as! ComponentCell) {
+                let componentVC: ComponentVC = segue.destination as! ComponentVC
+                componentVC.component = block.components[indexPath.row]
+            }
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

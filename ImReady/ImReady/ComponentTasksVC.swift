@@ -15,6 +15,7 @@ class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var currentUser = sharedInstance.currentUser
     var tasks = [ComponentTask]()
+    var component = Component()
     
     override func viewDidLoad() {
         super.viewDidLoad()

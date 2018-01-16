@@ -10,11 +10,9 @@ import Foundation
 import UIKit
 
 class Block {
-    var id : Int = 0
     var name : String = ""
-    var moduleid : Int = 0
-    var goalids : [Int] = []
+    var description : String = ""
+    var components : [Component] = []
     var image: UIImage = #imageLiteral(resourceName: "zorg")
-    var iscomplete : Bool = false
-    var components = [Component]()
+    var id : String = ""
 }

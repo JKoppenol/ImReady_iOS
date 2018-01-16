@@ -9,15 +9,16 @@
 import UIKit
 
 class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    let blocks:[Block] = blockService.mockData()
+    var myFutureCanvas : FutureCanvas = FutureCanvas()
     let reuseIdentifier = "cell"
     var apiClient: ApiClient = ApiClient()
-    var currentUser: User?
+    var currentUser = LoggedInUser.currentuser
     
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadFutureCanvas()
         
 //    collectionView.rowHeight = UITableViewAutomaticDimension
 //    collectionView.estimatedRowHeight = 125.0
@@ -32,14 +33,29 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     
     // Number of views (cells)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.blocks.count
+        return myFutureCanvas.blocks.count
+    }
+    
+    private func loadFutureCanvas() {
+        activateIndicator_Activity(onViewController: self, onView: view)
+        blockService.getFutureCanvas(ofUserWithId: currentUser.id!,
+                                     onSuccess: { (futureCanvas) in
+                                        self.myFutureCanvas = futureCanvas
+                                        deactivateIndicator_Activity()
+            },
+                                     onFailure: {
+                                        print("Failed to retrieve FutureCanvas.")
+                                        //create alert
+                                        deactivateIndicator_Activity()
+                                        
+        })
     }
     
     // Populate views (cells)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FCProgressCell
         
-        let block: Block = blocks[indexPath.item]
+        let block: Block = myFutureCanvas.blocks[indexPath.item]
         cell.configCell(block: block)
         return cell
     }
@@ -59,7 +75,7 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
             
             if let indexPath = self.collectionView?.indexPath(for: sender as! UICollectionViewCell) {
                 let blockVC: BlockVC = segue.destination as! BlockVC
-                blockVC.block = blocks[indexPath.row]
+                blockVC.block = myFutureCanvas.blocks[indexPath.row]
             }
         }
     }
@@ -83,15 +99,4 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         
         self.present(alert, animated: true, completion: nil)
     }
-
-
-    
-    
-    // MARK: - UICollectionViewDelegate protocol
-    
-    //func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    // handle tap events
-    //}
-    
-    
 }

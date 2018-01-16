@@ -13,7 +13,9 @@ class ComponentInfoVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet weak var wv: UIWebView!
     @IBOutlet weak var tableView: UITableView!
     
-    var links = [String]()
+    var links: [String] = []
+
+    var component = Component()
     
     override func viewDidLoad() {
         super.viewDidLoad()
