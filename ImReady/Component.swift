@@ -14,7 +14,7 @@ class Component {
     var description : String = ""
     var tasks : [ComponentTask] = []
     var youtubeUrl : String = ""
-    var usefulLinks : [String:String] = [:]
+    var usefulLinks : [String] = []
     var id : String = ""
     
     func amountTasks() -> String{

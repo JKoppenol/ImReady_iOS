@@ -15,6 +15,7 @@ let activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView()
 func activateIndicator_Activity(onViewController viewController: UIViewController,
                                 onView view: UIView) {
     activityIndicator.hidesWhenStopped = true
+    activityIndicator.color = UIColor(red:0.24, green:0.73, blue:0.61, alpha:1.0)
     activityIndicator.center = viewController.view.center
     view.addSubview(activityIndicator)
     activityIndicator.startAnimating()

@@ -41,6 +41,12 @@
 		7F701806200E5F48009B972D /* ComponentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701805200E5F48009B972D /* ComponentResult.swift */; };
 		7F701808200E5FDC009B972D /* ComponentTaskResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701807200E5FDC009B972D /* ComponentTaskResult.swift */; };
 		7F70180A200E6084009B972D /* FutureCanvasResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701809200E6084009B972D /* FutureCanvasResult.swift */; };
+		7F70180C200E7F44009B972D /* GenericBlockResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70180B200E7F44009B972D /* GenericBlockResult.swift */; };
+		7F70180E200E7F59009B972D /* GenericBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70180D200E7F59009B972D /* GenericBlock.swift */; };
+		7F701810200E83CA009B972D /* AddBlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70180F200E83CA009B972D /* AddBlockVC.swift */; };
+		7F701812200E8587009B972D /* GenericBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701811200E8587009B972D /* GenericBlockCell.swift */; };
+		7F701815200E8910009B972D /* GenericBlockDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701814200E8910009B972D /* GenericBlockDetailVC.swift */; };
+		7F701817200EA8D6009B972D /* GenericComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701816200EA8D6009B972D /* GenericComponentCell.swift */; };
 		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
 		7F80EA762000002500093253 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA752000002500093253 /* NotificationVC.swift */; };
 		7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA77200001B600093253 /* MasterMessageVC.swift */; };
@@ -63,7 +69,6 @@
 		A4492365200CDFCB00D818A7 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4492364200CDFCB00D818A7 /* activityIndicator.swift */; };
 		A45C23131FD6D7530016311D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C23121FD6D7530016311D /* User.swift */; };
 		A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7491FFE446B0036050F /* BlockVC.swift */; };
-		A48CD74E1FFE44750036050F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD74D1FFE44750036050F /* TaskVC.swift */; };
 		A48CD7501FFE447A0036050F /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD74F1FFE447A0036050F /* Block.swift */; };
 		A48CD7521FFE44930036050F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7511FFE44930036050F /* ApiClient.swift */; };
 		A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */; };
@@ -118,6 +123,12 @@
 		7F701805200E5F48009B972D /* ComponentResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentResult.swift; sourceTree = "<group>"; };
 		7F701807200E5FDC009B972D /* ComponentTaskResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTaskResult.swift; sourceTree = "<group>"; };
 		7F701809200E6084009B972D /* FutureCanvasResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureCanvasResult.swift; sourceTree = "<group>"; };
+		7F70180B200E7F44009B972D /* GenericBlockResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBlockResult.swift; sourceTree = "<group>"; };
+		7F70180D200E7F59009B972D /* GenericBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBlock.swift; sourceTree = "<group>"; };
+		7F70180F200E83CA009B972D /* AddBlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBlockVC.swift; sourceTree = "<group>"; };
+		7F701811200E8587009B972D /* GenericBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBlockCell.swift; sourceTree = "<group>"; };
+		7F701814200E8910009B972D /* GenericBlockDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBlockDetailVC.swift; sourceTree = "<group>"; };
+		7F701816200EA8D6009B972D /* GenericComponentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericComponentCell.swift; sourceTree = "<group>"; };
 		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
 		7F80EA752000002500093253 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		7F80EA77200001B600093253 /* MasterMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessageVC.swift; sourceTree = "<group>"; };
@@ -143,7 +154,6 @@
 		A4492364200CDFCB00D818A7 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
 		A45C23121FD6D7530016311D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A48CD7491FFE446B0036050F /* BlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVC.swift; sourceTree = "<group>"; };
-		A48CD74D1FFE44750036050F /* TaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		A48CD74F1FFE447A0036050F /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		A48CD7511FFE44930036050F /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureCanvasVC.swift; sourceTree = "<group>"; };
@@ -253,6 +263,8 @@
 				7F67F79A200CC0AB00672BFC /* LinkCell.swift */,
 				7F67F79C200CC0C100672BFC /* TaskCell.swift */,
 				7F67F79E200CCA3F00672BFC /* ClientCell.swift */,
+				7F701811200E8587009B972D /* GenericBlockCell.swift */,
+				7F701816200EA8D6009B972D /* GenericComponentCell.swift */,
 			);
 			name = "Future Canvas";
 			sourceTree = "<group>";
@@ -262,11 +274,12 @@
 			children = (
 				A48CD7491FFE446B0036050F /* BlockVC.swift */,
 				A48CD7531FFE4A090036050F /* FutureCanvasVC.swift */,
-				A48CD74D1FFE44750036050F /* TaskVC.swift */,
 				7F67F7942009068D00672BFC /* ComponentVC.swift */,
 				7F67F796200906AC00672BFC /* ComponentInfoVC.swift */,
 				7F67F798200906BE00672BFC /* ComponentTasksVC.swift */,
 				7F67F7A0200CCA6B00672BFC /* ClientVC.swift */,
+				7F70180F200E83CA009B972D /* AddBlockVC.swift */,
+				7F701814200E8910009B972D /* GenericBlockDetailVC.swift */,
 			);
 			name = "Future Canvas";
 			sourceTree = "<group>";
@@ -366,6 +379,7 @@
 				7F701805200E5F48009B972D /* ComponentResult.swift */,
 				7F701807200E5FDC009B972D /* ComponentTaskResult.swift */,
 				7F701809200E6084009B972D /* FutureCanvasResult.swift */,
+				7F70180B200E7F44009B972D /* GenericBlockResult.swift */,
 			);
 			name = "Result Models";
 			sourceTree = "<group>";
@@ -398,6 +412,7 @@
 				7F6D6B7C2003D8A90077D416 /* Session.swift */,
 				A44923612007ACF800D818A7 /* baseModel.swift */,
 				7F7017FD200E3E42009B972D /* FutureCanvas.swift */,
+				7F70180D200E7F59009B972D /* GenericBlock.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -617,6 +632,7 @@
 			files = (
 				7F67F79B200CC0AC00672BFC /* LinkCell.swift in Sources */,
 				7F6D6B7D2003D8A90077D416 /* Session.swift in Sources */,
+				7F70180C200E7F44009B972D /* GenericBlockResult.swift in Sources */,
 				7F6525BA1FFCDE7100EE115B /* Appointment.swift in Sources */,
 				7F6525BE1FFCE6AB00EE115B /* AgendaService.swift in Sources */,
 				7F67F799200906BE00672BFC /* ComponentTasksVC.swift in Sources */,
@@ -627,7 +643,6 @@
 				7F54D3D71FE169730023B570 /* LoginVC.swift in Sources */,
 				7F80EA8220000FBD00093253 /* MasterMessage.swift in Sources */,
 				A4492354200563A000D818A7 /* FCSectionHeaderCollectionReusableView.swift in Sources */,
-				A48CD74E1FFE44750036050F /* TaskVC.swift in Sources */,
 				7F6525B81FFBBCEF00EE115B /* AddAgendaVC.swift in Sources */,
 				7F67F79F200CCA3F00672BFC /* ClientCell.swift in Sources */,
 				7F6525BC1FFCE03C00EE115B /* AgendaDayCell.swift in Sources */,
@@ -636,6 +651,7 @@
 				7F80EA852000163200093253 /* NotificationCell.swift in Sources */,
 				7F6D6B87200661570077D416 /* ChatListVC.swift in Sources */,
 				7F6525B61FFBACCE00EE115B /* AgendaVC.swift in Sources */,
+				7F701812200E8587009B972D /* GenericBlockCell.swift in Sources */,
 				A4492365200CDFCB00D818A7 /* activityIndicator.swift in Sources */,
 				7F6D6B85200546410077D416 /* EditAgendaItemVC.swift in Sources */,
 				7F54D3CE1FD97C2B0023B570 /* UserService.swift in Sources */,
@@ -655,14 +671,18 @@
 				A48CD7521FFE44930036050F /* ApiClient.swift in Sources */,
 				A4170A11200E2E00008E9792 /* TaskCell.swift in Sources */,
 				7F80EA7E20000F6500093253 /* NotificationService.swift in Sources */,
+				7F701810200E83CA009B972D /* AddBlockVC.swift in Sources */,
 				A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */,
 				7F67F7932008F30500672BFC /* ChatCell.swift in Sources */,
 				7F80EA8020000F9A00093253 /* Notification.swift in Sources */,
+				7F70180E200E7F59009B972D /* GenericBlock.swift in Sources */,
 				A4170A10200E2DC9008E9792 /* ComponentInfoVC.swift in Sources */,
 				A45C23131FD6D7530016311D /* User.swift in Sources */,
 				7F70180A200E6084009B972D /* FutureCanvasResult.swift in Sources */,
 				7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */,
+				7F701817200EA8D6009B972D /* GenericComponentCell.swift in Sources */,
 				7F8DCCAE1FD07C960022CBE6 /* AppDelegate.swift in Sources */,
+				7F701815200E8910009B972D /* GenericBlockDetailVC.swift in Sources */,
 				7F54D3D91FE2973A0023B570 /* MessagesCell.swift in Sources */,
 				7F6D6B81200508D30077D416 /* BlockService.swift in Sources */,
 				7F701808200E5FDC009B972D /* ComponentTaskResult.swift in Sources */,

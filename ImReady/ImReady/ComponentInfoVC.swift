@@ -19,11 +19,20 @@ class ComponentInfoVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadYoutube(videoID: "HiLn2yrM1GM")
+        setupView()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    private func setupView() {
+        links = component.usefulLinks
+        
+        let videoId = component.youtubeUrl.components(separatedBy: "=").last
+        loadYoutube(videoID: videoId!)
+    }
+    
     func loadYoutube(videoID:String) {
         guard
             let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")

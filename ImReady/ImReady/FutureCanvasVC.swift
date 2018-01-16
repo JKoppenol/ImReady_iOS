@@ -42,13 +42,12 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
                                      onSuccess: { (futureCanvas) in
                                         self.myFutureCanvas = futureCanvas
                                         deactivateIndicator_Activity()
-            },
+                                        },
                                      onFailure: {
                                         print("Failed to retrieve FutureCanvas.")
                                         //create alert
                                         deactivateIndicator_Activity()
-                                        
-        })
+                                        })
     }
     
     // Populate views (cells)
@@ -60,7 +59,7 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath as IndexPath) {
             performSegue(withIdentifier: "ShowBlockSegue", sender: cell)
         } else {

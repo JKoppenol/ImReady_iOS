@@ -15,4 +15,14 @@ class ComponentTask {
     var status : Int = 0
     var feedback: String = ""
     var id : String = ""
+    
+    func getStatusText() -> String {
+        if(self.status == 0) {
+            return ""
+        }
+            
+        else {
+            return "Ready!"
+        }
+    }
 }

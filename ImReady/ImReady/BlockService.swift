@@ -74,6 +74,30 @@ class BlockService {
             onFailure: onFailure)
         
     }
+    
+    public func getGenericBlocks(onSuccess: @escaping (_ : [GenericBlock]) -> (),
+                                  onFailure: @escaping () -> ()) {
+        apiClient.send(toRelativePath: "buildingblock",
+                       withHttpMethod: .get,
+                       onSuccessDo: {(_ data) in
+                        var genericBlocks : [GenericBlock] = []
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data) as! [[String:Any]]
+                            
+                            for object in json {
+                                let genericBlock = GenericBlockResult(withData: object) as GenericBlock
+                                genericBlocks.append(genericBlock)
+                            }
+                            
+                            onSuccess(genericBlocks)
+                        }
+                        catch {
+                            onFailure()
+                        }
+        },
+                       onFailure: onFailure)
+    }
 }
 
 let blockService = BlockService()

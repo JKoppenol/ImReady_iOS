@@ -13,9 +13,17 @@ class ComponentResult : Component {
         super.init()
         name = data["Name"] as! String
         description = data["Description"] as! String
-        tasks = data["Tasks"] as! [ComponentTaskResult]
-        youtubeUrl = data["YoutubeURL"] as! String
-        usefulLinks = data["UsefulLinks"] as! [String:String]
+        
+        if(data["Tasks"] != nil) {
+            tasks = data["Tasks"] as! [ComponentTaskResult]
+        }
+    
+        youtubeUrl = String(describing: data["YoutubeURL"])
+        
+        for object in data["UsefulLinks"] as! [[String:Any]] {
+            usefulLinks.append(String(describing: object["Url"]))
+        }
+        
         id = data["Id"] as! String
     }
 }

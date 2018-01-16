@@ -21,7 +21,6 @@ class TaskCell: UITableViewCell {
         super.awakeFromNib()
         readyButton.layer.cornerRadius = 5.0
         statusLabel.text = ""
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,10 +30,13 @@ class TaskCell: UITableViewCell {
     }
 
     func configCell(task: ComponentTask) {
-//        titleLabel.text
-//        statusLabel.text
-//        descriptionLabel.text
-//        deadlineLabel.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        titleLabel.text = task.name
+        statusLabel.text = task.getStatusText()
+        descriptionLabel.text = task.description
+        deadlineLabel.text = dateFormatter.string(from: task.deadline)
     }
     
     @IBAction func setReady() {
