@@ -8,20 +8,20 @@
 
 import Foundation
 
-//class User : baseModel {
-//    var firstname : String?
-//    var lastname : String?
-//    var role : Role?
-//
-//    
-//    init(id: String, firstname: String, lastname: String, role: Role){
-//        super.init()
-//        self.id = id
-//        self.firstname = firstname
-//        self.lastname = lastname
-//        self.role = role
-//    }
-//}
+class UserAPI : baseModel {
+    var firstname : String?
+    var lastname : String?
+    var role : Role?
+
+    
+    init(id: String, firstname: String, lastname: String, role: Role){
+        super.init()
+        self.id = id
+        self.firstname = firstname
+        self.lastname = lastname
+        self.role = role
+    }
+}
 
 
 class User {

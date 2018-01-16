@@ -18,7 +18,7 @@ class LoginService {
                       onSuccess: @escaping () -> (),
                       onFailure: @escaping () -> ()) -> () {
         
-        apiClient.send(toRelativePath: "login/",
+        apiClient.send(toRelativePath: "login",
                        withHttpMethod: .post,
                        withParameters: ["username": username, "password": password, "grant_type": "password"],
                        withHeaders: ["Content-Type": apiClient.ContentTypeHeader, "Accept": apiClient.AcceptHeader],

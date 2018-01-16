@@ -77,6 +77,7 @@ class LoginVC: UIViewController {
     }
     
     private func createAlert(title: String!, message: String!) {
+        deactivateIndicator_Activity()
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Oke", style: UIAlertActionStyle.default, handler: { (action) in
