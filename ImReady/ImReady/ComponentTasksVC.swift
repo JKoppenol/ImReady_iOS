@@ -5,7 +5,7 @@
 //  Created by Inholland on 1/12/18.
 //  Copyright © 2018 Inholland. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -36,7 +36,7 @@ class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let task = tasks[indexPath.row]
-        
+    
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Task") as? TaskCell {
             cell.configCell(task: task)
             

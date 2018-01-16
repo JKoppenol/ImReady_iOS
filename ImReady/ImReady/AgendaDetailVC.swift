@@ -25,7 +25,7 @@ class AgendaDetailVC: UIViewController {
         let vc = EditAgendaItemVC(nibName: "EditAgendaItemVC", bundle: nil)
         vc.detailVC = self
         
-        if(sharedInstance.currentUser?.role == .Caretaker) {
+        if(sharedInstance.currentUser?.role == Role.Caregiver) {
             editButton.isEnabled = true
             editButton.title = "Bewerk"
         }
@@ -60,7 +60,7 @@ class AgendaDetailVC: UIViewController {
         let agendaItem = self.appointment
         let dateFormatter = DateFormatter()
         
-        if(sharedInstance.currentUser?.role == .Caretaker) {
+        if(sharedInstance.currentUser?.role == Role.Caregiver) {
             titleLabel.text = agendaItem.caretakerTitle
         }
         

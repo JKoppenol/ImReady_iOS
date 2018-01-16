@@ -33,7 +33,7 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(currentUser.id == 1) {
+        if(currentUser.id == "1") {
             return 0
         }
         

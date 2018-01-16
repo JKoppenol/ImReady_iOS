@@ -11,6 +11,6 @@ import Foundation
 class MasterMessage {
     var id: Int = 0
     var content: String = ""
-    var receiverId : Int = 0
+    var receiverId : String = ""
     var date : Date = Date()
 }

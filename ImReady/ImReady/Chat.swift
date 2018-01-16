@@ -14,12 +14,12 @@ class Chats {
 
 class Chat {
     var id : Int = 0
-    var senderId : Int = 0
-    var receiverId : Int = 0
+    var senderId : String = ""
+    var receiverId : String = ""
     var messages : [Message] = []
     var lastMessage = Message()
 }
 
 class Message : MasterMessage {
-    var senderId : Int = 0
+    var senderId : String = "0"
 }

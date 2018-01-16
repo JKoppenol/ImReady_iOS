@@ -63,7 +63,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
             message.id = messages.count + 1
             message.content = textField.text!
             message.senderId = currentUser.id
-            message.receiverId = 1
+            message.receiverId = "1"
             
             messages.append(message)
             textField.text = ""

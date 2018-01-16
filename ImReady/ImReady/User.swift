@@ -8,33 +8,33 @@
 
 import Foundation
 
-class User : baseModel {
-    var firstname : String?
-    var lastname : String?
-    var role : Role?
-
-    
-    init(id: String, firstname: String, lastname: String, role: Role){
-        super.init()
-        self.id = id
-        self.firstname = firstname
-        self.lastname = lastname
-        self.role = role
-    }
-}
-
-
-//class User {
-//    var Id : String = ""
-//    var UserName : String = ""
-//    var FirstName : String = ""
-//    var LastName : String = ""
-//    var PhoneNumber : String = ""
-//    var PasswordHash : String = ""
-//    var Email : String = ""
-//    var Roles : Role = Role()
-//    var AccessFailedCount : Int = 0
+//class User : baseModel {
+//    var firstname : String?
+//    var lastname : String?
+//    var role : Role?
+//
+//    
+//    init(id: String, firstname: String, lastname: String, role: Role){
+//        super.init()
+//        self.id = id
+//        self.firstname = firstname
+//        self.lastname = lastname
+//        self.role = role
 //    }
+//}
+
+
+class User {
+    var id : String = ""
+    var name : String = ""
+    var FirstName : String = ""
+    var LastName : String = ""
+    var PhoneNumber : String = ""
+    var password : String = ""
+    var email : String = ""
+    var role : Role = Role.Client
+    var AccessFailedCount : Int = 0
+    }
 
 enum Role : String {
     case Client = "CLIENT"

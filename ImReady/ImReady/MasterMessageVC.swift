@@ -44,7 +44,7 @@ class MasterMessageVC: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = ChatListVC()
         
-        if(self.currentUser?.role == .Caretaker) {
+        if(self.currentUser?.role == Role.Caregiver) {
             viewController = storyboard.instantiateViewController(withIdentifier: "Chatlist") as! ChatListVC
             
             self.addVCAsChildVC(childVC: viewController)
@@ -56,7 +56,7 @@ class MasterMessageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if(currentUser?.role == .Caretaker) {
+        if(currentUser?.role == Role.Caregiver) {
             segmentedControl.isHidden = true
             let navItem = UINavigationItem(title: "Berichten")
             self.navigationController?.navigationBar.setItems([navItem], animated: false);
