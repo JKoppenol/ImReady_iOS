@@ -16,7 +16,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var addButton: UIButton!
     
-    var appointments = [Appointment] = []
+    var appointments: [Appointment] = []
     var days = [Date]()
     var sections = [AgendaDay]()
     var currentUser = LoggedInUser.currentuser
