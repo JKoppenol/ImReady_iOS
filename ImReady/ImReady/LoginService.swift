@@ -102,13 +102,13 @@ class LoginService {
         let preferences = UserDefaults.standard
         preferences.set(nil, forKey: "session")
         do{
-            if(terminated) {
-                try Locksmith.deleteDataForUserAccount(userAccount: "rememeberUser")
+            if(!terminated) {
+                try Locksmith.deleteDataForUserAccount(userAccount: "rememberUser")
             }
             try Locksmith.deleteDataForUserAccount(userAccount: "loggedInUser")
         }
         catch {
-            print("Logout error: could not del rememberUser and/or loggedInUser")
+            print("Logout error: could not delete rememberUser and/or loggedInUser")
             success = false
         }
         return success

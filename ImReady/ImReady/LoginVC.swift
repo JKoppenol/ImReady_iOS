@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Locksmith
 
 class LoginVC: UIViewController {
     //UI elements
@@ -24,10 +25,30 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkRemember()
         setupIBObjects()
         
         // Do any additional setup after loading the view.
+    }
+    
+    func checkRemember() {
+        activateIndicator_Activity(onViewController: self, onView: view)
+        let user = Locksmith.loadDataForUserAccount(userAccount: "rememberUser")
+        if(user != nil) {
+            loginService.login(
+                Username: user?["username"] as! String,
+                Password: user?["password"] as! String,
+                doRemember: true,
+                onSuccess: {
+                    deactivateIndicator_Activity()
+                    self.performSegue(withIdentifier: "toFutureCanvas", sender: nil)
+            })
+            {
+                self.createAlert(title: "Er is iets fout gegaan!", message: "Gebruikersnaam of wachtwoord ongeldig!")
+            }
+            return
+        }
+        deactivateIndicator_Activity()
     }
     
     @IBAction func login(_ sender: AnyObject) {
@@ -49,7 +70,7 @@ class LoginVC: UIViewController {
             loginService.login(
                 Username: parameters["username"]!,
                 Password: parameters["password"]!,
-                doRemember: false,
+                doRemember: rememberMeSwitch.isOn,
                 onSuccess: {
                     deactivateIndicator_Activity()
                     self.performSegue(withIdentifier: "toFutureCanvas", sender: nil)
