@@ -8,6 +8,7 @@ target 'ImReady' do
   # Pods for ImReady
 pod 'SwiftyJSON', '~> 4.0’
 pod 'Alamofire', ‘~> 4.6’
+pod 'Locksmith', '~> 4.0'
 
 
   target 'ImReadyUITests' do

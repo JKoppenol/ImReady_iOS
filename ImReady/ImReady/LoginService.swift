@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
+import Locksmith
 
 class LoginService {
     let apiClient: ApiClient = ApiClient()
