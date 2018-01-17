@@ -24,7 +24,7 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
     var clients = userService.getAllUsers()
     var selectedUser = User()
     var agendaVC: AgendaVC?
-    var currentUser = LoggedInUser.currentuser
+    var currentUser = LoggedInUser().getLoggedInUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()

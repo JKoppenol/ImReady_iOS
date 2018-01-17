@@ -12,7 +12,7 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     var myFutureCanvas : FutureCanvas = FutureCanvas()
     let reuseIdentifier = "cell"
     var apiClient: ApiClient = ApiClient()
-    var currentUser = LoggedInUser.currentuser
+    var currentUser = LoggedInUser().getLoggedInUser()
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -89,7 +89,8 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         alert.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.destructive, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
             sharedInstance.currentUser = nil
-            self.performSegue(withIdentifier: "logOut", sender: nil)
+            _ = loginService.logOut(isTerminated: false)
+             self.performSegue(withIdentifier: "unwindSegueToLogin", sender: self)
         }))
         
         alert.addAction(UIAlertAction(title: "Nee", style: UIAlertActionStyle.default, handler: { (action) in

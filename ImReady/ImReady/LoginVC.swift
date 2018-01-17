@@ -49,6 +49,7 @@ class LoginVC: UIViewController {
             loginService.login(
                 Username: parameters["username"]!,
                 Password: parameters["password"]!,
+                doRemember: false,
                 onSuccess: {
                     deactivateIndicator_Activity()
                     self.performSegue(withIdentifier: "toFutureCanvas", sender: nil)
@@ -76,6 +77,10 @@ class LoginVC: UIViewController {
         logoImageView.image = logo
         
         loginBtn.layer.cornerRadius = 5.0
+    }
+    
+    @IBAction func unwindToLogin(segue:UIStoryboardSegue) {
+    
     }
     
     private func createAlert(title: String!, message: String!) {

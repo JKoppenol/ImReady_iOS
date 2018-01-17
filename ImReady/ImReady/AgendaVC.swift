@@ -19,7 +19,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var appointments: [Appointment] = []
     var days = [Date]()
     var sections = [AgendaDay]()
-    var currentUser = LoggedInUser.currentuser
+    var currentUser = LoggedInUser().getLoggedInUser()
     var weekInterval = 0
     var weekNumber = 0
 

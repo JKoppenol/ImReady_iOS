@@ -45,7 +45,7 @@ class BlockService {
 //        
 //        return activeblocks
 //    }
-    var user = LoggedInUser.currentuser.id
+    var user = LoggedInUser().getLoggedInUser().id
     
     public func getFutureCanvas(ofUserWithId userId: String,
                                 onSuccess: @escaping (_ : FutureCanvas) -> (),
