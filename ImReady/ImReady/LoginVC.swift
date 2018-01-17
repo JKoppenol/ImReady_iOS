@@ -60,6 +60,7 @@ class LoginVC: UIViewController {
     }
     
     private func setupIBObjects() {
+        usernameText.autocorrectionType = .no
         usernameText.layer.borderWidth = 1.0
         passwordText.layer.borderWidth = 1.0
         
