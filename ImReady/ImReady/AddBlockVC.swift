@@ -58,8 +58,8 @@ class AddBlockVC: UIViewController, UICollectionViewDataSource, UICollectionView
         activateIndicator_Activity(onViewController: self, onView: view)
         blockService.getGenericBlocks(onSuccess: { (genericBlocks) in
                                         self.blocks = genericBlocks
-                                        deactivateIndicator_Activity()
                                         self.collectionView.reloadData()
+                                        deactivateIndicator_Activity()
                                         },
                                       onFailure: {
                                         print("Failed to retrieve Generic Blocks")

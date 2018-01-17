@@ -57,7 +57,7 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         appointment.client = selectedUser
         //appointment.caretaker = currentUser
         appointment.caretakerTitle = "Afspraak met " + selectedUser.name
-        appointment.id = 4
+        appointment.id = ""
         appointment.day = dayPicker.date
         appointment.startTime = startPicker.date
         
