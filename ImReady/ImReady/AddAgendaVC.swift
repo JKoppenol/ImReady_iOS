@@ -24,6 +24,7 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
     var clients = userService.getAllUsers()
     var selectedUser = User()
     var agendaVC: AgendaVC?
+    var currentUser = LoggedInUser.currentuser
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +53,9 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     @IBAction func saveAppointment(_ sender: UIBarButtonItem) {
-        appointment.clientTitle = "Afspraak met " + (sharedInstance.currentUser?.name)!
+        //appointment.clientTitle = "Afspraak met " + (currentUser.username)
         appointment.client = selectedUser
-        appointment.caretaker = (sharedInstance.currentUser)!
+        //appointment.caretaker = currentUser
         appointment.caretakerTitle = "Afspraak met " + selectedUser.name
         appointment.id = 4
         appointment.day = dayPicker.date

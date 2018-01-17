@@ -47,6 +47,7 @@
 		7F701812200E8587009B972D /* GenericBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701811200E8587009B972D /* GenericBlockCell.swift */; };
 		7F701815200E8910009B972D /* GenericBlockDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701814200E8910009B972D /* GenericBlockDetailVC.swift */; };
 		7F701817200EA8D6009B972D /* GenericComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F701816200EA8D6009B972D /* GenericComponentCell.swift */; };
+		7F70181B200F4CAB009B972D /* AppointmentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70181A200F4CAB009B972D /* AppointmentResult.swift */; };
 		7F80EA741FFFD7E400093253 /* CalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */; };
 		7F80EA762000002500093253 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA752000002500093253 /* NotificationVC.swift */; };
 		7F80EA78200001B600093253 /* MasterMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80EA77200001B600093253 /* MasterMessageVC.swift */; };
@@ -129,6 +130,7 @@
 		7F701811200E8587009B972D /* GenericBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBlockCell.swift; sourceTree = "<group>"; };
 		7F701814200E8910009B972D /* GenericBlockDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBlockDetailVC.swift; sourceTree = "<group>"; };
 		7F701816200EA8D6009B972D /* GenericComponentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericComponentCell.swift; sourceTree = "<group>"; };
+		7F70181A200F4CAB009B972D /* AppointmentResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentResult.swift; sourceTree = "<group>"; };
 		7F80EA731FFFD7E400093253 /* CalendarDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateExtension.swift; sourceTree = "<group>"; };
 		7F80EA752000002500093253 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		7F80EA77200001B600093253 /* MasterMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterMessageVC.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				7F701807200E5FDC009B972D /* ComponentTaskResult.swift */,
 				7F701809200E6084009B972D /* FutureCanvasResult.swift */,
 				7F70180B200E7F44009B972D /* GenericBlockResult.swift */,
+				7F70181A200F4CAB009B972D /* AppointmentResult.swift */,
 			);
 			name = "Result Models";
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				7F70180E200E7F59009B972D /* GenericBlock.swift in Sources */,
 				A4170A10200E2DC9008E9792 /* ComponentInfoVC.swift in Sources */,
 				A45C23131FD6D7530016311D /* User.swift in Sources */,
+				7F70181B200F4CAB009B972D /* AppointmentResult.swift in Sources */,
 				7F70180A200E6084009B972D /* FutureCanvasResult.swift in Sources */,
 				7F6D6B83200522220077D416 /* AgendaDetailVC.swift in Sources */,
 				7F701817200EA8D6009B972D /* GenericComponentCell.swift in Sources */,

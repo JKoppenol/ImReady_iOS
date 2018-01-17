@@ -16,10 +16,10 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var addButton: UIButton!
     
-    var appointments = agendaService.mockData()
+    var appointments = [Appointment] = []
     var days = [Date]()
     var sections = [AgendaDay]()
-    var currentUser = sharedInstance.currentUser
+    var currentUser = LoggedInUser.currentuser
     var weekInterval = 0
     var weekNumber = 0
 
@@ -35,7 +35,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func loadData() {
         
-        if(currentUser?.role == .Client) {
+        if(currentUser.user_type == .Client) {
             addButton.isHidden = true
         }
         
@@ -118,8 +118,8 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func fillDaysArray() {
         for appointment in appointments {
             
-            if((appointment.client.id == sharedInstance.currentUser?.id) ||
-                (appointment.caretaker.id == sharedInstance.currentUser?.id && appointment.kind == .Appointment)) {
+            if((appointment.client.id == currentUser.id) ||
+                (appointment.caretaker.id == currentUser.id && appointment.kind == .Appointment)) {
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd-MM-yyyy"
