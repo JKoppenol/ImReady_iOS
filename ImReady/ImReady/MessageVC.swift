@@ -16,7 +16,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     var messageId: String!
     var message: Message!
-    var messages = chatService.mockData().messages
+    var messages: [Message] = []
     var recipient = User()
     var currentUser = User()
     var chat = Chat()
@@ -53,18 +53,17 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     
     func loadData() {
-        messages = chatService.mockData().messages
+//        messages = chatService.mockData().messages
     }
     
     @IBAction func sendMessage(sender: UIButton) {
         message = Message()
         
         if(textField.text != "") {
-            message.id = messages.count + 1
+            message.id = ""
             message.content = textField.text!
             message.senderId = currentUser.id
-            message.receiverId = "1"
-            
+
             messages.append(message)
             textField.text = ""
             tableView.reloadData()

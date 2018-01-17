@@ -9,8 +9,7 @@
 import Foundation
 
 class MasterMessage {
-    var id: Int = 0
+    var id: String = ""
     var content: String = ""
-    var receiverId : String = ""
     var date : Date = Date()
 }

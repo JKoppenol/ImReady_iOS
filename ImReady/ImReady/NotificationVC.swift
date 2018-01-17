@@ -65,6 +65,6 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func loadData() {
-        notifications = notificationService.mockData()
+//        notifications = notificationService.mockData()
     }
 }
