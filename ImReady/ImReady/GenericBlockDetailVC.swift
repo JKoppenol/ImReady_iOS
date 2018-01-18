@@ -29,6 +29,10 @@ class GenericBlockDetailVC: UIViewController, UITabBarDelegate, UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addBlock(_ sender: Any) {
+        
+    }
+    
     private func setupUI() {
         descriptionLabel.text = block.description
         imageView.image = block.image

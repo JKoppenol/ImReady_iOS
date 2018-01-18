@@ -18,6 +18,7 @@ class AddBlockVC: UIViewController, UICollectionViewDataSource, UICollectionView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        createActiveBlocksArray()
         loadGenericBlocks()
         // Do any additional setup after loading the view.
     }
