@@ -64,7 +64,12 @@ class BlockService {
                         onFailure()
                     }
                     else {
-                        futureCanvas.blocks = json["Blocks"] as! [BlockResult]
+                        let blocks = json["Blocks"] as! [[String:Any]]
+                        
+                        for block in blocks{
+                            let newBlock = BlockResult(withData: block) as Block
+                            futureCanvas.blocks.append(newBlock)
+                        }
                         onSuccess(futureCanvas)
                     }
                 } catch {
