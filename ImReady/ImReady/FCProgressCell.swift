@@ -19,8 +19,11 @@ class FCProgressCell: UICollectionViewCell {
     
     func configCell(block: Block) {
         blockImage.layer.borderWidth = 1.0
-        blockImage.layer.borderColor = UIColor.black.cgColor
+        blockImage.layer.borderColor = UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.0).cgColor
         blockImage.layer.cornerRadius = 8.0
+        
+        prgTaskProgress.layer.borderWidth = 1.0
+        prgTaskProgress.layer.borderColor = UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.0).cgColor
         
         lblBlockName.isHidden = false
         lblBlockName.text = block.name

@@ -18,7 +18,7 @@ class GenericBlockCell: UICollectionViewCell {
     
     func configCell(block: GenericBlock) {
         blockImage.layer.borderWidth = 1.0
-        blockImage.layer.borderColor = UIColor.black.cgColor
+        blockImage.layer.borderColor = UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.0).cgColor
         blockImage.layer.cornerRadius = 8.0
         
         lblBlockName.isHidden = false

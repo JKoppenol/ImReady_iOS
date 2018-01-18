@@ -20,9 +20,6 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         loadFutureCanvas()
         
-//    collectionView.rowHeight = UITableViewAutomaticDimension
-//    collectionView.estimatedRowHeight = 125.0
-        
         // Do any additional setup after loading the view.
     }
     
@@ -58,6 +55,15 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         let block: Block = myFutureCanvas.blocks[indexPath.item]
         cell.configCell(block: block)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeaderCollectionReusableView {
+            sectionHeader.headerLabel.text = "Actieve bouwstenen"
+            return sectionHeader
+        }
+        return UICollectionReusableView()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

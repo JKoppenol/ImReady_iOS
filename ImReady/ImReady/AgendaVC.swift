@@ -156,12 +156,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     
                     if (appointmentDay == dateString) {
                         tempAgendaDay.dayName = dayName
-                        
-                        let list: [Appointment] = tempAgendaDay.appointments
-                        
-//                        if(!list.contains(appointment)) {
-                            tempAgendaDay.appointments.append(appointment)
-                        //}
+                        tempAgendaDay.appointments.append(appointment)
                     }
                 }
             }

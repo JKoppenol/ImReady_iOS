@@ -1072,7 +1072,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vwh-yc-CpC">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sfT-25-SL8">
-                                    <size key="itemSize" width="93" height="105"/>
+                                    <size key="itemSize" width="90" height="130"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1085,7 +1085,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dua-yn-JV5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dua-yn-JV5">
+                                                    <color key="backgroundColor" red="0.79215686269999996" green="0.96862745100000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="6t4-dr-Gfw"/>
                                                         <constraint firstAttribute="width" constant="90" id="yfK-TG-Eka"/>
@@ -1112,7 +1113,7 @@
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlockName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6a-Px-ETp">
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1141,22 +1142,23 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Q7e-KS-h2i" customClass="FCSectionHeaderCollectionReusableView" customModule="ImReady" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="Q7e-KS-h2i" customClass="SectionHeaderCollectionReusableView" customModule="ImReady" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMv-6d-UFW">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="YMv-6d-UFW" firstAttribute="leading" secondItem="Q7e-KS-h2i" secondAttribute="leading" id="Auc-5U-0qB"/>
-                                        <constraint firstItem="YMv-6d-UFW" firstAttribute="centerY" secondItem="Q7e-KS-h2i" secondAttribute="centerY" id="cIA-Gz-tfv"/>
+                                        <constraint firstItem="YMv-6d-UFW" firstAttribute="leading" secondItem="Q7e-KS-h2i" secondAttribute="leading" constant="8" id="ULH-GO-JDO"/>
+                                        <constraint firstItem="YMv-6d-UFW" firstAttribute="centerY" secondItem="Q7e-KS-h2i" secondAttribute="centerY" id="Xp4-Cc-tWc"/>
+                                        <constraint firstAttribute="trailing" secondItem="YMv-6d-UFW" secondAttribute="trailing" constant="8" id="ohO-D7-zHP"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="headerLabel" destination="YMv-6d-UFW" id="WF9-j5-R8c"/>
+                                        <outlet property="headerLabel" destination="YMv-6d-UFW" id="FTS-7G-m62"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
@@ -1197,7 +1199,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NQ-ip-A89" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bvn-qu-IkX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="993" y="-729"/>
+            <point key="canvasLocation" x="992.79999999999995" y="-729.08545727136436"/>
         </scene>
         <!--Bouwstenen-->
         <scene sceneID="15k-QU-8XO">
