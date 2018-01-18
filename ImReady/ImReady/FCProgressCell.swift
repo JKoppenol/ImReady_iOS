@@ -24,5 +24,6 @@ class FCProgressCell: UICollectionViewCell {
         
         lblBlockName.isHidden = false
         lblBlockName.text = block.name
+        blockImage.image = block.image
     }
 }

@@ -11,14 +11,21 @@ import UIKit
 class AddBlockVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var myFutureCanvas: FutureCanvas = FutureCanvas()
     var blocks : [GenericBlock] = []
     let reuseIdentifier = "GenericBlock"
+    var activeBlocks: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadGenericBlocks()
         // Do any additional setup after loading the view.
+    }
+    
+    func createActiveBlocksArray() {
+        for block in myFutureCanvas.blocks {
+            activeBlocks.append(block.name)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +65,13 @@ class AddBlockVC: UIViewController, UICollectionViewDataSource, UICollectionView
         activateIndicator_Activity(onViewController: self, onView: view)
         blockService.getGenericBlocks(onSuccess: { (genericBlocks) in
                                         self.blocks = genericBlocks
+                                        var i = 0
+                                        for block in self.blocks{
+                                            if(self.activeBlocks.contains(block.name)){
+                                                self.blocks.remove(at: i)
+                                            }
+                                            i += 1
+                                        }
                                         self.collectionView.reloadData()
                                         deactivateIndicator_Activity()
                                         },

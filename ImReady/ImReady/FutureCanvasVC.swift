@@ -41,6 +41,7 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         blockService.getFutureCanvas(ofUserWithId: currentUser.id!,
                                      onSuccess: { (futureCanvas) in
                                         self.myFutureCanvas = futureCanvas
+                                        self.collectionView.reloadData()
                                         deactivateIndicator_Activity()
                                         },
                                      onFailure: {
@@ -59,14 +60,6 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath as IndexPath) {
-            performSegue(withIdentifier: "ShowBlockSegue", sender: cell)
-        } else {
-            // Error indexPath is not on screen: this should never happen.
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowBlockSegue" {
             assert(sender as? UICollectionViewCell != nil, "Sender is not a collection view")
@@ -77,6 +70,13 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
                 blockVC.block = myFutureCanvas.blocks[indexPath.row]
             }
         }
+        
+         if segue.identifier == "toAddBlock" {
+            guard segue.identifier != nil else {return}
+            let addBlock: AddBlockVC = segue.destination as! AddBlockVC
+            addBlock.myFutureCanvas = self.myFutureCanvas
+        }
+
     }
     
     @IBAction func logOut() {
