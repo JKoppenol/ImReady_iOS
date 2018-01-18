@@ -118,8 +118,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func fillDaysArray() {
         for appointment in appointments {
             
-            if((appointment.client.id == currentUser.id) ||
-                (appointment.caretaker.id == currentUser.id && appointment.kind == .Appointment)) {
+            if(appointment.kind == .Appointment) {
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -141,13 +140,11 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func fillSectionsArray() {
         
         let dateFormatter = DateFormatter()
-        let currentUserId = LoggedInUser().getLoggedInUser().id
         
         for day in days {
             var tempAgendaDay = AgendaDay()
             for appointment in appointments {
-                if((appointment.client.id == currentUserId) ||
-                    (appointment.caretaker.id == currentUserId && appointment.kind == .Appointment)){
+                if(appointment.kind == .Appointment){
                     
                     dateFormatter.dateFormat = "dd-MM-yyyy"
                     let appointmentDay = dateFormatter.string(from: appointment.day)
@@ -159,7 +156,12 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     
                     if (appointmentDay == dateString) {
                         tempAgendaDay.dayName = dayName
-                        tempAgendaDay.appointments.append(appointment)
+                        
+                        let list: [Appointment] = tempAgendaDay.appointments
+                        
+//                        if(!list.contains(appointment)) {
+                            tempAgendaDay.appointments.append(appointment)
+                        //}
                     }
                 }
             }
