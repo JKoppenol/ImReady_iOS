@@ -13,6 +13,6 @@ class Block {
     var name : String = ""
     var description : String = ""
     var components : [Component] = []
-    var image: UIImage = #imageLiteral(resourceName: "Zorg")
+    var image: UIImage?
     var id : String = ""
 }
