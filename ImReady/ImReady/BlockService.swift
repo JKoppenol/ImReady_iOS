@@ -108,9 +108,10 @@ class BlockService {
                              addBlock block: String,
                              onSuccess: @escaping () -> (),
                              onFailure: @escaping () -> ()) {
-        apiClient.send(toRelativePath: "clien/\(client)/futureplan/enroll/\(block)",
+        apiClient.send(toRelativePath: "client/\(client)/futureplan/enroll/\(block)",
                        withHttpMethod: .post,
                        withParameters: ["id": client, "buildingBlockId": block],
+                       withHeaders: ["Content-Type": apiClient.ContentTypeHeader, "Accept": apiClient.AcceptHeader],
                        onSuccessDo: {(_ data) in
                             onSuccess()
         },
