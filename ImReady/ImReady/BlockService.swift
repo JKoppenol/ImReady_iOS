@@ -98,6 +98,20 @@ class BlockService {
         },
                        onFailure: onFailure)
     }
+    
+    public func addBlockToFC(forClient client: String,
+                             addBlock block: String,
+                             onSuccess: @escaping () -> (),
+                             onFailure: @escaping () -> ()) {
+        apiClient.send(toRelativePath: "clien/\(client)/futureplan/enroll/\(block)",
+                       withHttpMethod: .post,
+                       withParameters: ["id": client, "buildingBlockId": block],
+                       onSuccessDo: {(_ data) in
+                            onSuccess()
+        },
+                       onFailure: onFailure)
+    }
+
 }
 
 let blockService = BlockService()
