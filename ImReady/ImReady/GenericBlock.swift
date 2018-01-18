@@ -12,7 +12,7 @@ import UIKit
 class GenericBlock {
     var name : String = ""
     var description : String = ""
-    var image : UIImage = #imageLiteral(resourceName: "Zorg")
+    var image : UIImage = #imageLiteral(resourceName: "Gezondheid")
     var components : [Component] = []
     var id : String = ""
 }
