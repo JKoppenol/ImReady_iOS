@@ -886,6 +886,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helaas is de notificatie-functionaliteit, in deze versie van de applicatie, nog niet beschikbaar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgf-HU-6Sz">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GDx-0A-sLs">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.25490196079999999" green="0.68235294120000001" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -946,8 +951,12 @@
                         <constraints>
                             <constraint firstItem="nm5-Rw-6pv" firstAttribute="top" secondItem="GDx-0A-sLs" secondAttribute="bottom" id="0Ql-qC-vdL"/>
                             <constraint firstItem="GDx-0A-sLs" firstAttribute="leading" secondItem="ESB-aT-bwG" secondAttribute="leading" id="Jmu-DG-MNp"/>
+                            <constraint firstItem="tgf-HU-6Sz" firstAttribute="top" secondItem="0ZO-ie-ili" secondAttribute="bottom" constant="8" id="Qan-SI-G1O"/>
                             <constraint firstItem="GDx-0A-sLs" firstAttribute="top" secondItem="ESB-aT-bwG" secondAttribute="top" constant="73" id="UjA-7n-r3K"/>
                             <constraint firstAttribute="trailing" secondItem="GDx-0A-sLs" secondAttribute="trailing" id="pF4-Wy-WfQ"/>
+                            <constraint firstItem="nm5-Rw-6pv" firstAttribute="top" secondItem="tgf-HU-6Sz" secondAttribute="bottom" constant="8" id="txM-8K-NqL"/>
+                            <constraint firstItem="tgf-HU-6Sz" firstAttribute="leading" secondItem="ESB-aT-bwG" secondAttribute="leading" constant="30" id="ufE-14-odv"/>
+                            <constraint firstAttribute="trailing" secondItem="tgf-HU-6Sz" secondAttribute="trailing" constant="30" id="ykk-fa-vyB"/>
                         </constraints>
                     </view>
                     <connections>

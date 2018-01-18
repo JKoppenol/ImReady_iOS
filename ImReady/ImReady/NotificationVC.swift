@@ -17,7 +17,8 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        tableView.isHidden = true
+        //loadData()
         tableView.estimatedRowHeight = 60.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
