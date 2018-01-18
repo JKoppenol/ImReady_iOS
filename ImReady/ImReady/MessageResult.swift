@@ -1,5 +1,5 @@
 //
-//  AppointmentResult.swift
+//  MessageResult.swift
 //  ImReady
 //
 //  Created by Inholland on 1/17/18.
@@ -8,26 +8,14 @@
 
 import Foundation
 
-class AppointmentResult : Appointment {
-    init(withData data:[String:Any]) {
+class MessageResult : Message {
+    init(withData data: [String:Any], andChatReceiverId receiverId: String) {
         super.init()
+        content = data["Content"] as! String
+        date = formatDate(fromString: data["SentDate"] as! String, withFormat: "dd-MM-yyyy HH:mm")
+        senderId = data["SenderId"] as! String
+        self.receiverId = receiverId
         id = data["Id"] as! String
-        clientTitle = data["Title"] as! String
-        caretakerTitle = data["Title"] as? String
-        day = formatDate(fromString: data["StartDate"] as! String, withFormat: "dd-MM-yyyy")
-        startTime = formatDate(fromString: data["StartDate"] as! String, withFormat: "HH:mm")
-        endTime = formatDate(fromString: data["EndDate"] as! String, withFormat: "HH:mm")
-        location = data["Location"] as! String
-        comments = data["Remark"] as! String
-        
-        if(data["ClientId"] is NSNull) {
-            client.id = ""
-        }
-        else {
-            client.id = data["ClientId"] as! String
-        }
-        
-        kind = .Appointment
     }
     
     private func formatDate(fromString string: String, withFormat format: String) -> Date {

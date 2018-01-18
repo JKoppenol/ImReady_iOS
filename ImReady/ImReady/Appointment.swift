@@ -9,7 +9,7 @@
 import Foundation
 
 class Appointment {
-    var id: Int = 0
+    var id: String = ""
     var clientTitle: String = ""
     var caretakerTitle: String? = ""
     var day = Date()

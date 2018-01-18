@@ -17,7 +17,6 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        chats.append(chatService.mockData())
         // Do any additional setup after loading the view.
     }
 

@@ -78,12 +78,14 @@ class AgendaService {
 //        return appointments
 //    }
     let apiClient: ApiClient = ApiClient()
+    let currentUserId = LoggedInUser().getLoggedInUser().id
     
-    public func getAppointments(onSuccess: @escaping (_ : [Appointment]) -> (),
-                                 onFailure: @escaping () -> ()) {
-        apiClient.send(toRelativePath: "user/\(LoggedInUser().getLoggedInUser().id)/calendar",
+    public func getAppointments(ofUserWithId userId: String,
+                                onSuccess: @escaping (_ : [Appointment]) -> (),
+                                onFailure: @escaping () -> ()) {
+        apiClient.send(toRelativePath: "user/\(currentUserId)/calendar",
                        withHttpMethod: .get,
-                       onSuccessDo: {(_ data) in
+                       onSuccessDo: { (_ data) in
                         var appointments : [Appointment] = []
                         
                         do {

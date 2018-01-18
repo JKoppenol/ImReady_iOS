@@ -13,7 +13,7 @@ class Chats {
 }
 
 class Chat {
-    var id : Int = 0
+    var id : String = ""
     var senderId : String = ""
     var receiverId : String = ""
     var messages : [Message] = []
@@ -21,5 +21,5 @@ class Chat {
 }
 
 class Message : MasterMessage {
-    var senderId : String = "0"
+    var senderId : String = ""
 }

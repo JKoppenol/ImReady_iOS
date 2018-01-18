@@ -25,10 +25,9 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        loadAgendaFromAPI()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
-
 
         // Do any additional setup after loading the view.
     }
@@ -141,12 +140,13 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func fillSectionsArray() {
         
         let dateFormatter = DateFormatter()
+        let currentUserId = LoggedInUser().getLoggedInUser().id
         
         for day in days {
             var tempAgendaDay = AgendaDay()
             for appointment in appointments {
-                if((appointment.client.id == sharedInstance.currentUser?.id) ||
-                    (appointment.caretaker.id == sharedInstance.currentUser?.id && appointment.kind == .Appointment)){
+                if((appointment.client.id == currentUserId) ||
+                    (appointment.caretaker.id == currentUserId && appointment.kind == .Appointment)){
                     
                     dateFormatter.dateFormat = "dd-MM-yyyy"
                     let appointmentDay = dateFormatter.string(from: appointment.day)
@@ -221,4 +221,17 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         loadData()
     }
 
+    private func loadAgendaFromAPI() {
+        activateIndicator_Activity(onViewController: self, onView: view)
+        agendaService.getAppointments(ofUserWithId: currentUser.id!,
+                                      onSuccess: { (appointments) in
+            self.appointments = appointments
+            self.loadData()
+            self.tableView.reloadData()
+            deactivateIndicator_Activity()
+            }, onFailure: {
+                print("±±±-Failed to retrieve Agenda-±±±")
+                deactivateIndicator_Activity()
+        })
+    }
 }
