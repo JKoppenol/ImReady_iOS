@@ -31,6 +31,7 @@ class GenericBlockDetailVC: UIViewController, UITabBarDelegate, UITableViewDataS
     }
     
     func addBlock(sender: UIButton!) {
+        activateIndicator_Activity(onViewController: self, onView: view)
         if(block.name == "") {
             createAlert(title: "Er is iets fout gegaan!", message: "De bouwsteen kon niet worden toegevoegd, probeer het nogmaals of neem contact op met de beheerder.")
         }
@@ -38,11 +39,13 @@ class GenericBlockDetailVC: UIViewController, UITabBarDelegate, UITableViewDataS
         blockService.addBlockToFC(forClient: LoggedInUser().getLoggedInUser().id!,
                                   addBlock: block.id,
                                   onSuccess: {
+                                    deactivateIndicator_Activity()
                                     self.createAlert(title: "Bouwsteen toegevoegd!", message: "De bouwsteen \(self.block.name) is toegevoegd aan je toekomstplan.")
                                     //TO DO: segue naar toekomstplan
         
         },
                                   onFailure: {
+                                    deactivateIndicator_Activity()
                                     print("Error in adding block to future canvas")
         })
     }
