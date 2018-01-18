@@ -53,10 +53,12 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     
     private func loadData() {
+        let zoey: String! = "211436f6-1e94-4ef4-8b8f-0c7cf165ec14"
+        
         if(currentUser.user_type == .Client) {
             activateIndicator_Activity(onViewController: self, onView: view)
             chatService.getOrCreateChat(ofSenderId: currentUser.id!,
-                                        toReceiverId: currentUser.caretakerId!,
+                                        toReceiverId: zoey!,
                                         onSuccess: { (chat) in
                                             self.chat = chat
                                             self.messages = self.chat.messages
