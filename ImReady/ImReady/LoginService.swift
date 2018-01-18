@@ -80,12 +80,41 @@ class LoginService {
                                     }
                                 }
                                 
+                                let userRole: Role = Role(rawValue: (json["user_type"] as! String))!
+                                let userId: String = json["user_id"] as! String
                                 
-                                //Safekeeping
-                                //                                LoggedInUser.currentuser.access_token = json["access_token"] as? String
-                                //                                LoggedInUser.currentuser.id = json["user_id"] as? String
-                                //                                LoggedInUser.currentuser.username = json["firstname"] as? String
-                                //                                LoggedInUser.currentuser.user_type = Role(rawValue: json["user_type"] as! String)
+                                if(userRole == .Client) {
+                                    self.apiClient.send(toRelativePath: "client/\(userId)",
+                                        withHttpMethod: .get,
+                                        onSuccessDo: { (_ data) in
+
+                                            
+                                            do {
+                                                let jsonClient = try JSONSerialization.jsonObject(with: data) as! [String:Any]
+                                                
+                                                if let error = jsonClient["error-description"] as? String {
+                                                    print(error)
+                                                    onFailure()
+                                                }
+                                                else {
+                                                    let caretaker = jsonClient["Caregiver"]! as! [String:Any]
+                                                    
+                                                    do {
+                                                        try Locksmith.updateData(data: ["caretakerId" : caretaker["Id"]!],
+                                                                                 forUserAccount: "loggedInUser")
+                                                    }
+                                                    catch {
+                                                        print("Could not find clients CaretakerId")
+                                                    }
+                                                    
+                                                    onSuccess()
+                                                }
+                                            }
+                                            catch {
+                                                onFailure()
+                                            }
+                                    },onFailure: onFailure)
+                                }
                                 
                                 onSuccess()
                             }

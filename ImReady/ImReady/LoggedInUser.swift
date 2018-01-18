@@ -19,6 +19,7 @@ class LoggedInUser {
             return access_token != nil
         }
     }
+    var caretakerId: String?
     
     func getLoggedInUser() -> LoggedInUser {
         let user: LoggedInUser = LoggedInUser()
@@ -32,13 +33,10 @@ class LoggedInUser {
         user.username = userDict?["firstname"] as? String
         user.user_type = Role(rawValue: (userDict?["user_type"] as? String)!)
         
+        if(user.user_type == .Client) {
+            user.caretakerId = userDict?["caretakerId"] as? String
+        }
+        
         return user
     }
-    
-//    func logoutAndClean() {
-//        LoggedInUser.currentuser.id = nil
-//        LoggedInUser.currentuser.access_token = nil
-//        LoggedInUser.currentuser.user_type = nil
-//        LoggedInUser.currentuser.username = nil
-//    }
 }
