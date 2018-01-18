@@ -99,30 +99,18 @@ class BlockService {
                        onFailure: onFailure)
     }
     
-//    public func addBlockToFC(forClient client: String,
-//                             addBlock block: String,
-//                             onSuccess: @escaping () -> (),
-//                             onFailure: @escaping () -> ()) {
-//        apiClient.send(toRelativePath: "clien/\(client)/futureplan/enroll/\(block)",
-//                       withHttpMethod: .post,
-//                       withParameters: ["id": client, "buildingBlockId": block],
-//                       onSuccessDo: {(_ data) in
-//                        do {
-//                            let json = try JSONSerialization.jsonObject(with: data) as! [[String:Any]]
-//                            
-//                            for object in json {
-//                                let genericBlock = GenericBlockResult(withData: object) as GenericBlock
-//                                genericBlocks.append(genericBlock)
-//                            }
-//                            
-//                            onSuccess()
-//                        }
-//                        catch {
-//                            onFailure()
-//                        }
-//        },
-//                       onFailure: onFailure)
-//    }
+    public func addBlockToFC(forClient client: String,
+                             addBlock block: String,
+                             onSuccess: @escaping () -> (),
+                             onFailure: @escaping () -> ()) {
+        apiClient.send(toRelativePath: "clien/\(client)/futureplan/enroll/\(block)",
+                       withHttpMethod: .post,
+                       withParameters: ["id": client, "buildingBlockId": block],
+                       onSuccessDo: {(_ data) in
+                            onSuccess()
+        },
+                       onFailure: onFailure)
+    }
 
 }
 
