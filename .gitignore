@@ -5,6 +5,9 @@
 ## Build generated
 build/
 DerivedData/
+ImReady/ImReady.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcuserdata/*
+ImReady/ImReady/ImReady.entitlements
 
 ## Various settings
 *.pbxuser
