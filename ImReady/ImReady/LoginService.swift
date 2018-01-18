@@ -16,6 +16,7 @@ class LoginService {
 
     public func login(Username username: String,
                       Password password: String,
+                      doRemember remember: Bool,
                       onSuccess: @escaping () -> (),
                       onFailure: @escaping () -> ()) -> () {
         
@@ -26,17 +27,65 @@ class LoginService {
                        withEncoding: URLEncoding.httpBody,
                        onSuccessDo: { (_ data) in
                         do {
-
+                            
                             let json = try JSONSerialization.jsonObject(with: data) as! [String:Any]
                             if let error = json["error_description"] as? String {
                                 print(error)
                                 onFailure()
                             }
                             else {
-                                LoggedInUser.currentuser.access_token = json["access_token"] as? String
-                                LoggedInUser.currentuser.id = json["user_id"] as? String
-                                LoggedInUser.currentuser.username = json["firstname"] as? String
-                                LoggedInUser.currentuser.user_type = Role(rawValue: json["user_type"] as! String)
+                                do {
+                                    try Locksmith.updateData(data: ["access_token" : json["access_token"]!,
+                                                                    "id" : json["user_id"]!,
+                                                                    "firstname" : json["firstname"]!,
+                                                                    "user_type" : json["user_type"]!],
+                                                             forUserAccount: "loggedInUser")
+                                }
+                                catch {
+                                    do {
+                                        try Locksmith.saveData(data: ["access_token" : json["access_token"]!,
+                                                                      "id" : json["user_id"]!,
+                                                                      "firstname" : json["firstname"]!,
+                                                                      "user_type" : json["user_type"]!],
+                                                               forUserAccount: "loggedInUser")
+                                    }
+                                    catch {
+                                        print("Logged in user could not be stored!")
+                                    }
+                                }
+                                
+                                if(remember) {
+                                    do {
+                                        try Locksmith.updateData(data: ["username" : username,
+                                                                        "password" : password],
+                                                                 forUserAccount: "rememberUser")
+                                    }
+                                    catch {
+                                        do {
+                                            try Locksmith.saveData(data: ["username" : username,
+                                                                          "password" : password],
+                                                                   forUserAccount: "rememberUser")
+                                        }
+                                        catch {
+                                            print("Remember User function not working!")
+                                        }
+                                    }
+                                }
+                                else {
+                                    do {
+                                        try Locksmith.deleteDataForUserAccount(userAccount: "rememeberUser")
+                                    }
+                                    catch {
+                                        print("No record for remember user, nothing deleted from Locksmith")
+                                    }
+                                }
+                                
+                                
+                                //Safekeeping
+                                //                                LoggedInUser.currentuser.access_token = json["access_token"] as? String
+                                //                                LoggedInUser.currentuser.id = json["user_id"] as? String
+                                //                                LoggedInUser.currentuser.username = json["firstname"] as? String
+                                //                                LoggedInUser.currentuser.user_type = Role(rawValue: json["user_type"] as! String)
                                 
                                 onSuccess()
                             }
@@ -48,10 +97,21 @@ class LoginService {
                        onFailure: onFailure)
     }
     
-    public func logOut() -> Bool {
+    public func logOut(isTerminated terminated: Bool) -> Bool {
+        var success: Bool = true
         let preferences = UserDefaults.standard
         preferences.set(nil, forKey: "session")
-        return true
+        do{
+            if(!terminated) {
+                try Locksmith.deleteDataForUserAccount(userAccount: "rememberUser")
+            }
+            try Locksmith.deleteDataForUserAccount(userAccount: "loggedInUser")
+        }
+        catch {
+            print("Logout error: could not delete rememberUser and/or loggedInUser")
+            success = false
+        }
+        return success
     }
     
     public func isLoggedIn() -> Bool {

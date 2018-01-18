@@ -35,7 +35,7 @@ class MessagesCell: UITableViewCell {
     
     func configCell(message: Message) {
         self.message = message
-        let currentUser = LoggedInUser.currentuser
+        let currentUser = LoggedInUser().getLoggedInUser()
         
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         dateFormatter.locale = Locale(identifier: "nl_NL")

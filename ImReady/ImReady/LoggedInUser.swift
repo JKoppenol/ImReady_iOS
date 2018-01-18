@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import Locksmith
 
 class LoggedInUser {
-    static let currentuser = LoggedInUser()
-    
     var id : String?
     var access_token: String?
     var username: String?
@@ -21,10 +20,25 @@ class LoggedInUser {
         }
     }
     
-    func logoutAndClean() {
-        LoggedInUser.currentuser.id = nil
-        LoggedInUser.currentuser.access_token = nil
-        LoggedInUser.currentuser.user_type = nil
-        LoggedInUser.currentuser.username = nil
+    func getLoggedInUser() -> LoggedInUser {
+        let user: LoggedInUser = LoggedInUser()
+        let userDict = Locksmith.loadDataForUserAccount(userAccount: "loggedInUser")
+        if(userDict == nil) {
+            return user
+        }
+        
+        user.id = userDict?["id"] as! String
+        user.access_token = userDict?["access_token"] as! String
+        user.username = userDict?["firstname"] as! String
+        user.user_type = Role(rawValue: userDict?["user_type"] as! String)
+        
+        return user
     }
+    
+//    func logoutAndClean() {
+//        LoggedInUser.currentuser.id = nil
+//        LoggedInUser.currentuser.access_token = nil
+//        LoggedInUser.currentuser.user_type = nil
+//        LoggedInUser.currentuser.username = nil
+//    }
 }

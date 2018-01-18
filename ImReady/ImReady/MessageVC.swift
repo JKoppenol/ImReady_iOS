@@ -18,7 +18,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var message: Message!
     var messages: [Message] = []
     var recipient = User()
-    var currentUser = LoggedInUser.currentuser
+    var currentUser = LoggedInUser().getLoggedInUser()
     var chats : [Chat] = []
     var chat = Chat()
     

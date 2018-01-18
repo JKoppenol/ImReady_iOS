@@ -11,6 +11,7 @@ import Foundation
 class ChatResult : Chat {
     init(withData data: [String:Any]) {
         super.init()
+        let currentUser = LoggedInUser().getLoggedInUser()
         self.id = data["Id"] as! String
         self.senderId = data["SenderId"] as! String
         self.receiverId = data["ReceiverId"] as! String
@@ -19,8 +20,8 @@ class ChatResult : Chat {
             var messageReceiverId: String = ""
             
             //if ChatSender = LoggedinUser and MessageSender = LoggedinUser -> MessageReceiver = ChatReceiver
-            if(senderId == LoggedInUser.currentuser.id) {
-                if(object["SenderId"] as? String == LoggedInUser.currentuser.id) {
+            if(senderId == currentUser.id) {
+                if(object["SenderId"] as? String == currentUser.id) {
                     messageReceiverId = receiverId
                 }
                 else { messageReceiverId = senderId }
