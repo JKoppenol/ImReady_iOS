@@ -13,7 +13,7 @@ class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var currentUser = sharedInstance.currentUser
+    var currentUser = LoggedInUser().getLoggedInUser()
     var tasks = [ComponentTask]()
     var component = Component()
     

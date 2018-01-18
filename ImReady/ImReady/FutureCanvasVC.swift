@@ -11,7 +11,7 @@ import UIKit
 class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     var myFutureCanvas : FutureCanvas = FutureCanvas()
     let reuseIdentifier = "cell"
-    var apiClient: ApiClient = ApiClient()
+    let apiClient: ApiClient = ApiClient()
     var currentUser = LoggedInUser().getLoggedInUser()
     
     @IBOutlet weak var collectionView: UICollectionView!

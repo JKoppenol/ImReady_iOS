@@ -13,7 +13,7 @@ class ComponentVC: UIViewController {
     @IBOutlet var segmentedControl: UISegmentedControl!
     
     var component = Component()
-    var currentUser = sharedInstance.currentUser
+    var currentUser = LoggedInUser().getLoggedInUser()
     
     lazy var infoVC: ComponentInfoVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

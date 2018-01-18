@@ -50,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(!success) {
             print("LOGOUT ERROR - not terminated correctly")
         }
+        
+        let userdef = UserDefaults.standard
+        userdef.set(nil, forKey: "session")
     }
 }
 

@@ -115,8 +115,8 @@ class LoginService {
     }
     
     public func isLoggedIn() -> Bool {
-        let preferences = UserDefaults.standard
-        let authtoken = preferences.string(forKey: "session")
+        let userdef = UserDefaults.standard
+        let authtoken = userdef.string(forKey: "session")
         return authtoken != nil
     }
 }

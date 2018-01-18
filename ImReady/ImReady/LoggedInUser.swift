@@ -27,10 +27,10 @@ class LoggedInUser {
             return user
         }
         
-        user.id = userDict?["id"] as! String
-        user.access_token = userDict?["access_token"] as! String
-        user.username = userDict?["firstname"] as! String
-        user.user_type = Role(rawValue: userDict?["user_type"] as! String)
+        user.id = userDict?["id"] as? String
+        user.access_token = userDict?["access_token"] as? String
+        user.username = userDict?["firstname"] as? String
+        user.user_type = Role(rawValue: (userDict?["user_type"] as? String)!)
         
         return user
     }
