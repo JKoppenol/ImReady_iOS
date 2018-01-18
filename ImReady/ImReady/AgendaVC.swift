@@ -19,7 +19,8 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var appointments: [Appointment] = []
     var days = [Date]()
     var sections = [AgendaDay]()
-    var currentUser = LoggedInUser().getLoggedInUser()
+    var currentUser: LoggedInUser! = LoggedInUser().getLoggedInUser()
+    var currentUserId: String! = LoggedInUser().getLoggedInUser().id!
     var weekInterval = 0
     var weekNumber = 0
 
@@ -223,7 +224,7 @@ class AgendaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private func loadAgendaFromAPI() {
         activateIndicator_Activity(onViewController: self, onView: view)
-        agendaService.getAppointments(ofUserWithId: currentUser.id!,
+        agendaService.getAppointments(ofUserWithId: currentUserId!,
                                       onSuccess: { (appointments) in
             self.appointments = appointments
             self.loadData()
