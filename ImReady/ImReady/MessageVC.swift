@@ -17,7 +17,6 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var messageId: String!
     var message: Message!
     var messages: [Message] = []
-    var recipient = User()
     var currentUser = LoggedInUser().getLoggedInUser()
     var chats : [Chat] = []
     var chat = Chat()
@@ -27,6 +26,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         tableView.estimatedRowHeight = 50.0
         tableView.rowHeight = UITableViewAutomaticDimension
         sendButton.layer.cornerRadius = 5.0
+        loadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,32 +53,55 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     
     private func loadData() {
-        chatService.getChats(ofUserWithId: currentUser.id!,
-                             onSuccess: { (chats) in
-                                self.chats = chats
-                                self.tableView.reloadData()
-                                deactivateIndicator_Activity()
-            },
-                             onFailure: {
-                                print("Could not find Chats from user.")
-                                deactivateIndicator_Activity()
-        })
+        //Let op! Zoey moet nog veranderd worden naar currentUser.caretakerId
+        let zoey: String! = "211436f6-1e94-4ef4-8b8f-0c7cf165ec14"
         
         if(currentUser.user_type == .Client) {
-            messages = chats[0].messages
+            activateIndicator_Activity(onViewController: self, onView: view)
+            chatService.getOrCreateChat(ofSenderId: currentUser.id!,
+                                        toReceiverId: zoey!,
+                                        onSuccess: { (chat) in
+                                            self.chat = chat
+                                            self.messages = self.chat.messages
+                                            self.tableView.reloadData()
+                                            deactivateIndicator_Activity()
+                },
+                                        onFailure: {
+                                            print("Could not retrieve or create chat")
+                                            deactivateIndicator_Activity()
+                                            
+            })
         }
     }
     
     @IBAction func sendMessage(sender: UIButton) {
+        activateIndicator_Activity(onViewController: self, onView: view)
         message = Message()
         
         if(textField.text != "") {
             message.content = textField.text!
             message.senderId = currentUser.id!
-
-            messages.append(message)
+            
+            if(chat.receiverId == currentUser.id) {
+                message.receiverId = chat.senderId
+            }
+            else { message.receiverId = chat.receiverId }
+            
             textField.text = ""
-            tableView.reloadData()
+            
+            chatService.send(sentMessage: message,
+                             onSuccess: { (message) in
+                                self.chat.messages.append(message)
+                                self.messages = self.chat.messages
+                                self.tableView.reloadData()
+                                deactivateIndicator_Activity()
+                },
+                             onFailure: {
+                                print("Could not send message")
+                                deactivateIndicator_Activity()
+                                
+            })
+            
         }
     }
 }

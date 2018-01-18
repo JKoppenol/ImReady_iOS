@@ -12,13 +12,13 @@ class MasterMessageVC: UIViewController {
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     
-    var currentUser = sharedInstance.currentUser
+    var currentUser = LoggedInUser().getLoggedInUser()
     
     lazy var messageVC: MessageVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = MessageVC()
         
-        if(self.currentUser?.role == .Client) {
+        if(self.currentUser.user_type == .Client) {
             viewController = storyboard.instantiateViewController(withIdentifier: "Messages") as! MessageVC
             
             self.addVCAsChildVC(childVC: viewController)
@@ -31,7 +31,7 @@ class MasterMessageVC: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = NotificationVC()
         
-        if(self.currentUser?.role == .Client) {
+        if(self.currentUser.user_type == .Client) {
             viewController = storyboard.instantiateViewController(withIdentifier: "Notifications") as! NotificationVC
         
             self.addVCAsChildVC(childVC: viewController)
@@ -44,7 +44,7 @@ class MasterMessageVC: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = ChatListVC()
         
-        if(self.currentUser?.role == Role.Caregiver) {
+        if(self.currentUser.user_type == Role.Caregiver) {
             viewController = storyboard.instantiateViewController(withIdentifier: "Chatlist") as! ChatListVC
             
             self.addVCAsChildVC(childVC: viewController)
@@ -56,7 +56,7 @@ class MasterMessageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if(currentUser?.role == Role.Caregiver) {
+        if(self.currentUser.user_type == Role.Caregiver) {
             segmentedControl.isHidden = true
             let navItem = UINavigationItem(title: "Berichten")
             self.navigationController?.navigationBar.setItems([navItem], animated: false);
@@ -79,7 +79,7 @@ class MasterMessageVC: UIViewController {
     }
     
     private func updateView() {
-        if(currentUser?.role == .Client) {
+        if(self.currentUser.user_type == .Client) {
             messageVC.view.isHidden = !(segmentedControl.selectedSegmentIndex == 0)
             notificationVC.view.isHidden = (segmentedControl.selectedSegmentIndex == 0)
         }

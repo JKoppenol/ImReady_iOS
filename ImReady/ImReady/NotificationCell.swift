@@ -14,6 +14,8 @@ class NotificationCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
+    let currentUser = LoggedInUser().getLoggedInUser()
+    
     var dateFormatter = DateFormatter()
     
     override func awakeFromNib() {
@@ -26,7 +28,7 @@ class NotificationCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(notification: Notification, currentUser: User) {
+    func configCell(notification: Notification) {
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         
         if(notification.receiverId == currentUser.id) {

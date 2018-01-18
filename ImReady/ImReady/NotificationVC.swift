@@ -13,12 +13,11 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var notifications = [Notification]()
-    var currentUser = User()
+    var currentUser = LoggedInUser().getLoggedInUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        currentUser = sharedInstance.currentUser!
         tableView.estimatedRowHeight = 60.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -45,7 +44,7 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         let notification = notifications[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Notification") as? NotificationCell {
-            cell.configCell(notification: notification, currentUser: currentUser)
+            cell.configCell(notification: notification)
             
             return(cell)
         }

@@ -19,7 +19,7 @@ class MessagesCell: UITableViewCell {
     @IBOutlet weak var sendDate: UILabel!
     
     var message: Message!
-    var currentUser = sharedInstance.currentUser
+    var currentUser = LoggedInUser().getLoggedInUser()
     var dateFormatter = DateFormatter()
     
     override func awakeFromNib() {
@@ -35,7 +35,6 @@ class MessagesCell: UITableViewCell {
     
     func configCell(message: Message) {
         self.message = message
-        let currentUser = LoggedInUser().getLoggedInUser()
         
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         dateFormatter.locale = Locale(identifier: "nl_NL")
