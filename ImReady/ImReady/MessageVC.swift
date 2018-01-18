@@ -18,12 +18,12 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var message: Message!
     var messages: [Message] = []
     var recipient = User()
-    var currentUser = User()
+    var currentUser = LoggedInUser.currentuser
+    var chats : [Chat] = []
     var chat = Chat()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentUser = sharedInstance.currentUser!
         tableView.estimatedRowHeight = 50.0
         tableView.rowHeight = UITableViewAutomaticDimension
         sendButton.layer.cornerRadius = 5.0
@@ -42,7 +42,7 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         let message = messages[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Message") as? MessagesCell {
-            cell.configCell(message: message, currentUser: currentUser)
+            cell.configCell(message: message)
             
             return(cell)
         }
@@ -52,17 +52,29 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func loadData() {
-//        messages = chatService.mockData().messages
+    private func loadData() {
+        chatService.getChats(ofUserWithId: currentUser.id!,
+                             onSuccess: { (chats) in
+                                self.chats = chats
+                                self.tableView.reloadData()
+                                deactivateIndicator_Activity()
+            },
+                             onFailure: {
+                                print("Could not find Chats from user.")
+                                deactivateIndicator_Activity()
+        })
+        
+        if(currentUser.user_type == .Client) {
+            messages = chats[0].messages
+        }
     }
     
     @IBAction func sendMessage(sender: UIButton) {
         message = Message()
         
         if(textField.text != "") {
-            message.id = ""
             message.content = textField.text!
-            message.senderId = currentUser.id
+            message.senderId = currentUser.id!
 
             messages.append(message)
             textField.text = ""

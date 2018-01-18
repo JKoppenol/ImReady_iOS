@@ -9,11 +9,12 @@
 import Foundation
 
 class MessageResult : Message {
-    init(withData data: [String:Any]) {
+    init(withData data: [String:Any], andChatReceiverId receiverId: String) {
         super.init()
         content = data["Content"] as! String
         date = formatDate(fromString: data["SentDate"] as! String, withFormat: "dd-MM-yyyy HH:mm")
         senderId = data["SenderId"] as! String
+        self.receiverId = receiverId
         id = data["Id"] as! String
     }
     

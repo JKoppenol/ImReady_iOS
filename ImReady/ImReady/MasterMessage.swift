@@ -12,4 +12,5 @@ class MasterMessage {
     var id: String = ""
     var content: String = ""
     var date : Date = Date()
+    var receiverId: String = ""
 }

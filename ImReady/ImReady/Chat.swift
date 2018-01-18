@@ -21,5 +21,5 @@ class Chat {
 }
 
 class Message : MasterMessage {
-    var senderId : String = "0"
+    var senderId : String = ""
 }

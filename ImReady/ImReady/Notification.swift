@@ -10,5 +10,4 @@ import Foundation
 
 class Notification: MasterMessage {
     var title: String = ""
-    var receiverId: String = ""
 }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//
+import Alamofire
 
 
 class ChatService {
@@ -78,5 +78,23 @@ class ChatService {
             },
             onFailure: onFailure)
     }
+    
+    public func send(message: Message,
+                      onSuccess: @escaping () -> (),
+                      onFailure: @escaping () -> ()) -> () {
+        let senderId = message.senderId
+        let receiverId = message.receiverId
+        
+        apiClient.send(toRelativePath: "user/\(senderId)/chat/\(receiverId)",
+                       withHttpMethod: .post,
+                       withParameters: ["Content": message.content],
+                       withHeaders: ["Content-Type": apiClient.ContentTypeHeader, "Accept": apiClient.AcceptHeader],
+                       withEncoding: URLEncoding.httpBody,
+                       onSuccessDo: { (_ data) in
+                        
+            },
+                       onFailure: onFailure)
+    }
+
 }
 let chatService : ChatService = ChatService()

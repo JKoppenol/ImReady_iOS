@@ -33,8 +33,10 @@ class MessagesCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(message: Message, currentUser: User) {
+    func configCell(message: Message) {
         self.message = message
+        let currentUser = LoggedInUser.currentuser
+        
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         dateFormatter.locale = Locale(identifier: "nl_NL")
         
