@@ -70,6 +70,7 @@ class AddBlockVC: UIViewController, UICollectionViewDataSource, UICollectionView
                                         for block in self.blocks{
                                             if(self.activeBlocks.contains(block.name)){
                                                 self.blocks.remove(at: i)
+                                                continue
                                             }
                                             i += 1
                                         }

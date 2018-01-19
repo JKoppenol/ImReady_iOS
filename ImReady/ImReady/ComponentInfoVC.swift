@@ -30,8 +30,8 @@ class ComponentInfoVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     private func setupView() {
         links = component.usefulLinks
-        lblTitle.text = component.name
-        lblDescription.text = component.description
+        //lblTitle.text = component.name
+        //lblDescription.text = component.description
         
         let videoId = component.youtubeUrl.components(separatedBy: "=").last
         loadYoutube(videoID: videoId!)
