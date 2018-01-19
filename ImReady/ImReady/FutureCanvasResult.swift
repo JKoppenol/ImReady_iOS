@@ -11,6 +11,6 @@ import Foundation
 class FutureCanvasResult : FutureCanvas {
     init(withData data:[String:Any]) {
         super.init()
-        blocks = data["Blocks"] as! [BlockResult]
+        blocks = (data["Blocks"] as? [BlockResult])!
     }
 }

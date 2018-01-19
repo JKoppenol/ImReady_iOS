@@ -13,17 +13,17 @@ class ComponentTaskResult : ComponentTask {
         super.init()
         name = data["Name"] as! String
         if(!(data["Description"] is NSNull)) {
-            description = data["Description"] as! String
+            description = (data["Description"] as? String)!
         }
         else { description = "" }
         
         if(data["Deadline"] == nil || data["Deadline"] is NSNull) { deadline = Date() }
         else {
-            deadline = formatDate(fromString: data["Deadline"] as! String, withFormat: "dd-MM-yyyy HH:mm")
+            deadline = formatDate(fromString: (data["Deadline"] as? String)!, withFormat: "dd-MM-yyyy HH:mm")
         }
         
         if(data["Status"] == nil || data["Status"] is NSNull) { status = 0 }
-        else { status = data["Status"] as! Int }
+        else { status = (data["Status"] as? Int)! }
         
         id = data["Id"] as! String
         
