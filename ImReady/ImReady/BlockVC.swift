@@ -27,7 +27,7 @@ class BlockVC: UIViewController,UITabBarDelegate, UITableViewDataSource {
     }
     
     private func setupUI() {
-        descriptionLabel.text = block.name
+        descriptionLabel.text = block.description
         blockImageView.image = block.image
         navigationItem.title = block.name
     }

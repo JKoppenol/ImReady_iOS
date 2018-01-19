@@ -71,6 +71,8 @@
 		A44923622007ACF800D818A7 /* baseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44923612007ACF800D818A7 /* baseModel.swift */; };
 		A4492365200CDFCB00D818A7 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4492364200CDFCB00D818A7 /* activityIndicator.swift */; };
 		A45C23131FD6D7530016311D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C23121FD6D7530016311D /* User.swift */; };
+		A46B90D7201174A20085FBCE /* GenericComponentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46B90D6201174A20085FBCE /* GenericComponentResult.swift */; };
+		A46B90D9201174CE0085FBCE /* GenericComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46B90D8201174CE0085FBCE /* GenericComponent.swift */; };
 		A48CD74A1FFE446B0036050F /* BlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7491FFE446B0036050F /* BlockVC.swift */; };
 		A48CD7501FFE447A0036050F /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD74F1FFE447A0036050F /* Block.swift */; };
 		A48CD7521FFE44930036050F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD7511FFE44930036050F /* ApiClient.swift */; };
@@ -160,6 +162,8 @@
 		A44923612007ACF800D818A7 /* baseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseModel.swift; sourceTree = "<group>"; };
 		A4492364200CDFCB00D818A7 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
 		A45C23121FD6D7530016311D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A46B90D6201174A20085FBCE /* GenericComponentResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericComponentResult.swift; sourceTree = "<group>"; };
+		A46B90D8201174CE0085FBCE /* GenericComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericComponent.swift; sourceTree = "<group>"; };
 		A48CD7491FFE446B0036050F /* BlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVC.swift; sourceTree = "<group>"; };
 		A48CD74F1FFE447A0036050F /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		A48CD7511FFE44930036050F /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -391,6 +395,7 @@
 				7F70181A200F4CAB009B972D /* AppointmentResult.swift */,
 				7F70181C200FAE41009B972D /* ChatResult.swift */,
 				7F70181E200FB046009B972D /* MessageResult.swift */,
+				A46B90D6201174A20085FBCE /* GenericComponentResult.swift */,
 			);
 			name = "Result Models";
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				A44923612007ACF800D818A7 /* baseModel.swift */,
 				7F7017FD200E3E42009B972D /* FutureCanvas.swift */,
 				7F70180D200E7F59009B972D /* GenericBlock.swift */,
+				A46B90D8201174CE0085FBCE /* GenericComponent.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -682,6 +688,8 @@
 				7F67F7A1200CCA6B00672BFC /* ClientVC.swift in Sources */,
 				7F54D3D11FD97C4F0023B570 /* ChatService.swift in Sources */,
 				7F6D6B7F2005089E0077D416 /* FCProgressCell.swift in Sources */,
+				A46B90D9201174CE0085FBCE /* GenericComponent.swift in Sources */,
+				A46B90D7201174A20085FBCE /* GenericComponentResult.swift in Sources */,
 				A48CD7541FFE4A090036050F /* FutureCanvasVC.swift in Sources */,
 				A449235D2007A47200D818A7 /* LoginResult.swift in Sources */,
 				7F70181D200FAE41009B972D /* ChatResult.swift in Sources */,

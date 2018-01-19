@@ -12,6 +12,8 @@ class ComponentInfoVC: UIViewController, UITableViewDataSource, UITableViewDeleg
 
     @IBOutlet weak var wv: UIWebView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
     
     var links: [String] = []
 
@@ -28,6 +30,8 @@ class ComponentInfoVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     private func setupView() {
         links = component.usefulLinks
+        lblTitle.text = component.name
+        lblDescription.text = component.description
         
         let videoId = component.youtubeUrl.components(separatedBy: "=").last
         loadYoutube(videoID: videoId!)
