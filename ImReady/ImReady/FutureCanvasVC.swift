@@ -13,6 +13,8 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     let reuseIdentifier = "cell"
     let apiClient: ApiClient = ApiClient()
     var currentUser = LoggedInUser().getLoggedInUser()
+    let refreshControl = UIRefreshControl()
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -20,7 +22,22 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         loadFutureCanvas()
         
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func refreshAction(_ sender: Any) {
+        refresh(refreshControl: refreshControl)
+        print("refresh...")
+    }
+    
+    func refresh(refreshControl:UIRefreshControl) {
+        loadFutureCanvas()
+        refreshControl.endRefreshing()
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,6 +100,9 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
             addBlock.myFutureCanvas = self.myFutureCanvas
         }
 
+    }
+    
+    @IBAction func unwindToFC(segue:UIStoryboardSegue) {
     }
     
     @IBAction func logOut() {

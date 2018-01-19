@@ -41,11 +41,10 @@ class GenericBlockDetailVC: UIViewController, UITabBarDelegate, UITableViewDataS
                                   onSuccess: {
                                     deactivateIndicator_Activity()
                                     self.createAlert(title: "Bouwsteen toegevoegd!", message: "De bouwsteen \(self.block.name) is toegevoegd aan je toekomstplan.")
-                                    //TO DO: segue naar toekomstplan
-        
         },
                                   onFailure: {
                                     deactivateIndicator_Activity()
+                                    self.createAlert(title: "Bouwsteen niet toegevoegd!", message: "De bouwsteen \(self.block.name) is niet toegevoegd aan je toekomstplan, er is iets mis gegaan!")
                                     print("Error in adding block to future canvas")
         })
     }
@@ -96,6 +95,7 @@ class GenericBlockDetailVC: UIViewController, UITabBarDelegate, UITableViewDataS
         
         alert.addAction(UIAlertAction(title: "Oke", style: UIAlertActionStyle.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "unwindSegueToFC", sender: self)
         }))
         
         self.present(alert, animated: true, completion: nil)

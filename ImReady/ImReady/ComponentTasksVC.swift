@@ -25,6 +25,10 @@ class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
+    @IBAction func readyAction(_ sender: Any) {
+        createAlert(title: "Taak afgerond!", message: "Er is een bericht naar je zorgverlener gestuurd, die zal de taak beoordelen!")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,4 +56,17 @@ class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             return TaskCell()
         }
     }
+    
+    private func createAlert(title: String!, message: String!) {
+        deactivateIndicator_Activity()
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Oke", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "unwindSegueToFCReady", sender: self)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
