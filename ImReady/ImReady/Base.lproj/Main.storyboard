@@ -1264,10 +1264,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Toekomstplan" id="PTa-Xi-IKF">
                         <leftBarButtonItems>
-                            <barButtonItem style="done" systemItem="stop" id="NO6-ec-aIb">
+                            <barButtonItem title="Logout" style="done" id="NO6-ec-aIb">
                                 <color key="tintColor" red="0.25490196079999999" green="0.68235294120000001" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="logOut" destination="Ony-vc-9aX" id="YRE-PL-kMd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem id="pXv-Qw-rlh"/>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="fRp-XI-tcf">
+                                <color key="tintColor" red="0.25490196078431371" green="0.68235294117647061" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="p6Z-aM-ZIZ" kind="show" identifier="toAddBlock" id="KmL-R5-e7d"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="refresh" id="khC-4b-Ect">
@@ -1276,14 +1285,7 @@
                                     <action selector="refreshAction:" destination="Ony-vc-9aX" id="Si3-PA-Qo4"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem id="pXv-Qw-rlh"/>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fRp-XI-tcf">
-                            <color key="tintColor" red="0.25490196078431371" green="0.68235294117647061" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="p6Z-aM-ZIZ" kind="show" identifier="toAddBlock" id="KmL-R5-e7d"/>
-                            </connections>
-                        </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Vwh-yc-CpC" id="fsm-ln-jF4"/>
