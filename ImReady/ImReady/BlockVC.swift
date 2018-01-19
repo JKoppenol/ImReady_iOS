@@ -27,9 +27,10 @@ class BlockVC: UIViewController,UITabBarDelegate, UITableViewDataSource {
     }
     
     private func setupUI() {
-        descriptionLabel.text = block.name
+        descriptionLabel.text = block.description
         blockImageView.image = block.image
         navigationItem.title = block.name
+        navigationController?.navigationBar.tintColor = UIColor(red:0.24, green:0.73, blue:0.61, alpha:1.0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

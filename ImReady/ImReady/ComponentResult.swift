@@ -21,8 +21,47 @@ class ComponentResult : Component {
             description = data["Description"] as! String
         }
         
-        if(data["Tasks"] != nil) {
-            tasks = data["Tasks"] as! [ComponentTaskResult]
+        let activitiesArray = data["Activities"] as! [[String:Any]]
+        
+        if(!(data["Activities"] is NSNull) || !activitiesArray.isEmpty) {
+            
+            for object in activitiesArray {
+                
+                if(!object.isEmpty) {
+                    tasks.append(ComponentTaskResult(withData: object))
+                }
+                else {
+                    let component = data["Component"] as! [String:Any]
+                    let activities = component["Activities"] as! [[String:Any]]
+                    
+                    if(!activities.isEmpty) {
+                        for activity in activities {
+                            if(!activity.isEmpty) {
+                                tasks.append(ComponentTaskResult(withData: activity))
+                            }
+                            else {
+                                print("No activities/tasks.")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        else {
+            let component = data["Component"] as! [String:Any]
+            let activities = component["Activities"] as! [[String:Any]]
+            
+            if(!activities.isEmpty) {
+                for activity in activities {
+                    if(!activity.isEmpty) {
+                        tasks.append(ComponentTaskResult(withData: activity))
+                    }
+                    else {
+                        print("No activities/tasks.")
+                    }
+                }
+            }
         }
     
         youtubeUrl = String(describing: data["YoutubeURL"])

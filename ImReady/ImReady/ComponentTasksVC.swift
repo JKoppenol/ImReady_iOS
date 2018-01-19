@@ -19,6 +19,8 @@ class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tasks = component.tasks
+        nameLabel.text = component.name
     }
 
     override func didReceiveMemoryWarning() {

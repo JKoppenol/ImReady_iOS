@@ -38,7 +38,6 @@ class ComponentVC: UIViewController {
         return viewController
     }()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -52,7 +51,7 @@ class ComponentVC: UIViewController {
     private func setupView() {
         setupSegmentedControl()
         updateView()
-        
+        navigationController?.navigationBar.tintColor = UIColor(red:0.24, green:0.73, blue:0.61, alpha:1.0)
     }
     
     private func updateView() {

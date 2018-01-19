@@ -11,13 +11,42 @@ import Foundation
 class ComponentTaskResult : ComponentTask {
     init(withData data:[String:Any]) {
         super.init()
-        let dateFormatter = DateFormatter()
-        
         name = data["Name"] as! String
-        description = data["Description"] as! String
-        deadline = dateFormatter.date(from: data["DeadlineDate"] as! String)!
-        status = data["Status"] as! Int
-        feedback = data["Feedback"] as! String
+        if(!(data["Description"] is NSNull)) {
+            description = data["Description"] as! String
+        }
+        else { description = "" }
+        
+        if(data["Deadline"] == nil || data["Deadline"] is NSNull) { deadline = Date() }
+        else {
+            deadline = formatDate(fromString: data["Deadline"] as! String, withFormat: "dd-MM-yyyy HH:mm")
+        }
+        
+        if(data["Status"] == nil || data["Status"] is NSNull) { status = 0 }
+        else { status = data["Status"] as! Int }
+        
         id = data["Id"] as! String
+        
+        //feedback = data["Feedback"] as! String
+    }
+    
+    private func formatDate(fromString string: String, withFormat format: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        var dateString = string.replacingOccurrences(of: "T", with: " ")
+        
+        if let dotRange = dateString.range(of: ".") {
+            dateString.removeSubrange(dotRange.lowerBound..<dateString.endIndex)
+        }
+        
+        var date = dateFormatter.date(from: dateString)
+        
+        dateFormatter.dateFormat = format
+        dateString = dateFormatter.string(from: date!)
+        
+        date = dateFormatter.date(from: dateString)
+        
+        return date!
     }
 }

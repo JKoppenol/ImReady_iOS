@@ -20,7 +20,7 @@ class AddBlockVC: UIViewController, UICollectionViewDataSource, UICollectionView
         super.viewDidLoad()
         createActiveBlocksArray()
         loadGenericBlocks()
-        // Do any additional setup after loading the view.
+        navigationController?.navigationBar.tintColor = UIColor(red:0.24, green:0.73, blue:0.61, alpha:1.0)
     }
     
     func createActiveBlocksArray() {
@@ -66,12 +66,16 @@ class AddBlockVC: UIViewController, UICollectionViewDataSource, UICollectionView
         activateIndicator_Activity(onViewController: self, onView: view)
         blockService.getGenericBlocks(onSuccess: { (genericBlocks) in
                                         self.blocks = genericBlocks
-                                        var i = 0
-                                        for block in self.blocks{
-                                            if(self.activeBlocks.contains(block.name)){
-                                                self.blocks.remove(at: i)
+                                        for block in self.blocks {
+                                            
+                                            if(self.activeBlocks.contains(block.name)) {
+                                                
+                                                for (index, element) in self.blocks.enumerated() {
+                                                    if(element.name == block.name) {
+                                                        self.blocks.remove(at: index)
+                                                    }
+                                                }
                                             }
-                                            i += 1
                                         }
                                         self.collectionView.reloadData()
                                         deactivateIndicator_Activity()
