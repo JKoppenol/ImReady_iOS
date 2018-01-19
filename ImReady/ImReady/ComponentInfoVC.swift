@@ -33,7 +33,7 @@ class ComponentInfoVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             links = component.usefulLinks
         }
         
-        lblTitle.text = self.component.name
+        lblTitle.text = component.name
         
         lblDescription.text = component.description
         

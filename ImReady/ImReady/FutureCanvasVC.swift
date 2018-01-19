@@ -23,9 +23,9 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         loadFutureCanvas()
         
         
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        collectionView.refreshControl = refreshControl
+        //refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+        //refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        //collectionView.refreshControl = refreshControl
         
         // Do any additional setup after loading the view.
     }
@@ -37,7 +37,7 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     
     func refresh(refreshControl:UIRefreshControl) {
         loadFutureCanvas()
-        refreshControl.endRefreshing()
+        //refreshControl.endRefreshing()
     }
     
     override func didReceiveMemoryWarning() {
