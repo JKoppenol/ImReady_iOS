@@ -12,7 +12,14 @@ class ComponentResult : Component {
     init(withData data:[String:Any]) {
         super.init()
         name = data["Name"] as! String
-        description = data["Description"] as! String
+        
+        if(data["Description"] is NSNull) {
+            description = ""
+        }
+        
+        else {
+            description = data["Description"] as! String
+        }
         
         if(data["Tasks"] != nil) {
             tasks = data["Tasks"] as! [ComponentTaskResult]

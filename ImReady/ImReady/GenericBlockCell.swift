@@ -25,5 +25,4 @@ class GenericBlockCell: UICollectionViewCell {
         lblBlockName.text = block.name
         blockImage.image = block.image
     }
-
 }

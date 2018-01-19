@@ -14,7 +14,11 @@ class BlockResult : Block {
         super.init()
         name = data["Name"] as! String
         description = data["Description"] as! String
-        components = data["Components"] as! [ComponentResult]
+        
+        for object in data["Components"] as! [[String:Any]] {
+            components.append(ComponentResult(withData: object) as Component)
+        }
+        
         id = data["Id"] as! String
         
         image = UIImage(named: name)!
