@@ -21,6 +21,8 @@ class ComponentTasksVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         tasks = component.tasks
         nameLabel.text = component.name
+        tableView.estimatedRowHeight = 200.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {

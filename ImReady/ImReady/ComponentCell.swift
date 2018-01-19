@@ -30,6 +30,7 @@ class ComponentCell: UITableViewCell {
         naamLabel.text = component.name
         toDoLabel.text = component.amountTasks()
         doneLabel.text = component.doneTasks()
+        statusLabel.text = "Status: Nog niet voltooid."
     }
     
 }

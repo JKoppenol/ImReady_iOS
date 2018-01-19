@@ -15,6 +15,7 @@ class BlockResult : Block {
         name = data["Name"] as! String
         description = data["Description"] as! String
         
+        
         for object in data["Components"] as! [[String:Any]] {
             components.append(ComponentResult(withData: object) as Component)
         }
