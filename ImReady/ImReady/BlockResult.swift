@@ -16,11 +16,11 @@ class BlockResult : Block {
         description = data["Description"] as! String
         
         
-        for object in data["Components"] as! [[String:Any]] {
+        for object in (data["Components"] as? [[String:Any]])! {
             components.append(ComponentResult(withData: object) as Component)
         }
         
-        id = data["Id"] as! String
+        id = (data["Id"] as? String)!
         
         image = UIImage(named: name)!
     }

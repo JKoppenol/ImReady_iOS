@@ -17,7 +17,7 @@ class ComponentInfoVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     var links: [String] = []
 
-    var component = Component()
+    var component: Component = Component()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,27 @@ class ComponentInfoVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     private func setupView() {
-        links = component.usefulLinks
-        //lblTitle.text = component.name
-        //lblDescription.text = component.description
+        if(!component.usefulLinks.isEmpty) {
+            links = component.usefulLinks
+        }
         
-        let videoId = component.youtubeUrl.components(separatedBy: "=").last
-        loadYoutube(videoID: videoId!)
+        lblTitle.text = self.component.name
+        
+        lblDescription.text = component.description
+        
+        if(component.youtubeUrl != "") {
+            let videoId: String!
+            
+            if component.youtubeUrl.range(of:"youtu.be") != nil {
+                videoId = component.youtubeUrl.components(separatedBy: ".be/").last
+            }
+            
+            else {
+                videoId = component.youtubeUrl.components(separatedBy: "=").last
+            }
+            
+            loadYoutube(videoID: videoId!)
+        }
     }
     
     func loadYoutube(videoID:String) {
