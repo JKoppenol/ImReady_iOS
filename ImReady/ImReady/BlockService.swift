@@ -11,40 +11,7 @@ import UIKit
 
 class BlockService {
     let apiClient: ApiClient = ApiClient()
-    
-//    func mockData() -> [Block] {
-//        var activeblocks = [Block]()
-//        
-//        let block1 = Block()
-//        block1.id = 1
-//        block1.name = "Zorg"
-//        block1.iscomplete = false
-//        let component = Component()
-//        component.name = "Sporten"
-//        block1.components.append(component)
-//        
-//        let block2 = Block()
-//        block2.id = 2
-//        block2.name = "Sociaal"
-//        block2.iscomplete = false
-//        
-//        let block3 = Block()
-//        block3.id = 3
-//        block3.name = "Financien"
-//        block3.iscomplete = false
-//        
-//        let block4 = Block()
-//        block4.id = 4
-//        block4.name = "Opleiding"
-//        block4.iscomplete = false
-//        
-//        activeblocks.append(block1)
-//        activeblocks.append(block2)
-//        activeblocks.append(block3)
-//        activeblocks.append(block4)
-//        
-//        return activeblocks
-//    }
+  
     var user: LoggedInUser = LoggedInUser().getLoggedInUser()
     
     public func getFutureCanvas(ofUserWithId userId: String,
@@ -117,6 +84,23 @@ class BlockService {
         },
                        onFailure: onFailure)
     }
+    
+    //Work in Progress - Update Taskstatus:Int with Comment/Content:String
+//    public func updateTask(forClient clientId: String,
+//                               forTask task: ComponentTask,
+//                                   onSuccess: @escaping () -> (),
+//                                   onFailure: @escaping () -> ()) {
+//        var body: [String:Any] = [:]
+//        
+//        apiClient.send(toRelativePath: "client/\(clientId)/activity/\(task.id)",
+//                       withHttpMethod: .put,
+//                       withBody: body,
+//                       withHeaders: ["Content-Type": apiClient.ContentTypeHeader, "Accept": apiClient.AcceptHeader],
+//                       onSuccessDo: {(_ data) in
+//                            onSuccess()
+//                       },
+//                       onFailure: onFailure)
+//    }
 
 }
 

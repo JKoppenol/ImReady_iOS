@@ -34,6 +34,10 @@ class User {
     var email : String = ""
     var role : Role = Role.Client
     var AccessFailedCount : Int = 0
+    
+        public func getFullName() -> String{
+            return FirstName + " " + LastName
+        }
     }
 
 enum Role : String {

@@ -39,21 +39,21 @@ class ChatCell: UITableViewCell {
     
     private func getRecipientName() -> String {
         if(currentUser?.id == chat.receiverId) {
-            let sender = userService.getById(id: chat.senderId)
-            
-            if(sender != nil) {
-                return sender!.name
-            }
+//            let sender = userService.getById(id: chat.senderId)
+//            
+//            if(sender != nil) {
+//                return sender!.name
+//            }
             
             return ""
         }
         
         else {
-            let receiver = userService.getById(id: chat.receiverId)
-            
-            if(receiver != nil) {
-                return receiver!.name
-            }
+//            let receiver = userService.getById(id: chat.receiverId)
+//            
+//            if(receiver != nil) {
+//                return receiver!.name
+//            }
             
             return ""
         }

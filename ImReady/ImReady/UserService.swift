@@ -32,16 +32,43 @@ class UserService {
         return users;
     }
     
-    func getById(id : String) -> User? {
-        let users : [User] = getAllUsers()
+    func getUser(withId userId: String,
+                 withRole role: Role,
+                 onSuccess: @escaping (_ : User) -> (),
+                 onFailure: @escaping () -> ()) {
+        let apiClient: ApiClient = ApiClient()
+        var path: String = ""
+        var tempRole: Role = .Client
         
-        for user in users {
-            if(user.id == id) {
-                return user
-            }
+        if(role == .Client) {
+            path = "caregiver/\(userId)"
+            tempRole = .Caregiver
         }
         
-        return nil
+        else if(role == .Caregiver) {
+            path = "client/\(userId)"
+            tempRole = .Client
+        }
+        
+        apiClient.send(toRelativePath: path,
+                       withHttpMethod: .get,
+                       onSuccessDo: { (_ data) in
+                        let user : User = User()
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data) as! [String:Any]
+                            user.id = json["Id"] as! String
+                            user.FirstName = json["FirstName"] as! String
+                            user.LastName = json["LastName"] as! String
+                            user.role = tempRole
+                            
+                            onSuccess(user)
+                        }
+                        catch {
+                            onFailure()
+                        }
+            },
+                       onFailure: onFailure)
     }
 
 }

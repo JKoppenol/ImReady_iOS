@@ -16,8 +16,10 @@ class AgendaDetailVC: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var attendeesLabel: UILabel!
     
     var appointment: Appointment = Appointment()
+    let currentUser = LoggedInUser().getLoggedInUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +61,8 @@ class AgendaDetailVC: UIViewController {
     func fillLabels() {
         let agendaItem = self.appointment
         let dateFormatter = DateFormatter()
-        
+       
+        //Title
         if(sharedInstance.currentUser?.role == Role.Caregiver) {
             titleLabel.text = agendaItem.caretakerTitle
         }
@@ -68,12 +71,43 @@ class AgendaDetailVC: UIViewController {
             titleLabel.text = agendaItem.clientTitle
         }
         
+        //Date
         dateFormatter.dateFormat = "dd-MM-yyyy"
         dateLabel.text = dateFormatter.string(from: agendaItem.day)
         
+        //Starttime
         dateFormatter.dateFormat = "HH:mm"
         startLabel.text = dateFormatter.string(from: agendaItem.startTime)
         
+        //Attendees
+        self.attendeesLabel.text = "Gebruiker ophalen..."
+        if(currentUser.user_type == .Client) {
+            userService.getUser(withId: agendaItem.caretaker.id,
+                                withRole: currentUser.user_type!,
+                                onSuccess: { (user) in
+                                    agendaItem.caretaker = user
+                                    self.attendeesLabel.text = agendaItem.caretaker.getFullName()
+                },
+                                onFailure: {
+                                    print("Unable to find caretaker.")
+                                    self.attendeesLabel.text = "Geen"
+            })
+        }
+        
+        else {
+            userService.getUser(withId: agendaItem.client.id,
+                                withRole: currentUser.user_type!,
+                                onSuccess: { (user) in
+                                    agendaItem.client = user
+                                    self.attendeesLabel.text = agendaItem.client.getFullName()
+                },
+                                onFailure: {
+                                    print("Unable to find client.")
+                                    self.attendeesLabel.text = "Geen"
+            })
+        }
+        
+        //Endtime
         if(agendaItem.hasEndTime) {
             endLabel.text = dateFormatter.string(from: agendaItem.endTime!)
         }
@@ -82,6 +116,7 @@ class AgendaDetailVC: UIViewController {
             endLabel.text = "Geen eindtijd"
         }
         
+        //Location
         if(agendaItem.location != "") {
             locationLabel.text = agendaItem.location
         }
@@ -90,10 +125,11 @@ class AgendaDetailVC: UIViewController {
             locationLabel.text = "Onbekend"
         }
         
+        //Comments
         if(agendaItem.comments != "") {
             commentsLabel.text = agendaItem.comments
         }
-        
+            
         else {
             commentsLabel.text = "Geen opmerkingen"
         }
