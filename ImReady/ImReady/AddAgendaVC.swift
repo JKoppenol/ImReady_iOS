@@ -27,10 +27,15 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userService.getClientsOfCaretaker(withId: currentUser.id!, onSuccess: { (users) in
-            self.clients = users
+        activateIndicator_Activity(onViewController: self, onView: view)
+        userService.getClientsOfCaretaker(withId: currentUser.id!,
+                                          onSuccess: { (users) in
+                                            self.clients = users
+                                            self.clientPicker.reloadAllComponents()
+                                            deactivateIndicator_Activity()
             }) { 
                 print("Could not retrieve clients.")
+                deactivateIndicator_Activity()
         }
         
         self.clientPicker.dataSource = self;
@@ -51,7 +56,6 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func saveAppointment(_ sender: UIBarButtonItem) {
@@ -62,6 +66,14 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         appointment.day = dayPicker.date
         appointment.startTime = startPicker.date
         appointment.endTime = endPicker.date
+        
+        userService.getUser(withId: currentUser.id!,
+                            withRole: Role.Client,
+                            onSuccess: { (user) in
+                                self.appointment.caretaker = user
+            },
+                            onFailure: {print("Could not retrieve user.")}
+        )
         
         if(locationTextfield.text != "") {
             appointment.location = locationTextfield.text!
@@ -74,24 +86,23 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         appointment.kind = Kind.Appointment
         
         save(appointment: appointment)
-        //agendaVC?.onUserAction(appointment: appointment)
+        agendaVC?.onUserAction(appointment: appointment)
         
     }
     
     private func save(appointment: Appointment) {
-        //TODO
-//        activateIndicator_Activity(onViewController: self, onView: view)
-//        agendaService.createAppointment(forCaregiver: currentUser.id,
-//                                        fromAppointment: appointment,
-//                                        onSuccess:{_ in
-//                                            agendaVC?.tableView.reloadData()
-//                                            deactivateIndicator_Activity()
-//                                            _ = navigationController?.popViewController(animated: true)
-//                                        },
-//                                        onFailure: {
-//                                            print("Could not create appointment")
-//                                            deactivateIndicator_Activity()
-//                                        })
+        activateIndicator_Activity(onViewController: self, onView: view)
+        agendaService.createAppointment(forCaregiver: currentUser.id!,
+                                        fromObject: appointment,
+                                        onSuccess:{_ in
+                                            self.agendaVC?.tableView.reloadData()
+                                            deactivateIndicator_Activity()
+                                            _ = self.navigationController?.popViewController(animated: true)
+                                        },
+                                        onFailure: {
+                                            print("Could not create appointment")
+                                            deactivateIndicator_Activity()
+                                        })
     }
     
     private func createAlert(title: String!, message: String!, sender: AddAgendaVC!) {
@@ -118,7 +129,7 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return clients[row].name
+        return clients[row].getFullName()
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)

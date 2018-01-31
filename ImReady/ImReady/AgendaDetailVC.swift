@@ -37,8 +37,8 @@ class AgendaDetailVC: UIViewController {
             editButton.title = ""
             editButton.tintColor = UIColor.clear
         }
+        
         fillLabels()
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -108,14 +108,8 @@ class AgendaDetailVC: UIViewController {
         }
         
         //Endtime
-        if(agendaItem.hasEndTime) {
-            endLabel.text = dateFormatter.string(from: agendaItem.endTime!)
-        }
-        
-        else {
-            endLabel.text = "Geen eindtijd"
-        }
-        
+        endLabel.text = dateFormatter.string(from: agendaItem.endTime)
+                
         //Location
         if(agendaItem.location != "") {
             locationLabel.text = agendaItem.location

@@ -45,7 +45,7 @@ class AgendaDayCell: UITableViewCell {
                     dashLabel.isHidden = false
                     endLabel.isHidden = false
                     dashLabel.text = "-"
-                    endLabel.text = dateFormatter.string(from: appointment.endTime!)
+                    endLabel.text = dateFormatter.string(from: appointment.endTime)
                 }
                     
                 else {
@@ -64,7 +64,7 @@ class AgendaDayCell: UITableViewCell {
                     dashLabel.isHidden = false
                     endLabel.isHidden = false
                     dashLabel.text = "-"
-                    endLabel.text = dateFormatter.string(from: appointment.endTime!)
+                    endLabel.text = dateFormatter.string(from: appointment.endTime)
                 }
                     
                 else {

@@ -48,19 +48,7 @@ class EditAgendaItemVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         dayPicker.date = appointment.day
         startPicker.date = appointment.startTime
         
-        if(!appointment.hasEndTime) {
-            endPicker.isHidden = true
-            endLabel.isHidden = true
-            endSwitch.isOn = true
-        }
-        
-        else {
-            endSwitch.isOn = false
-            endPicker.isHidden = false
-            endLabel.isHidden = false
-            
-            endPicker.date = appointment.endTime!
-        }
+        endPicker.date = appointment.endTime
         
         locationTextfield.text = appointment.location
         commentsTV.text = appointment.comments
@@ -89,14 +77,7 @@ class EditAgendaItemVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         appointment.day = dayPicker.date
         appointment.startTime = startPicker.date
         
-        if(!endSwitch.isOn) {
-            appointment.endTime = endPicker.date
-            appointment.hasEndTime = true
-        }
-            
-        else {
-            appointment.hasEndTime = false
-        }
+        appointment.endTime = endPicker.date
         
         if(locationTextfield.text != "") {
             appointment.location = locationTextfield.text!

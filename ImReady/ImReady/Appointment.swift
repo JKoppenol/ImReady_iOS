@@ -14,13 +14,12 @@ class Appointment {
     var caretakerTitle: String? = ""
     var day = Date()
     var startTime = Date()
-    var endTime: Date?
+    var endTime: Date = Date()
     var location: String = ""
     var comments: String = ""
     var client: User = User()
     var caretaker: User = User()
     var kind: Kind = .Appointment
-    var hasEndTime: Bool = true
 }
 
 enum Kind: String {

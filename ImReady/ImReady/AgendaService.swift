@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class AgendaService {
     let apiClient: ApiClient = ApiClient()
@@ -36,23 +37,26 @@ class AgendaService {
                        onFailure: onFailure)
     }
     
-//    public func createAppointment(forCaregiver caregiverId: String,
-//                                  fromObject appointment: Appointment,
-//                                  onSuccess: @escaping () -> (),
-//                                  onFailure: @escaping () -> ()) {
-//        apiClient.send(toRelativePath: "user/\(caregiverId)/calendar",
-//            withHttpMethod: .post,
-//            onSuccessDo: {_ in
-//                do {
-//                    onSuccess()
-//                }
-//                catch {
-//                    onFailure()
-//                }
-//            },
-//            onFailure: onFailure)
-//
-//    }
+    public func createAppointment(forCaregiver caregiverId: String,
+                                  fromObject appointment: Appointment,
+                                  onSuccess: @escaping () -> (),
+                                  onFailure: @escaping () -> ()) {
+        apiClient.send(toRelativePath: "user/\(caregiverId)/calendar",
+            withHttpMethod: .post,
+            withParameters: ["Title": appointment.clientTitle,
+                             "StartDate" : appointment.startTime,
+                             "EndDate" : appointment.endTime,
+                             "Location" : appointment.location,
+                             "Remark" : appointment.comments,
+                             "ClientId" : appointment.client.id],
+            withHeaders: ["Content-Type": apiClient.ContentTypeHeader, "Accept": apiClient.AcceptHeader],
+            withEncoding: URLEncoding.httpBody,
+            onSuccessDo: {_ in
+                onSuccess()
+            },
+            onFailure: onFailure)
+
+    }
 
 }
 let agendaService = AgendaService()

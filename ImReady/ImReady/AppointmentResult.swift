@@ -17,8 +17,14 @@ class AppointmentResult : Appointment {
         day = formatDate(fromString: data["StartDate"] as! String, withFormat: "dd-MM-yyyy")
         startTime = formatDate(fromString: data["StartDate"] as! String, withFormat: "HH:mm")
         endTime = formatDate(fromString: data["EndDate"] as! String, withFormat: "HH:mm")
-        location = data["Location"] as! String
-        comments = data["Remark"] as! String
+        
+        if(!(data["Location"] is NSNull)) {
+            location = data["Location"] as! String
+        }
+        
+        if(!(data["Remark"] is NSNull)) {
+            comments = data["Remark"] as! String
+        }
         
         if(data["ClientId"] is NSNull) {
             client.id = ""
