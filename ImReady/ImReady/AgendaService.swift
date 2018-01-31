@@ -35,6 +35,24 @@ class AgendaService {
             },
                        onFailure: onFailure)
     }
+    
+//    public func createAppointment(forCaregiver caregiverId: String,
+//                                  fromObject appointment: Appointment,
+//                                  onSuccess: @escaping () -> (),
+//                                  onFailure: @escaping () -> ()) {
+//        apiClient.send(toRelativePath: "user/\(caregiverId)/calendar",
+//            withHttpMethod: .post,
+//            onSuccessDo: {_ in
+//                do {
+//                    onSuccess()
+//                }
+//                catch {
+//                    onFailure()
+//                }
+//            },
+//            onFailure: onFailure)
+//
+//    }
 
 }
 let agendaService = AgendaService()

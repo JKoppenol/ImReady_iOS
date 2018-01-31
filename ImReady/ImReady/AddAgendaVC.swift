@@ -16,18 +16,22 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
     @IBOutlet weak var startPicker: UIDatePicker!
     @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var endPicker: UIDatePicker!
-    @IBOutlet weak var endSwitch: UISwitch!
     @IBOutlet weak var locationTextfield: UITextField!
     @IBOutlet weak var clientPicker: UIPickerView!
 
     var appointment = Appointment()
-    var clients = userService.getAllUsers()
     var selectedUser = User()
     var agendaVC: AgendaVC?
     var currentUser = LoggedInUser().getLoggedInUser()
+    var clients: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userService.getClientsOfCaretaker(withId: currentUser.id!, onSuccess: { (users) in
+            self.clients = users
+            }) { 
+                print("Could not retrieve clients.")
+        }
         
         self.clientPicker.dataSource = self;
         self.clientPicker.delegate = self;
@@ -39,8 +43,6 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "< Terug", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
-
-        // Do any additional setup after loading the view.
     }
     
     @objc private func back(sender: UIBarButtonItem) {
@@ -53,22 +55,13 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     @IBAction func saveAppointment(_ sender: UIBarButtonItem) {
-        //appointment.clientTitle = "Afspraak met " + (currentUser.username)
         appointment.client = selectedUser
-        //appointment.caretaker = currentUser
-        appointment.caretakerTitle = "Afspraak met " + selectedUser.name
+        appointment.clientTitle = titleTextfield.text!
+        appointment.caretakerTitle = titleTextfield.text
         appointment.id = ""
         appointment.day = dayPicker.date
         appointment.startTime = startPicker.date
-        
-        if(!endSwitch.isOn) {
-            appointment.endTime = endPicker.date
-            appointment.hasEndTime = true
-        }
-        
-        else {
-            appointment.hasEndTime = false
-        }
+        appointment.endTime = endPicker.date
         
         if(locationTextfield.text != "") {
             appointment.location = locationTextfield.text!
@@ -80,21 +73,25 @@ class AddAgendaVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         
         appointment.kind = Kind.Appointment
         
-        agendaVC?.onUserAction(appointment: appointment)
+        save(appointment: appointment)
+        //agendaVC?.onUserAction(appointment: appointment)
         
-        _ = navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func endTimeSwitch(_ sender: UISwitch) {
-        if(sender.isOn) {
-            endLabel.isHidden = true
-            endPicker.isHidden = true
-        }
-        
-        else {
-            endLabel.isHidden = false
-            endPicker.isHidden = false
-        }
+    private func save(appointment: Appointment) {
+        //TODO
+//        activateIndicator_Activity(onViewController: self, onView: view)
+//        agendaService.createAppointment(forCaregiver: currentUser.id,
+//                                        fromAppointment: appointment,
+//                                        onSuccess:{_ in
+//                                            agendaVC?.tableView.reloadData()
+//                                            deactivateIndicator_Activity()
+//                                            _ = navigationController?.popViewController(animated: true)
+//                                        },
+//                                        onFailure: {
+//                                            print("Could not create appointment")
+//                                            deactivateIndicator_Activity()
+//                                        })
     }
     
     private func createAlert(title: String!, message: String!, sender: AddAgendaVC!) {

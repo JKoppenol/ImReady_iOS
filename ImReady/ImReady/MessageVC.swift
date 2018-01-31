@@ -14,18 +14,17 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
-    var messageId: String!
     var message: Message!
     var messages: [Message] = []
     var currentUser = LoggedInUser().getLoggedInUser()
-    var chats : [Chat] = []
-    var chat = Chat()
+    var chat: Chat = Chat()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 50.0
         tableView.rowHeight = UITableViewAutomaticDimension
         sendButton.layer.cornerRadius = 5.0
+        setupUI()
         loadData()
     }
     
@@ -52,6 +51,12 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    private func setupUI() {
+        if(currentUser.user_type == .Caregiver) {
+            
+        }
+    }
+    
     private func loadData() {
         let zoey: String! = "211436f6-1e94-4ef4-8b8f-0c7cf165ec14"
         
@@ -70,6 +75,10 @@ class MessageVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
                                             deactivateIndicator_Activity()
                                             
             })
+        }
+        
+        else {
+            messages = chat.messages
         }
     }
     

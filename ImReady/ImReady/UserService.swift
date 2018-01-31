@@ -70,6 +70,30 @@ class UserService {
             },
                        onFailure: onFailure)
     }
+    
+    func getClientsOfCaretaker(withId caretakerId: String,
+                               onSuccess: @escaping (_ : [User]) -> (),
+                               onFailure: @escaping () -> ()) {
+        let apiClient: ApiClient = ApiClient()
+        apiClient.send(toRelativePath: "caregiver/\(caretakerId)",
+                       withHttpMethod: .get,
+                       onSuccessDo: { (_ data) in
+                        var users : [User] = []
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data) as! [String:Any]
+                            for object in json["Clients"] as! [[String:Any]] {
+                                let user = ClientResult(withData: object) as User
+                                users.append(user)
+                            }
+                            onSuccess(users)
+                        }
+                        catch {
+                            onFailure()
+                        }
+            },
+                       onFailure: onFailure)
+    }
 
 }
 

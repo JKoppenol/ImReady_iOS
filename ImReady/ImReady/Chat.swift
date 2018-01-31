@@ -17,7 +17,19 @@ class Chat {
     var senderId : String = ""
     var receiverId : String = ""
     var messages : [Message] = []
-    var lastMessage = Message()
+    
+    public func lastMessage() -> Message? {
+        if(self.messages.count != 0) {
+            
+            let lastMessage = self.messages.last!
+            
+            if(lastMessage.id != "") {
+                return lastMessage
+            }
+        }
+        
+        return nil
+    }
 }
 
 class Message : MasterMessage {

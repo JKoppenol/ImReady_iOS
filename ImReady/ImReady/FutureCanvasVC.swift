@@ -22,12 +22,9 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         loadFutureCanvas()
         
-        
         //refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
         //refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         //collectionView.refreshControl = refreshControl
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func refreshAction(_ sender: Any) {
@@ -42,7 +39,6 @@ class FutureCanvasVC: UIViewController, UICollectionViewDataSource, UICollection
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // Number of views (cells)
